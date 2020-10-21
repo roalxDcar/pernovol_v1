@@ -1,72 +1,97 @@
-@extends('layouts.app')
+@extends('layouts.principal')
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Login') }}</div>
-
-                <div class="card-body">
-                    <form method="POST" action="{{ route('login') }}">
-                        @csrf
-
-                        <div class="form-group row">
-                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required autofocus>
-
-                                @if ($errors->has('email'))
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('email') }}</strong>
+<div class="app-content content">
+    <div class="content-header row">
+    </div>
+    <div class="content-overlay">
+    </div>
+    <div class="content-wrapper">
+        <div class="content-body">
+            <section class="row flexbox-container">
+                <div class="col-12 d-flex align-items-center justify-content-center">
+                    <div class="col-lg-4 col-md-8 col-10 box-shadow-2 p-0">
+                        <div class="card border-grey border-lighten-3 m-0">
+                            <div class="card-header border-0">
+                                <div class="card-title text-center">
+                                    <div class="p-1">
+                                        <img alt="branding logo" src="{!! asset('assets/app-assets/images/logo/logo-dark.png') !!}"/>
+                                    </div>
+                                </div>
+                                <h2 class="card-subtitle line-on-side text-center">
+                                    <span>
+                                        Ingresar al Sistema
                                     </span>
-                                @endif
+                                </h2>
                             </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
-
-                                @if ($errors->has('password'))
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('password') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <div class="col-md-6 offset-md-4">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
-
-                                    <label class="form-check-label" for="remember">
-                                        {{ __('Remember Me') }}
-                                    </label>
+                            <div class="card-content">
+                                <div class="card-body">
+                                    <form  method="POST" action="{{ route('login') }}" class="form-horizontal form-simple" method="POST" novalidate="">
+                                        @csrf
+                                        <fieldset class="form-group position-relative has-icon-left mb-0">
+                                            <input class="form-control" id="email" name="email" placeholder="Email" required="" type="text">
+                                                <div class="form-control-position">
+                                                    <i class="la la-user">
+                                                    </i>
+                                                </div>
+                                            </input>
+                                        </fieldset>
+                                        <fieldset class="form-group position-relative has-icon-left">
+                                            <input class="form-control" id="password" name="password" placeholder="Contraseña" required="" type="password">
+                                                <div class="form-control-position">
+                                                    <i class="la la-key">
+                                                    </i>
+                                                </div>
+                                            </input>
+                                        </fieldset>
+                                        {{--
+                                        <div class="form-group row">
+                                            <div class="col-sm-6 col-12 text-center text-sm-left">
+                                                <fieldset>
+                                                    <input class="chk-remember" id="remember-me" type="checkbox">
+                                                        <label for="remember-me">
+                                                            Remember Me
+                                                        </label>
+                                                    </input>
+                                                </fieldset>
+                                            </div>
+                                            <div class="col-sm-6 col-12 text-center text-sm-right">
+                                                <a class="card-link" href="recover-password.html">
+                                                    Forgot Password?
+                                                </a>
+                                            </div>
+                                        </div>
+                                        --}}
+                                        <button class="btn btn-primary btn-block" type="submit">
+                                            <i class="ft-unlock">
+                                            </i>
+                                            INGRESAR
+                                        </button>
+                                    </form>
                                 </div>
                             </div>
-                        </div>
-
-                        <div class="form-group row mb-0">
-                            <div class="col-md-8 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('Login') }}
-                                </button>
-
-                                @if (Route::has('password.request'))
-                                    <a class="btn btn-link" href="{{ route('password.request') }}">
-                                        {{ __('Forgot Your Password?') }}
-                                    </a>
-                                @endif
+                            {{--
+                            <div class="card-footer">
+                                <div class="">
+                                    <p class="float-xl-left text-center m-0">
+                                        <a class="card-link" href="recover-password.html">
+                                            Recover
+                                            password
+                                        </a>
+                                    </p>
+                                    <p class="float-xl-right text-center m-0">
+                                        New to Moden Admin?
+                                        <a class="card-link" href="register-simple.html">
+                                            Sign Up
+                                        </a>
+                                    </p>
+                                </div>
                             </div>
+                            --}}
                         </div>
-                    </form>
+                    </div>
                 </div>
-            </div>
+            </section>
         </div>
     </div>
 </div>
