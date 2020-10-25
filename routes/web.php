@@ -21,3 +21,6 @@ Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
 Route::post('login', 'Auth\LoginController@login_attemps')->name('login_attemps');
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/welcome', function () {
+    return view('welcome');
+})->name('welcome');

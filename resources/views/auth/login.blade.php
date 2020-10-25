@@ -30,7 +30,7 @@
                                         @csrf
                                         <fieldset class="position-relative has-icon-left pb-3">
                                             <input class="form-control" id="email" name="email" placeholder="Email" required="" type="text">
-                                                <div class="form-control-position">
+                                                <div class="form-control-position ">
                                                     <i class="la la-user">
                                                     </i>
                                                 </div>
@@ -95,7 +95,6 @@
             $(".btn-block")
                 .html(`<i class="spinner-border spinner-border-sm" style="margin:2px;"></i> INGRESANDO`)
                 .attr("disabled",true);
-            console.log("Paso")
 
             let email = $('#email').val();
             let password = $('#password').val();
@@ -109,7 +108,7 @@
                     password:password
                 },
                 success:function(data){
-                    console.log(data);
+                    
                     if(data.state == "success"){
 
                         location.href = "{{ route('home') }}";
@@ -140,7 +139,7 @@
     {{-- Estilo de la etiqueta span de error --}}
     span.error{ 
         color: red; 
-        font-size: 0.8em;  
+        font-size: 1em;  
     }
 </style>
 
