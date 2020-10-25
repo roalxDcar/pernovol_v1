@@ -17,6 +17,7 @@ Route::get('/', function () {
 
 Route::post('logout', 'Auth\LoginController@logout')->name('logout');
 Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
-Route::post('login', 'Auth\LoginController@login');
+//Ingresar al sistema (Restricción)
+Route::post('login', 'Auth\LoginController@login_attemps')->name('login_attemps');
 
 Route::get('/home', 'HomeController@index')->name('home');
