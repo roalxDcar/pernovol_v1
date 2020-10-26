@@ -1,73 +1,146 @@
-@extends('layouts.app')
+@extends('layouts.principal')
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Login') }}</div>
-
-                <div class="card-body">
-                    <form method="POST" action="{{ route('login') }}">
-                        @csrf
-
-                        <div class="form-group row">
-                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required autofocus>
-
-                                @if ($errors->has('email'))
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('email') }}</strong>
+<div class="app-content content">
+    <div class="content-header row">
+    </div>
+    <div class="content-overlay">
+    </div>
+    <div class="content-wrapper">
+        <div class="content-body">
+            <section class="row flexbox-container">
+                <div class="col-12 d-flex align-items-center justify-content-center">
+                    <div class="col-lg-4 col-md-8 col-10 box-shadow-2 p-0">
+                        <div class="card border-grey border-lighten-3 m-0">
+                            <div class="border-0 mr-3 ml-3 mt-3 pt-10">
+                                <div class="card-title text-center">
+                                    <div class="p-3">
+                                        <img alt="branding logo" src="{!! asset('assets/app-assets/images/logo/logo-dark.png') !!}"/>
+                                    </div>
+                                </div>
+                                <h2 class="card-subtitle line-on-side text-center m-3">
+                                    <span>
+                                        Ingresar al Sistema
                                     </span>
-                                @endif
+                                </h2>
                             </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
-
-                                @if ($errors->has('password'))
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('password') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <div class="col-md-6 offset-md-4">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
-
-                                    <label class="form-check-label" for="remember">
-                                        {{ __('Remember Me') }}
-                                    </label>
+                            <div class="card-content">
+                                <div class="card-body m-3">
+                                    <form id="form" action="#" class="form-horizontal form-simple">
+                                        @csrf
+                                        <fieldset class="position-relative has-icon-left pb-3">
+                                            <input class="form-control" id="email" name="email" placeholder="Email" required="" type="text">
+                                                <div class="form-control-position ">
+                                                    <i class="la la-user">
+                                                    </i>
+                                                </div>
+                                            </input>
+                                        </fieldset>
+                                        <fieldset class="position-relative has-icon-left pb-3">
+                                            <input class="form-control" id="password" name="password" placeholder="Contraseña" required="" type="password">
+                                                <div class="form-control-position">
+                                                    <i class="la la-key">
+                                                    </i>
+                                                </div>
+                                            </input>
+                                        </fieldset>
+                                        <button class="btn btn-primary btn-block" type="submit" id="load">
+                                                INGRESAR
+                                        </button>
+                                    </form>
+                                    <br>
+                                    <span id="error-back"></span>
                                 </div>
                             </div>
                         </div>
-
-                        <div class="form-group row mb-0">
-                            <div class="col-md-8 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('Login') }}
-                                </button>
-
-                                @if (Route::has('password.request'))
-                                    <a class="btn btn-link" href="{{ route('password.request') }}">
-                                        {{ __('Forgot Your Password?') }}
-                                    </a>
-                                @endif
-                            </div>
-                        </div>
-                    </form>
+                    </div>
                 </div>
-            </div>
+            </section>
         </div>
     </div>
 </div>
+
+<script>   
+    {{-- Validación de campos de formulario Login --}}
+    $("#form").validate({
+        rules: {
+            // Se selecciona la etiqueta según el nombre (name)
+            email: {
+                required: true,
+                email: true
+            },
+            password:{
+                required: true,
+                minlength: 6,
+                maxlength: 15
+            }
+        },
+        messages: {
+            // Se cambia el texto de ingles a español(personalizado)
+            email: {
+                required: "Este campo es requerido",
+                email: "Por favor, introduce una dirección de correo electrónico válida."
+            },
+            password: {
+                required: "Este campo es requerido",
+                minlength: "Por favor, ingrese al menos 6 caracteres.",
+                maxlength: "Por favor, ingrese no más de 15 caracteres."
+            }
+        },
+        // Se aplicara el error del campo dentro de un span.
+        errorElement : 'span',
+        // Transferencia de información y validación de credenciales con la base de datos
+        // logica backend
+        submitHandler: function(){
+            $(".btn-block")
+                .html(`<i class="spinner-border spinner-border-sm" style="margin:2px;"></i> INGRESANDO`)
+                .attr("disabled",true);
+
+            let email = $('#email').val();
+            let password = $('#password').val();
+
+            $.ajax({
+                url:     "{{ route('login_attemps') }}",
+                headers: {'X-CSRF-TOKEN':$('meta[name="csrf-token"]').attr('content')},
+                method:  "POST",
+                data:{
+                    email:email,
+                    password:password
+                },
+                success:function(data){
+                    
+                    if(data.state == "success"){
+
+                        location.href = "{{ route('home') }}";
+
+                    }else{
+                        
+                        $('#error-back')
+                            .html(`<div class="alert alert-danger bg-danger text-white text-center">${data.msg}</div>`);
+                        
+                        $(".btn-block")
+                            .html(`INGRESAR`)
+                            .attr("disabled",false);
+                    }
+                }
+            });
+        },
+        // Personalización de clase para los inputs validados
+        highlight: function(element) {
+           $(element).addClass('is-invalid');
+        },
+        unhighlight: function(element) {
+           $(element).removeClass('is-invalid');
+       }
+    });
+</script>
+
+<style>
+    {{-- Estilo de la etiqueta span de error --}}
+    span.error{ 
+        color: red; 
+        font-size: 1em;  
+    }
+</style>
+
 @endsection
