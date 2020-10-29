@@ -24,3 +24,9 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/welcome', function () {
     return view('welcome');
 })->name('welcome');
+
+Route::get('lista-proveedor', 'ProviderController@getProvider')->name('get.provider');
+Route::get('nuevo-proveedor', 'ProviderController@createProvider')->name('create.provider');
+Route::post('nuevo-proveedor/guardar', 'ProviderController@storeProvider')->name('store.provider');
+Route::get('editar-proveedor/{id}', 'ProviderController@editProvider')->name('edit.provider');
+Route::put('editar-proveedor/actualizar/{id}', 'ProviderController@updateProvider')->name('update.provider');

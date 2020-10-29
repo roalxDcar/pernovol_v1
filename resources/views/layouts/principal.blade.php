@@ -39,7 +39,9 @@
     <link rel="stylesheet" type="text/css" href="{!! asset('assets/assets/css/style.css')!!}">
     <!-- END: Custom CSS-->
 
+    {{-- Uso de Jquery --}}
     <script src="{!! asset('assets/assets/jquery/jquery.min.js')!!}"></script>
+    {{-- Validación de formulario --}}
     <script src="{!! asset('assets/assets/jquery/jquery.validate.min.js')!!}"></script>
 
     {{-- Animacion de Loading (cargando) --}}

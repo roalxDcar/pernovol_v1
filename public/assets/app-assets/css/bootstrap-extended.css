@@ -270,7 +270,8 @@ form {
         margin-bottom: 10px; } }
   @media (min-width: 576px) {
     form.form-horizontal .form-group .label-control {
-      text-align: right; } }
+      text-align: left;
+      padding-left: 10px; } }
   form.row-separator .form-group {
     margin: 0;
     border-bottom: 1px solid #e9ebf5; }
