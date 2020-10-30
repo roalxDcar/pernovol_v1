@@ -29,7 +29,7 @@
                                     <form id="form" action="#" class="form-horizontal form-simple">
                                         @csrf
                                         <fieldset class="position-relative has-icon-left pb-3">
-                                            <input class="form-control" id="email" name="email" placeholder="Email" required="" type="text">
+                                            <input class="form-control" id="email" name="email" placeholder="Email" required="" type="text" style="margin-bottom:1px;">
                                                 <div class="form-control-position ">
                                                     <i class="la la-user">
                                                     </i>
@@ -37,7 +37,7 @@
                                             </input>
                                         </fieldset>
                                         <fieldset class="position-relative has-icon-left pb-3">
-                                            <input class="form-control" id="password" name="password" placeholder="Contraseña" required="" type="password">
+                                            <input class="form-control" id="password" name="password" placeholder="Contraseña" required="" type="password" style="margin-bottom:1px;">
                                                 <div class="form-control-position">
                                                     <i class="la la-key">
                                                     </i>
