@@ -17,7 +17,7 @@
                             person
                         </i>
                         <span class="align-middle">
-                            Profile
+                            Perfil
                         </span>
                     </a>
                     <a class="dropdown-item">
@@ -25,7 +25,7 @@
                             message
                         </i>
                         <span class="align-middle">
-                            Messages
+                            Mensaje
                         </span>
                     </a>
                     <a class="dropdown-item">
@@ -72,29 +72,11 @@
                 </a>
                 <ul class="menu-content">
                     <li>
-                        <a class="menu-item" href="{{ route('welcome') }}">
+                        <a class="menu-item" href="#">
                             <i class="material-icons">
                             </i>
                             <span data-i18n="eCommerce">
-                                eCommerce
-                            </span>
-                        </a>
-                    </li>
-                    <li>
-                        <a class="menu-item" href="dashboard-crypto.html">
-                            <i class="material-icons">
-                            </i>
-                            <span data-i18n="Crypto">
-                                Crypto
-                            </span>
-                        </a>
-                    </li>
-                    <li>
-                        <a class="menu-item" href="dashboard-sales.html">
-                            <i class="material-icons">
-                            </i>
-                            <span data-i18n="Sales">
-                                Sales
+                                Reportes
                             </span>
                         </a>
                     </li>
@@ -104,14 +86,14 @@
             <li class=" nav-item">
                 <a href="#">
                     <i class="material-icons">
-                        person_outline
+                        people_outline
                     </i>
                     <span class="menu-title" data-i18n="Users">
                         Gestión de Usuarios
                     </span>
                 </a>
                 <ul class="menu-content">
-                    <li class="active">
+                    <li class="">
                         <a class="menu-item" href="{{ route('get.provider') }}">
                             <i class="material-icons">
                             </i>
@@ -123,14 +105,121 @@
                 </ul>
             </li>
             <li class=" nav-item">
-                <a href="charts-apexcharts.html">
+                <a href="#">
                     <i class="material-icons">
-                        data_usage
+                        home
                     </i>
-                    <span class="menu-title" data-i18n="Apex Charts">
-                        Apex Charts
+                    <span class="menu-title" data-i18n="Users">
+                        Gestión Sucursales
                     </span>
                 </a>
+                <ul class="menu-content">
+                    <li class="">
+                        <a class="menu-item" href="#">
+                            <i class="material-icons">
+                            </i>
+                            <span data-i18n="Users List">
+                                Sucursales
+                            </span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li class=" nav-item">
+                <a href="#">
+                    <i class="material-icons">
+                        dvr
+                    </i>
+                    <span class="menu-title" data-i18n="Users">
+                        Catalogo
+                    </span>
+                </a>
+                <ul class="menu-content">
+                    <li class="">
+                        <a class="menu-item" href="#">
+                            <i class="material-icons">
+                            </i>
+                            <span data-i18n="Users List">
+                                Producto
+                            </span>
+                        </a>
+                    </li>
+                </ul>
+                <ul class="menu-content">
+                    <li class="">
+                        <a class="menu-item" href="{{ route('get.category') }}">
+                            <i class="material-icons">
+                            </i>
+                            <span data-i18n="Users List">
+                                Categoria
+                            </span>
+                        </a>
+                    </li>
+                </ul>
+                <ul class="menu-content">
+                    <li class="">
+                        <a class="menu-item" href="#">
+                            <i class="material-icons">
+                            </i>
+                            <span data-i18n="Users List">
+                                Unidad de Medida
+                            </span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li class=" nav-item">
+                <a href="#">
+                    <i class="material-icons">
+                        attach_money
+                    </i>
+                    <span class="menu-title" data-i18n="Users">
+                        Gestión Compras
+                    </span>
+                </a>
+                <ul class="menu-content">
+                    <li class="">
+                        <a class="menu-item" href="#">
+                            <i class="material-icons">
+                            </i>
+                            <span data-i18n="Users List">
+                                Compra
+                            </span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li class=" nav-item">
+                <a href="#">
+                    <i class="material-icons">
+                        add_shopping_cart
+                    </i>
+                    <span class="menu-title" data-i18n="Users">
+                        Gestión Ventas
+                    </span>
+                </a>
+                <ul class="menu-content">
+                    <li class="">
+                        <a class="menu-item" href="#">
+                            <i class="material-icons">
+                            </i>
+                            <span data-i18n="Users List">
+                                Ventas
+                            </span>
+                        </a>
+                    </li>
+                    <ul class="menu-content">
+                        <li class="">
+                            <a class="menu-item" href="{{ route('get.client') }}">
+                                <i class="material-icons">
+                                </i>
+                                <span data-i18n="Users List">
+                                    Clientes
+                                </span>
+                            </a>
+                        </li>
+                    </ul>
+                </ul>
             </li>
         </ul>
     </div>

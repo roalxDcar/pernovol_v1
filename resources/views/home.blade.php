@@ -18,9 +18,6 @@
     </div>
     <div class="content-header-right col-md-3 col-12">
         <div aria-label="Button group with nested dropdown" class="btn-group float-md-right" role="group">
-            <button aria-expanded="false" aria-haspopup="true" class="btn btn-primary round dropdown-menu-right px-2" style="margin-top: 5px;" type="button">
-                Nuevo Proveedor
-            </button>
         </div>
     </div>
 </div>
@@ -188,27 +185,4 @@
     </button>
 </section>
 <!--/ HTML Markup -->
-<script>
-   $("#prueba").on("click",function(){
-    // Uso de local Storage Guarda
-        localStorage.setItem("data", JSON.stringify({"prueba":"paso"}));
-        alert("bsrthrdt");
-    });
-
-   // Uso de local Storage Mostrar
-    $("#mostrar").on("click",function(){
-        var dataInLocalStorage = localStorage.getItem("data");
-        console.log(JSON.parse(dataInLocalStorage));
-    });
-    // Eliminar datos
-
-    $("#eliminar").on("click",function(){
-        localStorage.removeItem("data");
-        alert("Se elimino!");
-    });
-    
-    $("#editar").on("click",function(){
-        localStorage.setItem("data",JSON.stringify({"prueba":"loquesea"}));
-    });
-</script>
 @endsection

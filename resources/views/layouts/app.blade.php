@@ -81,7 +81,6 @@
     @include('layouts.footer')
     <!-- END: Footer-->
 
-
     <!-- BEGIN: Vendor JS-->
     <script src="{!! asset('assets/app-assets/vendors/js/material-vendors.min.js')!!}"></script>
     <!-- BEGIN Vendor JS-->

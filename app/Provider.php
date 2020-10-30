@@ -8,5 +8,5 @@ class Provider extends Model
 {
     protected $table = "pv_providers";
 
-    protected $primaryKey = "provider_id";
+    protected $primaryKey = "provider_prov";
 }

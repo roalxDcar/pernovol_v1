@@ -14,14 +14,14 @@ class CreatePvProvidersTable extends Migration
     public function up()
     {
         Schema::create('pv_providers', function (Blueprint $table) {
-            $table->increments('provider_id');
-            $table->string('company_name');
-            $table->integer('nit');
-            $table->string('address');
-            $table->string('name_manager');
-            $table->integer('phone');
-            $table->string('email');
-            $table->integer('state')->default();
+            $table->increments('provider_prov');
+            $table->string('company_name_prov');
+            $table->bigInteger('nit_prov');
+            $table->string('address_prov');
+            $table->string('name_manager_prov');
+            $table->integer('phone_prov');
+            $table->string('email_prov');
+            $table->integer('state_prov')->default(1);
             $table->timestamps();
         });
     }

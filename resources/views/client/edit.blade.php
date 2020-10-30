@@ -5,20 +5,20 @@
     <div class="content-header-left col-md-9 col-12 mb-2">
         <h3 class="content-header-title white">            
         	<strong>
-                Proveedores
+                Clientes
             </strong>
         </h3>
         <div class="row breadcrumbs-top">
             <div class="breadcrumb-wrapper col-12">
                 <ol class="breadcrumb">
                      <li class="breadcrumb-item">
-                        <a href="{{ route('get.provider') }}">
-                            Lista de Proveedores
+                        <a href="{{ route('get.client') }}">
+                            Lista de Clientes
                         </a>
                     </li>
                     <li class="breadcrumb-item">
                    		<a href="#">
-                   			Editar Proveedor
+                   			Editar Cliente
                    		</a>
                     </li>
                 </ol>
@@ -39,17 +39,19 @@
 
 	                <div class="card-content collapse show">
 	                    <div class="card-body">
-	                        <form class="form form-horizontal row-separator" action="{{ route('update.provider',$provider->provider_prov) }}" method="POST">
+	                        <form class="form form-horizontal row-separator" action="{{ route('update.client', $client->client_cli) }}" method="POST">
 	                        	@csrf
 	                        	@method('PUT')
 	                            <div class="form-body">
-	                                <h4 class="form-section"><i class="la la-home"></i> Datos del Proveedor</h4>
+
+	                                <h4 class="form-section"><i class="la la-user"></i> Datos del Cliente</h4>
+
 	                                <div class="row">
 	                                    <div class="col-md-4">
 	                                        <div class="form-group row mx-auto">
-	                                            <label class="col-md-3 label-control text-form-aling" style="text-align: left;" for="userinput1">Empresa</label>
+	                                            <label class="col-md-3 label-control text-form-aling" for="userinput1">Nombre</label>
 	                                            <div class="col-md-9">
-	                                                <input type="text" id="userinput1" class="form-control border-primary" value="{{ $provider->company_name_prov }}" placeholder="Ingresar nombre de la Empresa" name="company_name">
+	                                                <input type="text" id="userinput1" class="form-control border-primary" placeholder="Ingresar Nombre" name="name" value="{{ $client->name_cli }}">
 	                                            </div>
 	                                        </div>
 	                                    </div>
@@ -57,44 +59,33 @@
 	                                        <div class="form-group row mx-auto">
 	                                            <label class="col-md-3 label-control text-form-aling" for="userinput2">NIT</label>
 	                                            <div class="col-md-9">
-	                                                <input type="text" id="userinput2" class="form-control border-primary" value="{{ $provider->nit_prov }}"placeholder="Ingresar NIT" name="nit">
+	                                                <input type="text" id="userinput2" class="form-control border-primary" placeholder="Ingresar NIT" name="nit" value="{{ $client->nit_cli }}">
 	                                            </div>
 	                                        </div>
 	                                    </div>
 	                                    <div class="col-md-4">
 	                                        <div class="form-group row mx-auto">
-	                                            <label class="col-md-3 label-control text-form-aling" for="userinput2">Dirección</label>
+	                                            <label class="col-md-3 label-control text-form-aling" for="userinput2">CI</label>
 	                                            <div class="col-md-9">
-	                                                <input type="text" id="userinput2" class="form-control border-primary" value="{{ $provider->address_prov }}"placeholder="Ingresar Dirección" name="address">
+	                                                <input type="text" id="userinput2" class="form-control border-primary" placeholder="Ingresar Cédula de Identidad" name="ci" value="{{ $client->ci_cli }}">
 	                                            </div>
 	                                        </div>
 	                                    </div>
 	                                </div>
-
-	                                <h4 class="form-section"><i class="la la-user"></i> Datos del Contacto</h4>
-
 	                                <div class="row">
 	                                    <div class="col-md-4">
 	                                        <div class="form-group row mx-auto">
-	                                            <label class="col-md-3 label-control text-form-aling" for="userinput1">Encargado</label>
+	                                            <label class="col-md-3 label-control text-form-aling" for="userinput1">Telefono</label>
 	                                            <div class="col-md-9">
-	                                                <input type="text" id="userinput1" class="form-control border-primary" value="{{ $provider->name_manager_prov }}"placeholder="Ingresar nombre del Encargado" name="name_manager">
+	                                                <input type="text" id="userinput1" class="form-control border-primary" placeholder="Ingresar número de Telefono" name="phone" value="{{ $client->phone_cli }}">
 	                                            </div>
 	                                        </div>
 	                                    </div>
-	                                    <div class="col-md-4">
+	                                    <div class="col-md-8">
 	                                        <div class="form-group row mx-auto">
-	                                            <label class="col-md-3 label-control text-form-aling" for="userinput2">Telefono</label>
-	                                            <div class="col-md-9">
-	                                                <input type="text" id="userinput2" class="form-control border-primary" value="{{ $provider->phone_prov }}"placeholder="Ingresar número de telefono" name="phone">
-	                                            </div>
-	                                        </div>
-	                                    </div>
-	                                    <div class="col-md-4">
-	                                        <div class="form-group row mx-auto">
-	                                            <label class="col-md-3 label-control text-form-aling" for="userinput2">Email</label>
-	                                            <div class="col-md-9">
-	                                                <input type="text" id="userinput2" class="form-control border-primary" value="{{ $provider->email_prov }}"placeholder="Ingresar Email" name="email">
+	                                            <label class="col-md-2 label-control text-form-aling" for="userinput2">Dirección</label>
+	                                            <div class="col-md-10">
+	                                                <input type="text" id="userinput2" class="form-control border-primary" placeholder="Ingresar Dirección" name="address" value="{{ $client->address_cli }}">
 	                                            </div>
 	                                        </div>
 	                                    </div>
@@ -102,7 +93,7 @@
 	                            </div>
 
 	                            <div class="form-actions text-right">
-	                                <a href="{{ route('get.provider') }}">
+	                                <a href="{{ route('get.client') }}">
 	                                	<button type="button" class="btn btn-info mr-1 waves-effect waves-light">
 		                                    <i class="la la-remove"></i> Cancelar
 		                                </button>

@@ -35,7 +35,7 @@
                     <li class="dropdown dropdown-user nav-item">
                         <a class="dropdown-toggle nav-link dropdown-user-link" data-toggle="dropdown" href="#">
                             <span class="mr-1 user-name text-bold-700 dropdown-toggle">
-                                {{ Auth::user()->name }}
+                                Hola, {{ Auth::user()->name }}
                             </span>
                             <span class="avatar avatar-online">
                                 <img alt="avatar" src="{!! asset('assets/app-assets/images/portrait/small/avatar-s-3.png')!!}">

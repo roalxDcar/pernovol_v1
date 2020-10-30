@@ -4,15 +4,15 @@
     <div class="content-header-left col-md-9 col-12 mb-2">
         <h3 class="content-header-title white">
             <strong>
-                Proveedores
+                Categorias
             </strong>
         </h3>
         <div class="row breadcrumbs-top">
             <div class="breadcrumb-wrapper col-12">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item">
-                        <a href="{{ route('get.provider') }}">
-                            Lista de Proveedores
+                        <a href="{{ route('get.category') }}">
+                            Lista de Categorias
                         </a>
                     </li>
                 </ol>
@@ -21,9 +21,9 @@
     </div>
     <div class="content-header-right col-md-3 col-12">
         <div aria-label="Button group with nested dropdown" class="btn-group float-md-right" role="group">
-        	<a href="{{ route('create.provider') }}">
+        	<a href="{{ route('create.category') }}">
         		<button aria-expanded="false" aria-haspopup="true" class="btn btn-primary round dropdown-menu-right px-2" style="margin-top: 5px;" type="button">
-	                Nuevo Proveedor
+	                Nuevo Categoria
 	            </button>
         	</a>
         </div>
@@ -55,17 +55,8 @@
                                                     <th aria-controls="DataTables_Table_0" aria-label="Name: activate to sort column descending" aria-sort="ascending" class="sorting_asc" colspan="1" rowspan="1" style="width: 50px;" tabindex="0">
                                                         ID
                                                     </th>
-                                                    <th aria-controls="DataTables_Table_0" aria-label="Position: activate to sort column ascending" class="sorting" colspan="1" rowspan="1" style="width: 150px;" tabindex="0">
-                                                        Compañia
-                                                    </th>
-                                                    <th aria-controls="DataTables_Table_0" aria-label="Office: activate to sort column ascending" class="sorting" colspan="1" rowspan="1" style="width: 103px;" tabindex="0">
-                                                        NIT
-                                                    </th>
-                                                    <th aria-controls="DataTables_Table_0" aria-label="Age: activate to sort column ascending" class="sorting" colspan="1" rowspan="1" style="width: 150px;" tabindex="0">
-                                                        Encargado
-                                                    </th>
-                                                    <th aria-controls="DataTables_Table_0" aria-label="Start date: activate to sort column ascending" class="sorting" colspan="1" rowspan="1" style="width: 100px;" tabindex="0">
-                                                        Telefono
+                                                    <th aria-controls="DataTables_Table_0" aria-label="Position: activate to sort column ascending" class="sorting" colspan="1" rowspan="1" style="width: 450px;" tabindex="0">
+                                                        Descripción
                                                     </th>
                                                     <th aria-controls="DataTables_Table_0" aria-label="Salary: activate to sort column ascending" class="sorting" colspan="1" rowspan="1" style="width: 96px;" tabindex="0">
                                                         Estado
@@ -76,38 +67,30 @@
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                @foreach($providers as $provider)
+                                                @foreach($categories as $category)
                                                 <tr class="odd" role="row">
                                                     <td>
-                                                        {{ $provider->provider_prov }}
+                                                        {{ $category->category_cat }}
                                                     </td>
                                                     <td class="sorting_1">
-                                                        {{ $provider->company_name_prov }}
-                                                    </td>
-                                                    <td>
-                                                        {{ $provider->nit_prov }}
-                                                    </td>
-                                                    <td>
-                                                        {{ $provider->name_manager_prov }}
-                                                    </td>
-                                                    <td>
-                                                        {{ $provider->phone_prov }}
+                                                        {{ $category->name_cat }}
                                                     </td>
                                                     <td class="text-center">
-                                                        <button class="btn mr-1 btn-{{ $provider->state_prov?'success':'danger' }} btn-sm waves-effect waves-light" type="text">
-                                                            {{ $provider->state_prov?'Activo':'Inactivo' }}
+                                                        <button class="btn mr-1 btn-{{ $category->state_cat?'success':'danger' }} btn-sm waves-effect waves-light" type="text">
+                                                            {{ $category->state_cat?'Activo':'Inactivo' }}
                                                         </button>
                                                     </td>
                                                     <td>
-                                                        <a href="{{ route('edit.provider',$provider->provider_prov) }}">
+                                                        <a href="{{ route('edit.category',$category->category_cat) }}">
                                                             <button class="btn btn-icon btn-info waves-effect waves-light" type="button">
                                                                 <i class="la la-pencil">
                                                                 </i>
                                                             </button>
                                                         </a>
-                                                        <a href="{{ route('state.provider',$provider->provider_prov) }}">
-                                                            <button class="btn btn-icon btn-{{ $provider->state_prov?'danger':'success' }} waves-effect waves-light" type="button">
-                                                                <i class="la la-{{ $provider->state_prov?'times':'check' }}">
+
+                                                        <a href="{{ route('state.category',$category->category_cat) }}">
+                                                            <button class="btn btn-icon btn-{{ $category->state_cat?'danger':'success' }} waves-effect waves-light" type="button">
+                                                                <i class="la la-{{ $category->state_cat?'times':'check' }}">
                                                                 </i>
                                                             </button>
                                                         </a>
