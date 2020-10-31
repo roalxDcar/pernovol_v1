@@ -36,6 +36,10 @@
     <link rel="stylesheet" type="text/css" href="{!! asset('assets/assets/css/style.css')!!}">
     <!-- END: Custom CSS-->
 
+
+
+    <script src="{!! asset('assets/assets/jquery/jquery.min.js')!!}"></script>
+
 </head>
 <!-- END: Head-->
 
@@ -57,31 +61,7 @@
         {{-- Head navbar --}}
         <div class="content-header row">
             <div class="content-header-dark bg-img col-12">
-                <div class="row">
-                    <div class="content-header-left col-md-9 col-12 mb-2">
-                        <h3 class="content-header-title white">Footer Dark</h3>
-                        <div class="row breadcrumbs-top">
-                            <div class="breadcrumb-wrapper col-12">
-                                <ol class="breadcrumb">
-                                    <li class="breadcrumb-item"><a href="{{ route('welcome') }}">Home</a>
-                                    </li>
-                                    <li class="breadcrumb-item"><a href="#">Footer</a>
-                                    </li>
-                                    <li class="breadcrumb-item active">Footer Dark
-                                    </li>
-                                </ol>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="content-header-right col-md-3 col-12">
-                        <div class="btn-group float-md-right" role="group" aria-label="Button group with nested dropdown">
-                            <button class="btn btn-primary round dropdown-toggle dropdown-menu-right box-shadow-2 px-2 mb-1" id="btnGroupDrop1" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Action</button>
-                            <div class="dropdown-menu"><a class="dropdown-item" href="component-alerts.html"> Alerts</a><a class="dropdown-item" href="material-component-cards.html"> Cards</a><a class="dropdown-item" href="component-progress.html"> Progress</a>
-                                <div class="dropdown-divider"></div><a class="dropdown-item" href="register-with-bg-image.html"> Register</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                @yield('header_content')
             </div>
         </div>
         {{-- Head navbar --}}
@@ -101,7 +81,6 @@
     @include('layouts.footer')
     <!-- END: Footer-->
 
-
     <!-- BEGIN: Vendor JS-->
     <script src="{!! asset('assets/app-assets/vendors/js/material-vendors.min.js')!!}"></script>
     <!-- BEGIN Vendor JS-->
@@ -117,8 +96,9 @@
 
     <!-- BEGIN: Page JS-->
     <script src="{!! asset('assets/app-assets/js/scripts/pages/material-app.js')!!}"></script>
+    <script src="{!! asset('assets/app-assets/js/scripts/forms/select/form-select2.js') !!}"></script>
+    <script src="{!! asset('assets/app-assets/js/scripts/modal/components-modal.js') !!}"></script>
     <!-- END: Page JS-->
-
 </body>
 <!-- END: Body-->
 

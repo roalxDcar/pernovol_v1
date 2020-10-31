@@ -1,5 +1,31 @@
 @extends('layouts.app')
+@section('header_content')
+<div class="row">
+    <div class="content-header-left col-md-9 col-12 mb-2">
+        <h3 class="content-header-title white">Horizontal Forms</h3>
+        <div class="row breadcrumbs-top">
+            <div class="breadcrumb-wrapper col-12">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="index.html">Home</a>
+                    </li>
+                    <li class="breadcrumb-item"><a href="#">Form Layouts</a>
+                    </li>
+                    <li class="breadcrumb-item active"><a href="#">Horizontal Forms</a>
+                    </li>
+                </ol>
+            </div>
+        </div>
+    </div>
+    <div class="content-header-right col-md-3 col-12">
+        <div aria-label="Button group with nested dropdown" class="btn-group float-md-right" role="group">
+        </div>
+    </div>
+</div>
 
+
+
+
+@endsection
 @section('content')
 <!-- Description -->
 <section class="card" id="description">
@@ -146,6 +172,17 @@
             </div>
         </div>
     </div>
+    <button class="btn btn-primary" id="eliminar">
+        eliminar
+    </button>
+
+    <button class="btn btn-primary" id="mostrar">
+        Mostrar
+    </button>
+
+    <button class="btn btn-primary" id="editar">
+        Editar
+    </button>
 </section>
 <!--/ HTML Markup -->
 @endsection
