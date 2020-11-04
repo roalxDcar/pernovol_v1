@@ -62,7 +62,7 @@ class ProductController extends Controller
             $file->move(public_path() . '/assets/product/', $name);
         }
         $product->save();
-        return redirect()->route('get.product');
+        return redirect()->route('get.product')->with('status', 'Se registro nuevo producto.');
     }
 
     /**
@@ -90,7 +90,7 @@ class ProductController extends Controller
             $file->move(public_path() . '/assets/product/', $name);
         }
         $product->update();
-        return redirect()->route('get.product');
+        return redirect()->route('get.product')->with('status', 'Se actualizo registro.');
     }
 
     /**
@@ -103,6 +103,6 @@ class ProductController extends Controller
         $product             = Product::findOrFail($id);
         $product->state_prod = $product->state_prod ? 0 : 1;
         $product->update();
-        return redirect()->route('get.product');
+        return redirect()->route('get.product')->with('status', 'Se actualizo estado de Producto');
     }
 }

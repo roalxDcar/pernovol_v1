@@ -40,6 +40,9 @@
     {{-- Uso de Jquery --}}
     <script src="{!! asset('assets/assets/jquery/jquery.min.js')!!}"></script>
 
+    {{-- Sweet Alerts --}}
+    <script type="text/javascript" src="{!! asset('assets/assets/js/sweetAlert.js') !!}"></script>
+
 </head>
 <!-- END: Head-->
 

@@ -1,5 +1,14 @@
 @extends('layouts.app')
 @section('header_content')
+    @if(session('status'))
+        <script>
+            Swal.fire(
+                'Mensaje!',
+                `{{ session('status') }}`,
+                'success'
+            )
+        </script>
+    @endif
 <div class="row">
     <div class="content-header-left col-md-9 col-12 mb-2">
         <h3 class="content-header-title white">
@@ -97,13 +106,10 @@
                                                             <i class="la la-pencil">
                                                             </i>
                                                         </button>
-
-                                                        <a href="{{ route('state.product',$product->product_prod) }}">
-                                                            <button class="btn btn-icon btn-{{ $product->state_prod?'danger':'success' }} waves-effect waves-light" type="button">
-                                                                <i class="la la-{{ $product->state_prod?'times':'check' }}">
-                                                                </i>
-                                                            </button>
-                                                        </a>
+                                                        <button class="btn btn-icon btn-{{ $product->state_prod?'danger':'success' }} waves-effect waves-light btn-product-state" data-state="{{ $product->state_prod }}" data-id="{{ $product->product_prod }}" type="button">
+                                                            <i class="la la-{{ $product->state_prod?'times':'check' }}">
+                                                            </i>
+                                                        </button>
                                                     </td>
                                                 </tr>
                                                 @endforeach
@@ -241,6 +247,24 @@
         $('#photo_label').html("Seleccione Imagen");
         $('#btn-submit').html('Guardar');
         $('#newProduct').modal('show');    
+    });
+
+    $('.btn-product-state').on('click', function(event){
+        let state = $(this).data('state');
+        let prod_id = $(this).data('id');
+        Swal.fire({
+            title: state?"¿Desea Activar Producto?":"¿Desea Deactivar Producto?",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#673ab7',
+            cancelButtonColor: '#607d8b',
+            confirmButtonText: 'Aceptar',
+            cancelButtonText: 'Cancelar'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                location.href = `{{ url('producto/cambiar-estado') }}/`+prod_id;
+            }
+        })
     });
 </script>
 @endsection
