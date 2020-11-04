@@ -30,9 +30,11 @@
 
     <!-- BEGIN: Page CSS-->
     <link rel="stylesheet" type="text/css" href="{!! asset('assets/app-assets/css/core/menu/menu-types/material-vertical-menu-modern.css')!!}">
+    <link rel="stylesheet" type="text/css" href="{!! asset('assets/app-assets/vendors/css/forms/toggle/switchery.min.css') !!}">
     <!-- END: Page CSS-->
 
     <!-- BEGIN: Custom CSS-->
+    <link rel="stylesheet" type="text/css" href="{!! asset('assets/app-assets/css/plugins/forms/switch.css') !!}">
     <link rel="stylesheet" type="text/css" href="{!! asset('assets/assets/css/style.css')!!}">
     <!-- END: Custom CSS-->
 
@@ -105,7 +107,15 @@
     <script src="{!! asset('assets/app-assets/js/scripts/modal/components-modal.js') !!}"></script>
 
 
+    <script src="{!! asset('assets/app-assets/vendors/js/forms/toggle/bootstrap-switch.min.js') !!}"></script>
+    <script src="{!! asset('assets/app-assets/vendors/js/forms/toggle/switchery.min.js') !!}"></script>
+    <script src="{!! asset('assets/app-assets/vendors/js/forms/toggle/bootstrap-checkbox.min.js') !!}"></script>
+
+
     <script src="{!! asset('assets/app-assets/js/scripts/forms/custom-file-input.js') !!}"></script>
+
+
+    <script src="{!! asset('assets/app-assets/js/scripts/forms/switch.js') !!}"></script>
     <!-- END: Page JS-->
 </body>
 <!-- END: Body-->

@@ -51,7 +51,8 @@ class ProductController extends Controller
         $product->code_prod       = $request->code;
         $product->name_prod       = $request->name;
         $product->category_prod   = $request->category;
-        $product->expiration_prod = $request->expiration;
+        $product->exp_prod        = $request->exp ? 1 : 0;
+        $product->expiration_prod = $request->exp ? $request->expiration : null;
 
         if ($request->hasfile('photo')) {
             $file = $request->file('photo');
@@ -76,7 +77,8 @@ class ProductController extends Controller
         $product->code_prod       = $request->code;
         $product->name_prod       = $request->name;
         $product->category_prod   = $request->category;
-        $product->expiration_prod = $request->expiration;
+        $product->exp_prod        = $request->exp ? 1 : 0;
+        $product->expiration_prod = $request->exp ? $request->expiration : null;
 
         if ($request->hasfile('photo')) {
             // Eliminar foto

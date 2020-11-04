@@ -150,7 +150,7 @@
             <form action="{{ route('store.product') }}" id="formProduct" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div id="csrf_prod"></div>
-                <div class="modal-body">
+                <div class="modal-body" style="padding: 15px 25px 0px 25px;">
                     <fieldset class="form-group floating-label-form-group">
                         <label for="code">
                             Código
@@ -178,12 +178,14 @@
                             @endforeach
                         </select>
                     </fieldset>
-                    <fieldset class="form-group">
-                        <label for="expiration">
-                            Fecha de Expiración
+                    <div class="form-group mt-1">
+                        <label for="exp">
+                            Dispone de Fecha de Expiración?   
                         </label>
-                        <input type="date" class="form-control" id="expiration" name="expiration" value="{{ date('Y-m-d') }}">
-                    </fieldset>
+                        <input type="checkbox" id="exp" name="exp" class="switchery" data-size="sm" value="1"/>
+                    </div>
+                    <div id="exp_check">
+                    </div>
                     <fieldset class="form-group">
                         <label for="photo_prod">
                             Imagen del Producto
@@ -197,7 +199,7 @@
                     </fieldset>
                     <br>
                 </div>
-                <div class="modal-footer" style="margin: 10px;">
+                <div class="modal-footer" style="margin: 0px 20px 10px 20px;">
                     <button type="reset" class="btn btn-secondary btn-lg" data-dismiss="modal" style="color: white;">    Cancelar 
                     </button>
                     <button type="submit" class="btn btn-primary btn-lg" id="btn-submit" style="color: white;"> 
@@ -226,6 +228,16 @@
                 $('#name').val(data.product.name_prod);
                 $("#category option:selected").removeAttr("selected", false);
                 $(`#category option[value='${data.product.category_prod}']`).attr("selected", true);
+                if(data.product.exp_prod == 1){
+                    if($('#exp').is(':checked') === false){
+                        $('#exp').trigger('click');
+                    }
+                }else{
+                    if($('#exp').is(':checked') === true){
+                        $('#exp').trigger('click');
+                    }
+                } 
+
                 $('#expiration').val(data.product.expiration_prod);
                 $('#photo').val(data.product.photo_prod);
                 $('#photo_label').html(data.product.photo_prod);
@@ -242,13 +254,17 @@
         $('#code').val("");
         $('#name').val("");
         $("#category option:selected").removeAttr("selected", false);
-        $('#expiration').val(`{{ date('Y-m-d') }}`);
+
+        if($('#exp').is(':checked')){
+            $('#exp').trigger('click')
+            $('#expiration').val(`{{ date('Y-m-d') }}`);
+        } 
         $('#photo').val("");
         $('#photo_label').html("Seleccione Imagen");
         $('#btn-submit').html('Guardar');
         $('#newProduct').modal('show');    
     });
-
+    // Función para cambiar de estado
     $('.btn-product-state').on('click', function(event){
         let state = $(this).data('state');
         let prod_id = $(this).data('id');
@@ -265,6 +281,20 @@
                 location.href = `{{ url('producto/cambiar-estado') }}/`+prod_id;
             }
         })
+    });
+
+    $('#exp').on('change', function(){
+        if($('input:checkbox[name=exp]:checked').val()){
+           $('#exp_check').html(`<fieldset class="form-group" readonly="readonly">
+                        <label for="expiration">
+                            Fecha de Expiración
+                        </label>
+                        <input type="date" class="form-control" id="expiration" name="expiration" value="{{ date('Y-m-d') }}">
+                    </fieldset>`); 
+        }else{
+            $('#exp_check').html('')
+        }
+
     });
 </script>
 @endsection

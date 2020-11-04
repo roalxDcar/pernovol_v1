@@ -19,7 +19,8 @@ class CreatePvProductsTable extends Migration
             $table->string('name_prod');
             $table->integer('category_prod')->unsigned();
             $table->string('photo_prod');
-            $table->date('expiration_prod');
+            $table->integer('exp_prod')
+            $table->date('expiration_prod')->nullable();
             $table->integer('state_prod')->default(1);
             $table->timestamps();
 
