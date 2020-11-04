@@ -136,7 +136,7 @@
                 </a>
                 <ul class="menu-content">
                     <li class="">
-                        <a class="menu-item" href="#">
+                        <a class="menu-item" href="{{ route('get.product') }}">
                             <i class="material-icons">
                             </i>
                             <span data-i18n="Users List">
