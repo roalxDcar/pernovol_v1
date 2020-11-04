@@ -11,7 +11,7 @@
             <div class="breadcrumb-wrapper col-12">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item">
-                        <a href="{{ route('get.category') }}">
+                        <a href="{{ route('get.product') }}">
                             Lista de Productos
                         </a>
                     </li>
