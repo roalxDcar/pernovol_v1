@@ -9,7 +9,7 @@
     <meta name="description" content="Modern admin is super flexible, powerful, clean &amp; modern responsive bootstrap 4 admin template with unlimited possibilities with bitcoin dashboard.">
     <meta name="keywords" content="admin template, modern admin template, dashboard template, flat admin template, responsive admin template, web app, crypto dashboard, bitcoin dashboard">
     <meta name="author" content="PIXINVENT">
-    <title>Footer Dark - Modern Admin - Clean Bootstrap 4 Dashboard HTML Template + Bitcoin Dashboard</title>
+    <title>Pernovol</title>
     <link rel="apple-touch-icon" href="{!! asset('assets/app-assets/images/ico/apple-icon-120.png')!!}">
     <link rel="shortcut icon" type="image/x-icon" href="{!! asset('assets/app-assets/images/ico/favicon.ico')!!}">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i%7CQuicksand:300,400,500,700" rel="stylesheet">
@@ -30,15 +30,20 @@
 
     <!-- BEGIN: Page CSS-->
     <link rel="stylesheet" type="text/css" href="{!! asset('assets/app-assets/css/core/menu/menu-types/material-vertical-menu-modern.css')!!}">
+    <link rel="stylesheet" type="text/css" href="{!! asset('assets/app-assets/vendors/css/forms/toggle/switchery.min.css') !!}">
     <!-- END: Page CSS-->
 
     <!-- BEGIN: Custom CSS-->
+    <link rel="stylesheet" type="text/css" href="{!! asset('assets/app-assets/css/plugins/forms/switch.css') !!}">
     <link rel="stylesheet" type="text/css" href="{!! asset('assets/assets/css/style.css')!!}">
     <!-- END: Custom CSS-->
 
 
-
+    {{-- Uso de Jquery --}}
     <script src="{!! asset('assets/assets/jquery/jquery.min.js')!!}"></script>
+
+    {{-- Sweet Alerts --}}
+    <script type="text/javascript" src="{!! asset('assets/assets/js/sweetAlert.js') !!}"></script>
 
 </head>
 <!-- END: Head-->
@@ -89,6 +94,8 @@
     <script src="{!! asset('assets/app-assets/vendors/js/ui/prism.min.js')!!}"></script>
     <!-- END: Page Vendor JS-->
 
+
+
     <!-- BEGIN: Theme JS-->
     <script src="{!! asset('assets/app-assets/js/core/app-menu.js')!!}"></script>
     <script src="{!! asset('assets/app-assets/js/core/app.js')!!}"></script>
@@ -98,6 +105,17 @@
     <script src="{!! asset('assets/app-assets/js/scripts/pages/material-app.js')!!}"></script>
     <script src="{!! asset('assets/app-assets/js/scripts/forms/select/form-select2.js') !!}"></script>
     <script src="{!! asset('assets/app-assets/js/scripts/modal/components-modal.js') !!}"></script>
+
+
+    <script src="{!! asset('assets/app-assets/vendors/js/forms/toggle/bootstrap-switch.min.js') !!}"></script>
+    <script src="{!! asset('assets/app-assets/vendors/js/forms/toggle/switchery.min.js') !!}"></script>
+    <script src="{!! asset('assets/app-assets/vendors/js/forms/toggle/bootstrap-checkbox.min.js') !!}"></script>
+
+
+    <script src="{!! asset('assets/app-assets/js/scripts/forms/custom-file-input.js') !!}"></script>
+
+
+    <script src="{!! asset('assets/app-assets/js/scripts/forms/switch.js') !!}"></script>
     <!-- END: Page JS-->
 </body>
 <!-- END: Body-->

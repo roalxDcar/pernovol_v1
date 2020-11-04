@@ -45,3 +45,9 @@ Route::post('nuevo-categoria/guardar', 'CategoryController@storeCategory')->name
 Route::get('editar-categoria/{id}', 'CategoryController@editCategory')->name('edit.category');
 Route::put('editar-categoria/actualizar/{id}', 'CategoryController@updateCategory')->name('update.category');
 Route::get('categoria/cambiar-estado/{id}', 'CategoryController@stateCategory')->name('state.category');
+
+Route::get('lista-productos', 'ProductController@getProduct')->name('get.product');
+Route::post('nuevo-producto/guardar', 'ProductController@storeProduct')->name('store.product');
+Route::get('producto/cambiar-estado/{id}', 'ProductController@stateProduct')->name('state.product');
+Route::get('editar-producto/{id}', 'ProductController@editProduct')->name('edit.product');
+Route::put('editar-producto/actualizar/{id}', 'ProductController@updateProduct')->name('update.product');
