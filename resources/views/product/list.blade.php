@@ -73,10 +73,13 @@
                                                     <th aria-controls="DataTables_Table_0" aria-label="Position: activate to sort column ascending" class="sorting" colspan="1" rowspan="1" style="width: 150px;" tabindex="0">
                                                         Expiración
                                                     </th>
-                                                    <th aria-controls="DataTables_Table_0" aria-label="Salary: activate to sort column ascending" class="sorting" colspan="1" rowspan="1" style="width: 96px;" tabindex="0">
+                                                    <th aria-controls="DataTables_Table_0" aria-label="Position: activate to sort column ascending" class="sorting" colspan="1" rowspan="1" style="width: 150px;" tabindex="0">
+                                                        Imagen
+                                                    </th>
+                                                    <th aria-controls="DataTables_Table_0" aria-label="Salary: activate to sort column ascending" class="sorting" colspan="1" rowspan="1" style="width: 80px;" tabindex="0">
                                                         Estado
                                                     </th>
-                                                    <th aria-controls="DataTables_Table_0" aria-label="Salary: activate to sort column ascending" class="sorting" colspan="1" rowspan="1" style="width: 180px;" tabindex="0">
+                                                    <th aria-controls="DataTables_Table_0" aria-label="Salary: activate to sort column ascending" class="sorting" colspan="1" rowspan="1" style="width: 200px;" tabindex="0">
                                                         Acciones
                                                     </th>
                                                 </tr>
@@ -95,6 +98,9 @@
                                                     </td>
                                                     <td class="sorting_1">
                                                         {{ $product->expiration_prod }}
+                                                    </td>
+                                                    <td class="sorting_1">
+                                                        <img width="100" src="{!!asset('assets/product')!!}/{{ $product->photo_prod }}" alt="">
                                                     </td>
                                                     <td class="text-center">
                                                         <button class="btn mr-1 btn-{{ $product->state_prod?'success':'danger' }} btn-sm waves-effect waves-light" type="text">
