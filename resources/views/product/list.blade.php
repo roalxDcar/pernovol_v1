@@ -31,7 +31,7 @@
     <div class="content-header-right col-md-3 col-12">
         <div aria-label="Button group with nested dropdown" class="btn-group float-md-right" role="group">
             <a href="#">
-                <button type="button" class="btn btn-primary round dropdown-menu-right px-2" style="margin-top: 5px;" id="newProductBtn">
+                <button type="button" class="btn btn-primary round dropdown-menu-right px-2" style="margin-top: 5px;"  data-toggle="modal" data-target="#large">
                     Nuevo Producto
                 </button>
             </a>
@@ -42,44 +42,36 @@
 @section('content')
 <section id="html">
     <div class="row">
-        <div class="col-12">
+        <div class="col-md-12">
             <div class="card">
-                <div class="card-header">
-                    {{-- contenido de header --}}
-                </div>
                 <div class="card-content collpase show">
-                    <div class="card-body card-dashboard dataTables_wrapper dt-bootstrap">
+                    <div class="card-body card-dashboard dataTables_wrapper dt-bootstrap" style="padding:20px;">
                         <div class="table-responsive">
-                            <div class="dataTables_wrapper dt-bootstrap4" id="DataTables_Table_0_wrapper">
+                            <div class="dataTables_wrapper dt-bootstrap4">
                                 <div class="row">
-                                    <div class="col-sm-12 col-md-6">
-                                        {{-- Contenido list --}}
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-sm-12">
-                                        <table aria-describedby="DataTables_Table_0_info" class="table table-striped table-bordered sourced-data dataTable" id="DataTables_Table_0" role="grid">
+                                    <div class="col-md-12 col-sm-12">
+                                        <table class="table table-striped" id="products_table">
                                             <thead>
                                                 <tr role="row">
-                                                    <th aria-controls="DataTables_Table_0" aria-label="Name: activate to sort column descending" aria-sort="ascending" class="sorting_asc" colspan="1" rowspan="1" style="width: 200px;" tabindex="0">
+                                                    <th colspan="1" rowspan="1" style="width: 200px;">
                                                         COD
                                                     </th>
-                                                    <th aria-controls="DataTables_Table_0" aria-label="Position: activate to sort column ascending" class="sorting" colspan="1" rowspan="1" style="width: 400px;" tabindex="0">
+                                                    <th colspan="1" rowspan="1" style="width: 400px;">
                                                         Producto
                                                     </th>
-                                                    <th aria-controls="DataTables_Table_0" aria-label="Position: activate to sort column ascending" class="sorting" colspan="1" rowspan="1" style="width: 300px;" tabindex="0">
+                                                    <th colspan="1" rowspan="1" style="width: 300px;">
                                                         Categoria
                                                     </th>
-                                                    <th aria-controls="DataTables_Table_0" aria-label="Position: activate to sort column ascending" class="sorting" colspan="1" rowspan="1" style="width: 150px;" tabindex="0">
+                                                    <th colspan="1" rowspan="1" style="width: 120px;">
                                                         Expiración
                                                     </th>
-                                                    <th aria-controls="DataTables_Table_0" aria-label="Position: activate to sort column ascending" class="sorting" colspan="1" rowspan="1" style="width: 150px;" tabindex="0">
+                                                    <th colspan="1" rowspan="1" style="width: 150px;" class="text-center">
                                                         Imagen
                                                     </th>
-                                                    <th aria-controls="DataTables_Table_0" aria-label="Salary: activate to sort column ascending" class="sorting" colspan="1" rowspan="1" style="width: 80px;" tabindex="0">
+                                                    <th colspan="1" rowspan="1" style="width: 80px;" class="text-center">
                                                         Estado
                                                     </th>
-                                                    <th aria-controls="DataTables_Table_0" aria-label="Salary: activate to sort column ascending" class="sorting" colspan="1" rowspan="1" style="width: 200px;" tabindex="0">
+                                                    <th colspan="1" rowspan="1" style="width: 150px;" class="text-center">
                                                         Acciones
                                                     </th>
                                                 </tr>
@@ -99,8 +91,8 @@
                                                     <td class="sorting_1">
                                                         {{ $product->expiration_prod }}
                                                     </td>
-                                                    <td class="sorting_1">
-                                                        <img width="100" src="{!!asset('assets/product')!!}/{{ $product->photo_prod }}" alt="">
+                                                    <td class="text-center">
+                                                        <img height="80" src="{!!asset('assets/product')!!}/{{ $product->photo_prod }}" alt="">
                                                     </td>
                                                     <td class="text-center">
                                                         <button class="btn mr-1 btn-{{ $product->state_prod?'success':'danger' }} btn-sm waves-effect waves-light" type="text">
@@ -123,18 +115,6 @@
                                         </table>
                                     </div>
                                 </div>
-                                <div class="row">
-                                    <div class="col-sm-12 col-md-5">
-                                        <div aria-live="polite" class="dataTables_info" id="DataTables_Table_0_info" role="status">
-                                            Showing 1 to 10 of 57 entries
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-12 col-md-7">
-                                        <div class="dataTables_paginate paging_simple_numbers" id="DataTables_Table_0_paginate">
-                                            {{-- paginación --}}
-                                        </div>
-                                    </div>
-                                </div>
                             </div>
                         </div>
                     </div>
@@ -143,6 +123,48 @@
         </div>
     </div>
 </section>
+
+@include('product.new')
+
+@section('js')
+    {{-- DataTable Products --}}
+    <script type="text/javascript" src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/1.10.22/js/dataTables.bootstrap4.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/responsive/2.2.6/js/dataTables.responsive.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/responsive/2.2.6/js/responsive.bootstrap4.min.js"></script>
+    <script>
+        $('#products_table').DataTable({
+            responsive: true,
+            "language": {
+                "lengthMenu":  "Mostrar "+
+                            `
+                            <select class="">
+                                <option value="5">5</option>
+                                <option value="10">10</option>
+                                <option value="25">25</option>
+                                <option value="50">50</option>
+                                <option value="100">100</option>
+                            </select>
+                            `
+                            +" registros por pagina",
+                "zeroRecords": "No existen registros",
+                "info": "Mostrando la página _PAGE_ de _PAGES_",
+                "infoEmpty": "No records available",
+                "infoFiltered": "(Filtrado de _MAX_ registros totales)",
+                "search": "Buscar :",
+                "paginate":{
+                    "next": "Siguiente",
+                    "previous": "Anterior"
+                }
+            }
+        });
+    </script>
+@endsection
+
+
+
+
+
 {{-- Inicio de modal FORM --}}
 <div class="modal fade text-left" id="newProduct" tabindex="-1" role="dialog" aria-labelledby="myModalLabel35" aria-hidden="true">
     <div class="modal-dialog" role="document">
@@ -219,6 +241,42 @@
 {{-- Fin de Modal FORM --}}
 
 <script type="text/javascript">
+
+    // Función para cambiar de estado del producto
+    $('.btn-product-state').on('click', function(event){
+        let state = $(this).data('state');
+        let prod_id = $(this).data('id');
+        Swal.fire({
+            title: state?"¿Desea Activar Producto?":"¿Desea Deactivar Producto?",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#673ab7',
+            cancelButtonColor: '#607d8b',
+            confirmButtonText: 'Aceptar',
+            cancelButtonText: 'Cancelar'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                location.href = `{{ url('producto/cambiar-estado') }}/`+prod_id;
+            }
+        })
+    });
+
+    // Datos de Fecha de Vencimiento 
+    $('#exp').on('change', function(){
+        if($('input:checkbox[name=exp]:checked').val()){
+           $('#exp_check').html(`<fieldset class="form-group" readonly="readonly">
+                        <label for="expiration">
+                            Fecha de Expiración
+                        </label>
+                        <input type="date" class="form-control" id="expiration" name="expiration" value="{{ date('Y-m-d') }}">
+                    </fieldset>`); 
+        }else{
+            $('#exp_check').html('')
+        }
+
+    });
+
+    
     {{-- Función para recuperar datos del producto seleccionado --}}
     $('.updateProduct').on('click', function(){
         let product_cod = $(this).data('id');
@@ -269,38 +327,6 @@
         $('#photo_label').html("Seleccione Imagen");
         $('#btn-submit').html('Guardar');
         $('#newProduct').modal('show');    
-    });
-    // Función para cambiar de estado
-    $('.btn-product-state').on('click', function(event){
-        let state = $(this).data('state');
-        let prod_id = $(this).data('id');
-        Swal.fire({
-            title: state?"¿Desea Activar Producto?":"¿Desea Deactivar Producto?",
-            icon: 'warning',
-            showCancelButton: true,
-            confirmButtonColor: '#673ab7',
-            cancelButtonColor: '#607d8b',
-            confirmButtonText: 'Aceptar',
-            cancelButtonText: 'Cancelar'
-        }).then((result) => {
-            if (result.isConfirmed) {
-                location.href = `{{ url('producto/cambiar-estado') }}/`+prod_id;
-            }
-        })
-    });
-
-    $('#exp').on('change', function(){
-        if($('input:checkbox[name=exp]:checked').val()){
-           $('#exp_check').html(`<fieldset class="form-group" readonly="readonly">
-                        <label for="expiration">
-                            Fecha de Expiración
-                        </label>
-                        <input type="date" class="form-control" id="expiration" name="expiration" value="{{ date('Y-m-d') }}">
-                    </fieldset>`); 
-        }else{
-            $('#exp_check').html('')
-        }
-
     });
 </script>
 @endsection

@@ -38,13 +38,17 @@
     <link rel="stylesheet" type="text/css" href="{!! asset('assets/assets/css/style.css')!!}">
     <!-- END: Custom CSS-->
 
-
     {{-- Uso de Jquery --}}
     <script src="{!! asset('assets/assets/jquery/jquery.min.js')!!}"></script>
 
     {{-- Sweet Alerts --}}
     <script type="text/javascript" src="{!! asset('assets/assets/js/sweetAlert.js') !!}"></script>
 
+    {{-- Style DataTable --}}
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.22/css/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.2.6/css/responsive.bootstrap4.min.css">
+    {{-- End DataTable --}}
+    
 </head>
 <!-- END: Head-->
 
@@ -86,6 +90,10 @@
     @include('layouts.footer')
     <!-- END: Footer-->
 
+    {{-- DataTable --}}
+    @yield('js')
+    {{-- End DataTable --}}
+
     <!-- BEGIN: Vendor JS-->
     <script src="{!! asset('assets/app-assets/vendors/js/material-vendors.min.js')!!}"></script>
     <!-- BEGIN Vendor JS-->
@@ -111,13 +119,14 @@
     <script src="{!! asset('assets/app-assets/vendors/js/forms/toggle/switchery.min.js') !!}"></script>
     <script src="{!! asset('assets/app-assets/vendors/js/forms/toggle/bootstrap-checkbox.min.js') !!}"></script>
 
-
     <script src="{!! asset('assets/app-assets/js/scripts/forms/custom-file-input.js') !!}"></script>
 
-
     <script src="{!! asset('assets/app-assets/js/scripts/forms/switch.js') !!}"></script>
+
+
+    <script src="{!! asset('assets/app-assets/js/scripts/ui/jquery-ui/buttons-selects.js') !!}"></script>
     <!-- END: Page JS-->
+
 </body>
 <!-- END: Body-->
-
 </html>

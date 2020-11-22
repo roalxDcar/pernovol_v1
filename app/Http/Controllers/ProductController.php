@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Brand;
 use App\Category;
 use App\Product;
+use App\Unit;
 use Illuminate\Http\Request;
 
 class ProductController extends Controller
@@ -18,11 +20,19 @@ class ProductController extends Controller
         $categories = Category::select('category_cat', 'name_cat')
             ->where('state_cat', 1)
             ->get();
+        $brands = Brand::select('brand_bra', 'name_bra')
+            ->where('state_bra', 1)
+            ->get();
+        $units = Unit::select('unit_uni', 'name_uni', 'prefix_uni')
+            ->where('state_uni', 1)
+            ->get();
         $products = Product::with('category')
             ->get();
 
         return view('product.list', [
             'categories' => $categories,
+            'brands'     => $brands,
+            'units'      => $units,
             'products'   => $products,
         ]);
     }
@@ -47,15 +57,28 @@ class ProductController extends Controller
      */
     public function storeProduct(Request $request)
     {
-        $product                  = new Product;
-        $product->code_prod       = $request->code;
-        $product->name_prod       = $request->name;
-        $product->category_prod   = $request->category;
+        $product = new Product;
+
+        $product->category_prod = $request->category_prod;
+        $product->brand_prod    = $request->brand_prod;
+        $product->unit_prod     = $request->unit_prod;
+
+        $product->code_prod = $request->code_prod;
+        $product->name_prod = $request->name_prod;
+
+        $product->stock_prod           = $request->stock_prod;
+        $product->stock_minimum_prod   = $request->stock_minimum_prod;
+        $product->purchase_price_prod  = $request->purchase_price_prod;
+        $product->sale_price_prod      = $request->sale_price_prod;
+        $product->wholesale_price_prod = $request->wholesale_price_prod;
+
+        $product->detail_prod = $request->detail_prod ? $request->detail_prod : null;
+
         $product->exp_prod        = $request->exp ? 1 : 0;
         $product->expiration_prod = $request->exp ? $request->expiration : null;
 
-        if ($request->hasfile('photo')) {
-            $file = $request->file('photo');
+        if ($request->hasfile('photo_prod')) {
+            $file = $request->file('photo_prod');
             $name = time() . "_" . $file->getClientOriginalName();
             //Guardar en la Base de datos
             $product->photo_prod = $name;
