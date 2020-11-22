@@ -96,22 +96,32 @@ class ProductController extends Controller
      */
     public function updateProduct(Request $request, $id)
     {
-        $product                  = Product::findOrFail($id);
-        $product->code_prod       = $request->code;
-        $product->name_prod       = $request->name;
-        $product->category_prod   = $request->category;
-        $product->exp_prod        = $request->exp ? 1 : 0;
-        $product->expiration_prod = $request->exp ? $request->expiration : null;
+        $product = Product::findOrFail($id);
 
-        if ($request->hasfile('photo')) {
-            // Eliminar foto
-            unlink(public_path() . '/assets/product/' . $product->photo_prod);
-            // Guardar Foto
-            $file = $request->file('photo');
+        $product->category_prod = $request->category_prod;
+        $product->brand_prod    = $request->brand_prod;
+        $product->unit_prod     = $request->unit_prod;
+
+        $product->code_prod = $request->code_prod;
+        $product->name_prod = $request->name_prod;
+
+        $product->stock_prod           = $request->stock_prod;
+        $product->stock_minimum_prod   = $request->stock_minimum_prod;
+        $product->purchase_price_prod  = $request->purchase_price_prod;
+        $product->sale_price_prod      = $request->sale_price_prod;
+        $product->wholesale_price_prod = $request->wholesale_price_prod;
+
+        $product->detail_prod = $request->detail_prod ? $request->detail_prod : null;
+
+        $product->exp_prod        = $request->exp_edit ? 1 : 0;
+        $product->expiration_prod = $request->exp_edit ? $request->expiration : null;
+
+        if ($request->hasfile('photo_prod')) {
+            $file = $request->file('photo_prod');
             $name = time() . "_" . $file->getClientOriginalName();
             //Guardar en la Base de datos
             $product->photo_prod = $name;
-            // Se alamacena en la carpeta product las imagenes deñ producto
+            // Se alamacena en la carpeta product las imagenes del producto
             $file->move(public_path() . '/assets/product/', $name);
         }
         $product->update();

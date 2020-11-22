@@ -104,7 +104,7 @@
                         </label>
                         <div class="custom-file">
                             <input type="file" class="custom-file-input" id="inputGroupFile02" name="photo_prod">
-                            <label class="custom-file-label" id="photo_label" for="inputGroupFile02" aria-describedby="inputGroupFile02">
+                            <label class="custom-file-label" id="photo_label" for="inputGroupFile02" aria-describedby="inputGroupFile02" style="margin-top: 8px;">
                                 Seleccione Imagen
                             </label>
                         </div>
@@ -113,7 +113,7 @@
                         <label for="detail_prod">
                             <b>Detalle:</b>
                         </label><br>
-                        <textarea name="detail_prod" id="detail_prod" cols="40" rows="3" style="resize: none;"></textarea>
+                        <textarea name="detail_prod" id="detail_prod" cols="40" rows="3" style="resize: none; margin-top: 3px;"></textarea>
                     </fieldset>
                     <fieldset class="form-group floating-label-form-group col-md-6" style="float: left;">
                         <label for="exp">

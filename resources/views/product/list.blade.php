@@ -125,6 +125,7 @@
 </section>
 
 @include('product.new')
+@include('product.edit')
 
 @section('js')
     {{-- DataTable Products --}}
@@ -160,85 +161,6 @@
         });
     </script>
 @endsection
-
-
-
-
-
-{{-- Inicio de modal FORM --}}
-<div class="modal fade text-left" id="newProduct" tabindex="-1" role="dialog" aria-labelledby="myModalLabel35" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header bg-primary whiter">
-                <h3 class="modal-title" id="titleProduct" style="color:white;"><strong> NUEVO PRODUCTO</strong></h3>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <form action="{{ route('store.product') }}" id="formProduct" method="POST" enctype="multipart/form-data">
-                @csrf
-                <div id="csrf_prod"></div>
-                <div class="modal-body" style="padding: 15px 25px 0px 25px;">
-                    <fieldset class="form-group floating-label-form-group">
-                        <label for="code">
-                            Código
-                        </label>
-                        <input type="text" class="form-control" id="code" name="code" placeholder="Ingresar código de Producto">
-                    </fieldset>
-                    <fieldset class="form-group floating-label-form-group">
-                        <label for="name">
-                            Nombre
-                        </label>
-                        <input type="text" class="form-control" id="name" name="name" placeholder="Ingresar nombre del Producto">
-                    </fieldset>
-                    <fieldset class="form-group position-relative">
-                        <label for="category">
-                            Categoria
-                        </label>
-                        <select class="form-control" id="category" name="category">
-                            <option value="0" selected="">
-                                Seleccione Categoria
-                            </option>
-                            @foreach($categories as $category)
-                                <option value="{{ $category->category_cat }}">
-                                    {{ $category->name_cat }}
-                                </option>
-                            @endforeach
-                        </select>
-                    </fieldset>
-                    <div class="form-group mt-1">
-                        <label for="exp">
-                            Dispone de Fecha de Expiración?   
-                        </label>
-                        <input type="checkbox" id="exp" name="exp" class="switchery" data-size="sm" value="1"/>
-                    </div>
-                    <div id="exp_check">
-                    </div>
-                    <fieldset class="form-group">
-                        <label for="photo_prod">
-                            Imagen del Producto
-                        </label>
-                        <div class="custom-file">
-                            <input type="file" class="custom-file-input" id="inputGroupFile02" name="photo">
-                            <label class="custom-file-label" id="photo_label" for="inputGroupFile02" aria-describedby="inputGroupFile02">
-                                Seleccione Imagen
-                            </label>
-                        </div>
-                    </fieldset>
-                    <br>
-                </div>
-                <div class="modal-footer" style="margin: 0px 20px 10px 20px;">
-                    <button type="reset" class="btn btn-secondary btn-lg" data-dismiss="modal" style="color: white;">    Cancelar 
-                    </button>
-                    <button type="submit" class="btn btn-primary btn-lg" id="btn-submit" style="color: white;"> 
-                        Guardar 
-                    </button>
-                </div>
-            </form>
-        </div>
-    </div>
-</div>
-{{-- Fin de Modal FORM --}}
 
 <script type="text/javascript">
 
@@ -277,40 +199,8 @@
     });
 
     
-    {{-- Función para recuperar datos del producto seleccionado --}}
-    $('.updateProduct').on('click', function(){
-        let product_cod = $(this).data('id');
-        $.ajax({
-            url:     `editar-producto/${product_cod}`,
-            headers: {'X-CSRF-TOKEN':$('meta[name="csrf-token"]').attr('content')},
-            method:  "GET",
-            success: function(data){
-                $('#formProduct').attr('action',"{{ url('/editar-producto/actualizar') }}/"+product_cod);
-                $('#titleProduct').html('ACTUALIZAR PRODUCTO');
-                $('#csrf_prod').html('@method('PUT')');
-                $('#code').val(data.product.code_prod);
-                $('#name').val(data.product.name_prod);
-                $("#category option:selected").removeAttr("selected", false);
-                $(`#category option[value='${data.product.category_prod}']`).attr("selected", true);
-                if(data.product.exp_prod == 1){
-                    if($('#exp').is(':checked') === false){
-                        $('#exp').trigger('click');
-                    }
-                }else{
-                    if($('#exp').is(':checked') === true){
-                        $('#exp').trigger('click');
-                    }
-                } 
-
-                $('#expiration').val(data.product.expiration_prod);
-                $('#photo').val(data.product.photo_prod);
-                $('#photo_label').html(data.product.photo_prod);
-                $('#btn-submit').html('Actualizar');
-                $('#newProduct').modal('show');
-            }
-        });
-    })
     // Función para mostrar el formulario de registro de Producto
+
     $('#newProductBtn').on('click', function(){
         $('#formProduct').attr('action',"{{ route('store.product') }}");
         $('#titleProduct').html('NUEVO PRODUCTO');
