@@ -167,6 +167,17 @@
                         </a>
                     </li>
                 </ul>
+                <ul class="menu-content">
+                    <li class="">
+                        <a class="menu-item" href="{{ route('get.brand') }}">
+                            <i class="material-icons">
+                            </i>
+                            <span data-i18n="Users List">
+                                Marca
+                            </span>
+                        </a>
+                    </li>
+                </ul>
             </li>
             <li class=" nav-item">
                 <a href="#">

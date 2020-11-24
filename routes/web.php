@@ -51,3 +51,8 @@ Route::post('nuevo-producto/guardar', 'ProductController@storeProduct')->name('s
 Route::get('producto/cambiar-estado/{id}', 'ProductController@stateProduct')->name('state.product');
 Route::get('editar-producto/{id}', 'ProductController@editProduct')->name('edit.product');
 Route::put('editar-producto/actualizar/{id}', 'ProductController@updateProduct')->name('update.product');
+
+Route::get('lista-marcas', 'BrandController@getBrand')->name('get.brand');
+Route::get('marca/cambiar-estado/{id}', 'BrandController@stateBrand')->name('state.brand');
+Route::post('nuevo-marca/guardar', 'BrandController@storeBrand')->name('store.brand');
+Route::put('editar-marca/actualizar/{id}', 'BrandController@updateBrand')->name('update.brand');
