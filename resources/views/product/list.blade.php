@@ -46,7 +46,7 @@
             <div class="card">
                 <div class="card-content collpase show">
                     <div class="card-body card-dashboard dataTables_wrapper dt-bootstrap" style="padding:20px;">
-                        <div class="table-responsive">
+                        <div style="margin: 0px 20px 20px 20px;">
                             <div class="dataTables_wrapper dt-bootstrap4">
                                 <div class="row">
                                     <div class="col-md-12 col-sm-12">
@@ -214,7 +214,7 @@
             $('#expiration').val(`{{ date('Y-m-d') }}`);
         } 
         $('#photo').val("");
-        $('#photo_label').html("Seleccione Imagen");
+        $('#photo_label_p').html("Seleccione Imagen");
         $('#btn-submit').html('Guardar');
         $('#newProduct').modal('show');    
     });

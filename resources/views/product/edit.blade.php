@@ -104,7 +104,7 @@
                             <b>Imagen:</b>
                         </label>
                         <div class="custom-file">
-                            <input type="file" class="custom-file-input" id="inputGroupFile02" name="photo_prod">
+                            <input type="file" class="custom-file-input" name="photo_prod">
                             <label class="custom-file-label" id="edit_photo" for="inputGroupFile02" aria-describedby="inputGroupFile02" style="margin-top: 8px;">
                                 Seleccione Imagen
                             </label>
@@ -132,7 +132,7 @@
                         <i class="la la-times"></i>
                         Cancelar 
                     </button>
-                    <button type="submit" class="btn btn-primary btn-lg" id="btn-submit" style="color: white;">
+                    <button type="submit" class="btn btn-primary btn-lg" style="color: white;">
                         <i class="la la-check"></i>  
                         Actualizar 
                     </button>
