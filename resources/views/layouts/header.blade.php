@@ -38,7 +38,7 @@
                                 Hola, {{ Auth::user()->name }}
                             </span>
                             <span class="avatar avatar-online">
-                                <img alt="avatar" src="{!! asset('assets/app-assets/images/portrait/small/avatar-s-3.png')!!}">
+                                <img alt="avatar" src="{!! asset('assets/app-assets/images/portrait/small/avatar-s-6.png')!!}">
                                     <i>
                                     </i>
                                 </img>

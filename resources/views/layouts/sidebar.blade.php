@@ -1,7 +1,7 @@
 <div class="main-menu material-menu menu-fixed menu-dark menu-accordion menu-shadow" data-scroll-to-active="true">
     <div class="user-profile">
         <div class="user-info text-center pb-2">
-            <img alt="" class="user-img img-fluid rounded-circle w-25 mt-2" src="{!! asset('assets/app-assets/images/portrait/small/avatar-s-3.png')!!}"/>
+            <img alt="" class="user-img img-fluid rounded-circle w-25 mt-2" src="{!! asset('assets/app-assets/images/portrait/small/avatar-s-6.png')!!}"/>
             <div class="name-wrapper d-block dropdown mt-1">
                 <a aria-expanded="false" aria-haspopup="true" class="white dropdown-toggle" data-toggle="dropdown" href="#" id="user-account">
                     <span class="user-name">
@@ -61,26 +61,16 @@
             <li class=" nav-item">
                 <a href="index.html">
                     <i class="material-icons">
-                        settings_input_svideo
+                        desktop_windows
                     </i>
                     <span class="menu-title" data-i18n="Dashboard">
-                        Dashboard
+                    Inicio
                     </span>
                     <span class="badge badge badge-info badge-pill float-right mr-2">
                         3
                     </span>
                 </a>
-                <ul class="menu-content">
-                    <li>
-                        <a class="menu-item" href="#">
-                            <i class="material-icons">
-                            </i>
-                            <span data-i18n="eCommerce">
-                                Reportes
-                            </span>
-                        </a>
-                    </li>
-                </ul>
+                
             </li>
 
             <li class=" nav-item">
@@ -92,17 +82,7 @@
                         Gestión de Usuarios
                     </span>
                 </a>
-                <ul class="menu-content">
-                    <li class="">
-                        <a class="menu-item" href="{{ route('get.provider') }}">
-                            <i class="material-icons">
-                            </i>
-                            <span data-i18n="Users List">
-                                Proveedores
-                            </span>
-                        </a>
-                    </li>
-                </ul>
+                
             </li>
             <li class=" nav-item">
                 <a href="#">
@@ -128,7 +108,7 @@
             <li class=" nav-item">
                 <a href="#">
                     <i class="material-icons">
-                        dvr
+                        local_mall
                     </i>
                     <span class="menu-title" data-i18n="Users">
                         Catalogo
@@ -171,7 +151,7 @@
             <li class=" nav-item">
                 <a href="#">
                     <i class="material-icons">
-                        attach_money
+                        local_shipping
                     </i>
                     <span class="menu-title" data-i18n="Users">
                         Gestión Compras
@@ -183,7 +163,18 @@
                             <i class="material-icons">
                             </i>
                             <span data-i18n="Users List">
-                                Compra
+                                Compras
+                            </span>
+                        </a>
+                    </li>
+                </ul>
+                <ul class="menu-content">
+                    <li class="">
+                        <a class="menu-item" href="{{ route('get.provider') }}">
+                            <i class="material-icons">
+                            </i>
+                            <span data-i18n="Users List">
+                                Proveedores
                             </span>
                         </a>
                     </li>
@@ -208,6 +199,7 @@
                             </span>
                         </a>
                     </li>
+                </ul>
                     <ul class="menu-content">
                         <li class="">
                             <a class="menu-item" href="{{ route('get.client') }}">
@@ -219,6 +211,38 @@
                             </a>
                         </li>
                     </ul>
+                
+            </li>
+            <li class=" nav-item">
+                <a href="#">
+                    <i class="material-icons">
+                        assignment
+                    </i>
+                    <span class="menu-title" data-i18n="Users">
+                        Reportes
+                    </span>
+                </a>
+                <ul class="menu-content">
+                    <li class="">
+                        <a class="menu-item" href="#">
+                            <i class="material-icons">
+                            </i>
+                            <span data-i18n="Users List">
+                                Reporte de Compras
+                            </span>
+                        </a>
+                    </li>
+                </ul>
+                <ul class="menu-content">
+                    <li class="">
+                        <a class="menu-item" href="#">
+                            <i class="material-icons">
+                            </i>
+                            <span data-i18n="Users List">
+                                Reporte de VentasProveedores
+                            </span>
+                        </a>
+                    </li>
                 </ul>
             </li>
         </ul>
