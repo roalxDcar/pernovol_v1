@@ -61,3 +61,8 @@ Route::get('lista-unidades', 'UnitController@getUnit')->name('get.unit');
 Route::get('unidad/cambiar-estado/{id}', 'UnitController@stateUnit')->name('state.unit');
 Route::post('nuevo-unidad/guardar', 'UnitController@storeUnit')->name('store.unit');
 Route::put('editar-unidad/actualizar/{id}', 'UnitController@updateUnit')->name('update.unit');
+
+Route::get('lista-sucursales', 'BranchController@getBranch')->name('get.branch');
+Route::get('sucursal/cambiar-estado/{id}', 'BranchController@stateBranch')->name('state.branch');
+Route::post('nuevo-sucursal/guardar', 'BranchController@storeBranch')->name('store.branch');
+Route::put('editar-sucursal/actualizar/{id}', 'BranchController@updateBranch')->name('update.branch');
