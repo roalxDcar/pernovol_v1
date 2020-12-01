@@ -13,12 +13,7 @@
                     <div class="col-lg-4 col-md-8 col-10 box-shadow-2 p-0">
                         <div class="card border-grey border-lighten-3 m-0">
                             <div class="border-0 mr-3 ml-3 mt-3 pt-10">
-                                <div class="card-title text-center">
-                                    <div class="p-3">
-                                        <img alt="branding logo" src="{!! asset('assets/app-assets/images/logo/logo-dark.png') !!}"/>
-                                    </div>
-                                </div>
-                                <h3 class="card-subtitle line-on-side text-center m-3">
+                                <h3 class="card-subtitle line-on-side text-center mt-5 mb-4">
                                     <span>
                                         <b>
                                             Ingresar al Sistema
@@ -45,7 +40,7 @@
                                                 </div>
                                             </input>
                                         </fieldset>
-                                        <button class="btn btn-primary btn-block" type="submit" id="load">
+                                        <button class="btn btn-primary btn-block p-3" type="submit" id="load">
                                                 INGRESAR
                                         </button>
                                     </form>
