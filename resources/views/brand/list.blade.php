@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('header_content')
-<div class="row">
+
     @if(session('status'))
         <script>
             Swal.fire(
@@ -10,34 +10,33 @@
             )
         </script>
     @endif
-    <div class="content-header-left col-md-9 col-12 mb-2">
-        <h3 class="content-header-title white">
-            <strong>
-                Marcas
-            </strong>
-        </h3>
-        <div class="row breadcrumbs-top">
-            <div class="breadcrumb-wrapper col-12">
-                <ol class="breadcrumb">
-                    <li class="breadcrumb-item">
-                        <a href="{{ route('get.brand') }}">
-                            Lista de Marcas
-                        </a>
-                    </li>
-                </ol>
-            </div>
-        </div>
-    </div>
-    <div class="content-header-right col-md-3 col-12">
-        <div aria-label="Button group with nested dropdown" class="btn-group float-md-right" role="group">
-        	<a href="#">
-        		<button aria-expanded="false" aria-haspopup="true" class="btn btn-primary round dropdown-menu-right px-2" style="margin-top: 5px;" type="button" id="newBrand">
-	                Nueva Marca
-	            </button>
-        	</a>
+
+<div class="content-header-left col-md-6 col-12 mb-2 breadcrumb-new">
+    <h3 class="content-header-title mb-0 d-inline-block">            
+        <strong>
+            Marcas
+        </strong>
+    </h3>
+    <div class="row breadcrumbs-top d-inline-block">
+        <div class="breadcrumb-wrapper col-12">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item">
+                    <a href="{{ route('get.branch') }}" style="color:black;">
+                        Lista de Marcas
+                    </a>
+                </li>
+            </ol>
         </div>
     </div>
 </div>
+<div class="content-header-right col-md-6 col-12">
+    <div class="btn-group float-md-right">
+        <button aria-expanded="false" aria-haspopup="true" class="btn btn-primary round dropdown-menu-right px-2" style="margin-top: 5px;" type="button" id="newBrand">
+            Nuevo Marca
+        </button>
+    </div>
+</div>
+
 @endsection
 @section('content')
 <section id="html">

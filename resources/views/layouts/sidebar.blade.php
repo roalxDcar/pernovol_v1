@@ -190,7 +190,7 @@
                 </a>
                 <ul class="menu-content">
                     <li class="">
-                        <a class="menu-item" href="#">
+                        <a class="menu-item" href="{{ route('get.purchase') }}">
                             <i class="material-icons">
                             </i>
                             <span data-i18n="Users List">

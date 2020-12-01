@@ -23,15 +23,15 @@ class CreatePvProductsTable extends Migration
             $table->string('code_prod');
             $table->string('name_prod');
 
-            $table->integer('stock_prod');
-            $table->integer('stock_minimum_prod');
-            $table->double('purchase_price_prod');
-            $table->double('sale_price_prod');
-            $table->double('wholesale_price_prod');
+            $table->integer('stock_prod')->nullable();
+            $table->integer('stock_minimum_prod')->nullable();
+            $table->double('purchase_price_prod')->nullable();
+            $table->double('sale_price_prod')->nullable();
+            $table->double('wholesale_price_prod')->nullable();
 
             $table->text('detail_prod')->nullable();
-            $table->string('photo_prod');
-            $table->integer('exp_prod');
+            $table->string('photo_prod')->nullable();
+            $table->integer('exp_prod')->nullable();
             $table->date('expiration_prod')->nullable();
             $table->integer('state_prod')->default(1);
             $table->timestamps();

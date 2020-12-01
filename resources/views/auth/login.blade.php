@@ -18,11 +18,13 @@
                                         <img alt="branding logo" src="{!! asset('assets/app-assets/images/logo/logo-dark.png') !!}"/>
                                     </div>
                                 </div>
-                                <h2 class="card-subtitle line-on-side text-center m-3">
+                                <h3 class="card-subtitle line-on-side text-center m-3">
                                     <span>
-                                        Ingresar al Sistema
+                                        <b>
+                                            Ingresar al Sistema
+                                        </b>
                                     </span>
-                                </h2>
+                                </h3>
                             </div>
                             <div class="card-content">
                                 <div class="card-body m-3">
@@ -30,9 +32,8 @@
                                         @csrf
                                         <fieldset class="position-relative has-icon-left pb-3">
                                             <input class="form-control" id="email" name="email" placeholder="Email" required="" type="text" style="margin-bottom:1px;">
-                                                <div class="form-control-position ">
-                                                    <i class="la la-user">
-                                                    </i>
+                                                <div class="form-control-position">
+                                                    <i class="la la-user"></i>
                                                 </div>
                                             </input>
                                         </fieldset>

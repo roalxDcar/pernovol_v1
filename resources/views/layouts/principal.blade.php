@@ -17,27 +17,29 @@
     <link rel="stylesheet" type="text/css" href="{!! asset('assets/app-assets/fonts/material-icons/material-icons.css')!!}">
 
     <!-- BEGIN: Vendor CSS-->
-    <link rel="stylesheet" type="text/css" href="{!! asset('assets/app-assets/vendors/css/material-vendors.min.css')!!}">
-    <link rel="stylesheet" type="text/css" href="{!! asset('assets/app-assets/vendors/css/forms/icheck/icheck.css')!!}">
-    <link rel="stylesheet" type="text/css" href="{!! asset('assets/app-assets/vendors/css/forms/icheck/custom.css')!!}">
+    <link rel="stylesheet" type="text/css" href="{!! asset('assets/app-assets/vendors/css/vendors.min.css') !!}">
+    <link rel="stylesheet" type="text/css" href="{!! asset('assets/app-assets/vendors/css/forms/icheck/icheck.css') !!}">
+    <link rel="stylesheet" type="text/css" href="{!! asset('assets/app-assets/vendors/css/forms/icheck/custom.css') !!}">
     <!-- END: Vendor CSS-->
 
     <!-- BEGIN: Theme CSS-->
-    <link rel="stylesheet" type="text/css" href="{!! asset('assets/app-assets/css/material.css')!!}">
-    <link rel="stylesheet" type="text/css" href="{!! asset('assets/app-assets/css/components.css')!!}">
-    <link rel="stylesheet" type="text/css" href="{!! asset('assets/app-assets/css/bootstrap-extended.css')!!}">
-    <link rel="stylesheet" type="text/css" href="{!! asset('assets/app-assets/css/material-extended.css')!!}">
-    <link rel="stylesheet" type="text/css" href="{!! asset('assets/app-assets/css/material-colors.css')!!}">
+    <link rel="stylesheet" type="text/css" href="{!! asset('assets/app-assets/css/bootstrap.css') !!}">
+    <link rel="stylesheet" type="text/css" href="{!! asset('assets/app-assets/css/bootstrap-extended.css') !!}">
+    <link rel="stylesheet" type="text/css" href="{!! asset('assets/app-assets/css/colors.css') !!}">
+    <link rel="stylesheet" type="text/css" href="{!! asset('assets/app-assets/css/components.css') !!}">
     <!-- END: Theme CSS-->
 
     <!-- BEGIN: Page CSS-->
-    <link rel="stylesheet" type="text/css" href="{!! asset('assets/app-assets/css/core/menu/menu-types/material-vertical-menu-modern.css')!!}">
-    <link rel="stylesheet" type="text/css" href="{!! asset('assets/app-assets/css/pages/login-register.css')!!}">
+    <link rel="stylesheet" type="text/css" href="{!! asset('assets/app-assets/css/core/menu/menu-types/vertical-menu-modern.css') !!}">
+    <link rel="stylesheet" type="text/css" href="{!! asset('assets/app-assets/css/core/colors/palette-gradient.css') !!}">
+    <link rel="stylesheet" type="text/css" href="{!! asset('assets/app-assets/css/pages/login-register.css') !!}">
     <!-- END: Page CSS-->
 
     <!-- BEGIN: Custom CSS-->
-    <link rel="stylesheet" type="text/css" href="{!! asset('assets/assets/css/style.css')!!}">
+    <link rel="stylesheet" type="text/css" href="{!! asset('assets/assets/css/style.css') !!}">
     <!-- END: Custom CSS-->
+
+
 
     {{-- Uso de Jquery --}}
     <script src="{!! asset('assets/assets/jquery/jquery.min.js')!!}"></script>

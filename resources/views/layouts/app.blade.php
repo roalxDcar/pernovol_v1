@@ -14,18 +14,17 @@
     <link rel="shortcut icon" type="image/x-icon" href="{!! asset('assets/app-assets/images/ico/favicon.ico')!!}">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i%7CQuicksand:300,400,500,700" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="{!! asset('assets/app-assets/fonts/material-icons/material-icons.css')!!}">
-
+{{-- ////////////////////////////////////////////////////////////////////////////////////////////////////////////////// --}}
     <!-- BEGIN: Vendor CSS-->
     <link rel="stylesheet" type="text/css" href="{!! asset('assets/app-assets/vendors/css/material-vendors.min.css')!!}">
     <link rel="stylesheet" type="text/css" href="{!! asset('assets/app-assets/vendors/css/ui/prism.min.css')!!}">
     <!-- END: Vendor CSS-->
 
     <!-- BEGIN: Theme CSS-->
-    <link rel="stylesheet" type="text/css" href="{!! asset('assets/app-assets/css/material.css')!!}">
-    <link rel="stylesheet" type="text/css" href="{!! asset('assets/app-assets/css/components.css')!!}">
-    <link rel="stylesheet" type="text/css" href="{!! asset('assets/app-assets/css/bootstrap-extended.css')!!}">
-    <link rel="stylesheet" type="text/css" href="{!! asset('assets/app-assets/css/material-extended.css')!!}">
-    <link rel="stylesheet" type="text/css" href="{!! asset('assets/app-assets/css/material-colors.css')!!}">
+    <link rel="stylesheet" type="text/css" href="{!! asset('assets/app-assets/css/bootstrap.css') !!}">
+    <link rel="stylesheet" type="text/css" href="{!! asset('assets/app-assets/css/bootstrap-extended.css') !!}">
+    <link rel="stylesheet" type="text/css" href="{!! asset('assets/app-assets/css/colors.css') !!}">
+    <link rel="stylesheet" type="text/css" href="{!! asset('assets/app-assets/css/components.css') !!}">
     <!-- END: Theme CSS-->
 
     <!-- BEGIN: Page CSS-->
@@ -37,6 +36,8 @@
     <link rel="stylesheet" type="text/css" href="{!! asset('assets/app-assets/css/plugins/forms/switch.css') !!}">
     <link rel="stylesheet" type="text/css" href="{!! asset('assets/assets/css/style.css')!!}">
     <!-- END: Custom CSS-->
+
+{{-- ////////////////////////////////////////////////////////////////////////////////////////////////////////////////// --}}
 
     {{-- Uso de Jquery --}}
     <script src="{!! asset('assets/assets/jquery/jquery.min.js')!!}"></script>
@@ -54,7 +55,7 @@
 
 <!-- BEGIN: Body-->
 
-<body class="vertical-layout vertical-menu-modern material-vertical-layout material-layout 2-columns   fixed-navbar" data-open="click" data-menu="vertical-menu-modern" data-col="2-columns">
+<body class="vertical-layout vertical-menu-modern 2-columns   fixed-navbar" data-open="click" data-menu="vertical-menu-modern" data-col="2-columns">
 
     <!-- BEGIN: Header-->
     @include('layouts.header')
@@ -67,9 +68,10 @@
     
     <!-- BEGIN: Content-->
     <div class="app-content content">
-        {{-- Head navbar --}}
-        <div class="content-header row">
-            <div class="content-header-dark bg-img col-12">
+        <div class="content-overlay"></div>
+        <div class="content-wrapper">
+            <div class="content-header row">
+            {{-- Head navbar --}}
                 @yield('header_content')
             </div>
         </div>

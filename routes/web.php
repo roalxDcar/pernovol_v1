@@ -66,3 +66,7 @@ Route::get('lista-sucursales', 'BranchController@getBranch')->name('get.branch')
 Route::get('sucursal/cambiar-estado/{id}', 'BranchController@stateBranch')->name('state.branch');
 Route::post('nuevo-sucursal/guardar', 'BranchController@storeBranch')->name('store.branch');
 Route::put('editar-sucursal/actualizar/{id}', 'BranchController@updateBranch')->name('update.branch');
+
+Route::get('lista-compras', 'PurchaseController@getPurchase')->name('get.purchase');
+Route::get('nueva-compra', 'PurchaseController@createPurchase')->name('create.purchase');
+Route::post('nuevo-compra/guardar', 'PurchaseController@storePurchase')->name('store.purchase');

@@ -1,34 +1,34 @@
 @extends('layouts.app')
 @section('header_content')
-<div class="row">
-    <div class="content-header-left col-md-9 col-12 mb-2">
-        <h3 class="content-header-title white">
-            <strong>
-                Proveedores
-            </strong>
-        </h3>
-        <div class="row breadcrumbs-top">
-            <div class="breadcrumb-wrapper col-12">
-                <ol class="breadcrumb">
-                    <li class="breadcrumb-item">
-                        <a href="{{ route('get.provider') }}">
-                            Lista de Proveedores
-                        </a>
-                    </li>
-                </ol>
-            </div>
-        </div>
-    </div>
-    <div class="content-header-right col-md-3 col-12">
-        <div aria-label="Button group with nested dropdown" class="btn-group float-md-right" role="group">
-        	<a href="{{ route('create.provider') }}">
-        		<button aria-expanded="false" aria-haspopup="true" class="btn btn-primary round dropdown-menu-right px-2" style="margin-top: 5px;" type="button">
-	                Nuevo Proveedor
-	            </button>
-        	</a>
+
+<div class="content-header-left col-md-6 col-12 mb-2 breadcrumb-new">
+    <h3 class="content-header-title mb-0 d-inline-block">            
+        <strong>
+            Proveedores
+        </strong>
+    </h3>
+    <div class="row breadcrumbs-top d-inline-block">
+        <div class="breadcrumb-wrapper col-12">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item">
+                    <a href="{{ route('get.provider') }}" style="color:black;">
+                        Lista de Proveedores
+                    </a>
+                </li>
+            </ol>
         </div>
     </div>
 </div>
+<div class="content-header-right col-md-6 col-12">
+    <div class="btn-group float-md-right">
+        <a href="{{ route('create.provider') }}">
+            <button aria-expanded="false" aria-haspopup="true" class="btn btn-primary round dropdown-menu-right px-2" style="margin-top: 5px;" type="button">
+                Nuevo Proveedor
+            </button>
+        </a>
+    </div>
+</div>
+
 @endsection
 @section('content')
 <section id="html">
