@@ -55,7 +55,7 @@
                                                     <th colspan="1" rowspan="1" style="width: 200px;">
                                                         COD
                                                     </th>
-                                                    <th colspan="1" rowspan="1" style="width: 400px;">
+                                                    <th colspan="1" rowspan="1" style="width: 300px;">
                                                         Producto
                                                     </th>
                                                     <th colspan="1" rowspan="1" style="width: 300px;">
@@ -64,13 +64,13 @@
                                                     <th colspan="1" rowspan="1" style="width: 120px;">
                                                         Expiración
                                                     </th>
-                                                    <th colspan="1" rowspan="1" style="width: 150px;" class="text-center">
+                                                    <th colspan="1" rowspan="1" style="width: 120px;" class="text-center">
                                                         Imagen
                                                     </th>
                                                     <th colspan="1" rowspan="1" style="width: 80px;" class="text-center">
                                                         Estado
                                                     </th>
-                                                    <th colspan="1" rowspan="1" style="width: 150px;" class="text-center">
+                                                    <th colspan="1" rowspan="1" style="width: 200px;" class="text-center">
                                                         Acciones
                                                     </th>
                                                 </tr>
@@ -99,7 +99,7 @@
                                                         </button>
                                                     </td>
                                                     <td>
-                                                        <button class="btn btn-icon btn-info waves-effect waves-light updateProduct" type="button" data-id="{{ $product->product_prod }}">
+                                                        <button class="btn btn-md btn-info waves-effect waves-light updateProduct" type="button" data-id="{{ $product->product_prod }}">
                                                             <i class="la la-pencil">
                                                             </i>
                                                         </button>

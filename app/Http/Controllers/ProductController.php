@@ -20,13 +20,13 @@ class ProductController extends Controller
         $categories = Category::select('category_cat', 'name_cat')
             ->where('state_cat', 1)
             ->get();
-        $brands = Brand::select('brand_bra', 'name_bra')
+        $brands     = Brand::select('brand_bra', 'name_bra')
             ->where('state_bra', 1)
             ->get();
-        $units = Unit::select('unit_uni', 'name_uni', 'prefix_uni')
+        $units      = Unit::select('unit_uni', 'name_uni', 'prefix_uni')
             ->where('state_uni', 1)
             ->get();
-        $products = Product::with('category')
+        $products   = Product::with('category')
             ->get();
 
         return view('product.list', [

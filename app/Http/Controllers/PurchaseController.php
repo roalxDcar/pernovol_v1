@@ -70,4 +70,9 @@ class PurchaseController extends Controller
         return redirect()->route('get.purchase')->with('status', 'Se actualizo la Compra');
     }
 
+    public function getProduct($id){
+        $product = Product::findOrFail($id);
+        return $product;
+    }
+
 }

@@ -70,3 +70,4 @@ Route::put('editar-sucursal/actualizar/{id}', 'BranchController@updateBranch')->
 Route::get('lista-compras', 'PurchaseController@getPurchase')->name('get.purchase');
 Route::get('nueva-compra', 'PurchaseController@createPurchase')->name('create.purchase');
 Route::post('nuevo-compra/guardar', 'PurchaseController@storePurchase')->name('store.purchase');
+Route::get('lista-productos/venta/{id}','PurchaseController@getProduct')->name('product.purchase');

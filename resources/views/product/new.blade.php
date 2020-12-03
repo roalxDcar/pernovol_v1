@@ -126,12 +126,12 @@
                 </div>
                 <br>
 
-                <div class="modal-footer col-md-12" style="padding: 0px 35px 20px 35px;">
-                    <button type="reset" class="btn btn-secondary btn-lg" data-dismiss="modal" style="color: white;">    
+                <div class="modal-footer col-md-12" style="padding: 10px 35px 20px 35px;">
+                    <button type="reset" class="btn btn-secondary btn-md" data-dismiss="modal" style="color: white;">    
                         <i class="la la-times"></i>
                         Cancelar 
                     </button>
-                    <button type="submit" class="btn btn-primary btn-lg" style="color: white;">
+                    <button type="submit" class="btn btn-primary btn-md" style="color: white;">
                         <i class="la la-check"></i>  
                         Guardar 
                     </button>

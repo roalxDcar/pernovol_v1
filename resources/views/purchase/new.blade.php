@@ -34,11 +34,13 @@
 		                		<div class="row">
                                 	<div class="col-md-12" style="padding-left: 0px;">
 	                                	<div class="col-md-4" style="float: left; padding-top: 10px;">
-	                                		<h4 style="color: white;"><b>Detalle de Compra</b></h4>
+	                                		<h4 style="color: white;"><b><span class="material-icons">
+                                			shopping_cart
+                                		</span> Detalle de Compra</b></h4>
 	                                	</div>
 		                                <div style="float: right;">
 		                                	<a href="#">
-								        		<button aria-expanded="false" aria-haspopup="true" class="btn btn-success round dropdown-menu-right px-2" style="margin-top: 5px;" type="button" id="newBranch">
+								        		<button aria-expanded="false" aria-haspopup="true" class="btn btn-success round dropdown-menu-right px-2" style="margin-top: 5px;" type="button" id="newProduct">
 									                <b><i class="la la-plus"></i> Nuevo Producto</b>
 									            </button>
 								        	</a>
@@ -50,80 +52,66 @@
 	                            <div class="form-body">
 	                                <div class="row">
 	                                    <div class="col-md-12">
-	                                        <fieldset>
-		                                        <div class="input-group">
-		                                        	<label style="color: black;"><b>Productos: </b></label>
-		                                            <select class="form-control" name="branch">
-							                            <option value="0" selected="">
-							                                Seleccione Producto
-							                            </option>
-							                            @foreach($products as $product)
-							                                <option value="{{ $product->product_prod }}">
-							                                    {{ $product->name_prod }}
-							                                </option>
-							                            @endforeach
-							                        </select>
-		                                        </div>
-		                                    </fieldset>
+	                                        <div class="input-group">
+	                                        	<label style="color: black;"><b>Productos: </b></label>
+	                                            <select class="form-control ml-2" id="product_select">
+						                            <option value="0" selected="">
+						                                Seleccione Producto
+						                            </option>
+						                            @foreach($products as $product)
+						                                <option value="{{ $product->product_prod }}">
+						                                    {{ $product->name_prod }}
+						                                </option>
+						                            @endforeach
+						                        </select>
+						                        <button aria-expanded="false" aria-haspopup="true" class="btn btn-info  px-2" type="button" id="push">
+									                <b>Agregar</b>
+									            </button>
+	                                        </div>
 	                                    </div>
 	                                </div>
 	                            </div><br>
                             	<table class="table table-striped table-responsive">
 	                                <thead class="bg-secondary" style="color: white;">
 	                                    <tr role="row">
-	                                        <th style="width: 100px;">
-	                                            Código Producto
+	                                        <th style="width: 50px;">
+	                                            ID-PRO
 	                                        </th>
-	                                        <th style="width: 200px;">
+	                                        <th style="width: 50px;">
 	                                            Producto
 	                                        </th>
 	                                        <th style="width: 100px;">
+	                                            Cantidad Actual
+	                                        </th>
+	                                        <th style="width: 80px;">
 	                                            Cantidad
 	                                        </th>
-	                                        <th style="width: 120px;">
-	                                            Precio
+	                                        <th style="width: 100px;">
+	                                            Precio Compra
+	                                        </th>
+	                                        <th style="width: 10px;">
+	                                        	SubTotal
 	                                        </th>
 	                                        <th style="width: 50px;">
 	                                            Acciones
 	                                        </th>
 	                                    </tr>
 	                                </thead>
-	                                <tbody>
-	                                    <tr>
-	                                        
-	                                        <td>
-	                                            <input readonly="readonly" type="number" class="form-control" name="product_pro[]">
-	                                        </td>
-
-	                                        <td class="sorting_1">
-	                                            sr6u
-	                                        </td>
-
-	                                        <td class="sorting_1">
-	                                            <input type="number" class="form-control" name="quantity[]">
-	                                        </td>
-
-	                                        <td class="sorting_1">
-	                                            <input type="number" class="form-control" name="price[]">
-	                                        </td>
-	                                        <td>
-	                                            <button class="btn btn-icon btn-danger waves-effect waves-light" type="button">
-	                                                <i class="la la-trash">
-	                                                </i>
-	                                            </button>
-	                                        </td>
-
-	                                    </tr>
+	                                <tbody id="body_table">
 	                                    <tr>
 	                                        <td>
 	                                        </td>
 	                                        <td>
 	                                        </td>
 	                                        <td>
-	                                            <b>SUMAS:</b> 
 	                                        </td>
 	                                        <td>
-	                                            5
+	                                        </td>
+	                                        <td style="font-weight: bold;">
+	                                            SUMAS 
+	                                        </td>
+	                                        <td class="suma">
+	                                            0
 	                                        </td>
 	                                        <td>
 	                                        </td>
@@ -134,10 +122,14 @@
 	                                        <td>
 	                                        </td>
 	                                        <td>
-	                                            <b>IVA %:</b> 
 	                                        </td>
 	                                        <td>
-	                                            13.0
+	                                        </td>
+	                                        <td>
+	                                            <b>IVA %</b> 
+	                                        </td>
+	                                        <td>
+	                                            13
 	                                        </td>
 	                                        <td>
 	                                        </td>
@@ -148,10 +140,14 @@
 	                                        <td>
 	                                        </td>
 	                                        <td>
-	                                            <b>TOTAL %:</b> 
 	                                        </td>
 	                                        <td>
-	                                            <input type="number" class="form-control" name="total[]" value="13">
+
+	                                        <td>
+	                                            <b>TOTAL</b> 
+	                                        </td>
+	                                        <td class="total_val">
+	                                            0
 	                                        </td>
 	                                        <td>
 	                                        </td>
@@ -166,7 +162,7 @@
 		        	<div class="card">
 		                <div class="card-content collapse show">
 		                	<div class="card-header bg-primary text-center">
-		                		<h3 style="color: white;"><b>Total: 0 Bs</b></h3>
+		                		<h3 style="color: white;"><b class="title-total">Total: 0 Bs</b></h3>
 		                	</div>
 		                    <div class="card-body">
 		                        <div class="form-body">
@@ -238,9 +234,6 @@
 		                    <div class="card-footer">
                                 <button class="btn btn-primary btn-block" type="submit">
                                 	<b>
-                                		<span class="material-icons">
-                                			shopping_cart
-                                		</span> 
                                 		Guardar Compra
                                 	</b>
                                 </button>
@@ -251,4 +244,110 @@
 	        </div>
         </form>
 	</section>
+@endsection
+@section('js')
+<script>
+
+// Agregar un producto a carrito
+$('#push').on('click', function(){
+	let val = $('#product_select').val();
+	if(val != 0){
+		$('#product_select option[value="'+val+'"]').remove();
+	}
+   	$.ajax({
+        url:     "{{ url('lista-productos/venta/') }}/" + val,
+        headers: {'X-CSRF-TOKEN':$('meta[name="csrf-token"]').attr('content')},
+        method:  "GET",
+        success:function(data){
+        	$('#body_table').prepend(`<tr>
+
+                <td>
+                    <input readonly="readonly" type="number" class="form-control" value="${data.product_prod}" name="product_pro[]">
+                </td>
+                
+                <td>
+                    ${data.name_prod}
+                </td>
+
+                <td class="sorting_1">
+                    ${data.stock_prod}
+                </td>
+
+                <td class="sorting_1">
+                    <input type="number" class="form-control stock_prod NAN" value="15" name="quantity[]">
+                </td>
+
+                <td class="sorting_1">
+                    <input type="number" class="form-control price NAN" value="${data.purchase_price_prod}" name="price[]">
+                </td>
+
+                <td class="text-center val_${data.product_prod}">
+                	12
+                </td>
+
+                <td class="text-center">
+                    <button class="btn btn-icon btn-danger trash-item" type="button" data-id="${data.product_prod}" data-product="${data.name_prod}">
+                        <i class="la la-trash">
+                        </i>
+                    </button>
+                </td>
+
+            </tr>`);
+            sumarTbody();
+        }
+    });
+});
+
+// Eliminar producto
+$(document).on('click','.trash-item', function(){
+	let id = $(this).data('id');
+	let product = $(this).data('product');
+	
+	$('#product_select').append("<option value='"+id+"' >"+product+"</option>");
+	// Elimina celda seleccionada
+	$(this).closest('tr').remove();
+	sumarTbody();
+});
+
+$(document).change(function(){
+	sumarTbody();
+})
+
+function sumarTbody(){
+	var suma = 0;
+	var total = 0;
+    $("#body_table tr").each(function(ind,ele){//recorre tr's
+    	var t0=0, sw = 0, sw1 = 0;
+        $("td",ele).each(function(i,e){//recorre td's           
+          if(i==3) {
+          	// Valor Cantidad
+          	if(Number($(e).find(".stock_prod").val())){
+          		t0+=Number($(e).find(".stock_prod").val());
+          	}
+          	// Se verifica si existe un valor dentro del input
+          	if($(e).find(".stock_prod").val()){
+          		sw = 1;
+          	}
+          }
+          if(i==4) {
+          	// Valor precios
+          	if(Number($(e).find(".price").val())){
+          		t0+=Number($(e).find(".price").val());
+          	}
+          }
+          if(i==5 && sw == 1) {
+          	$(e).html(t0);
+          	suma += t0;
+         	total += t0+(t0*0.13);
+          }
+        });
+    })
+    $('.suma').html(suma.toFixed(2));
+
+    $('.total_val').html(total.toFixed(2));
+    // console.log(t0,t1);//renderiza tu footer con estos valores
+    $('.title-total').html("Total: "+total.toFixed(2)+" Bs.");
+}
+
+</script>		
 @endsection

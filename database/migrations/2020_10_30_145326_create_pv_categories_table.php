@@ -16,7 +16,7 @@ class CreatePvCategoriesTable extends Migration
         Schema::create('pv_categories', function (Blueprint $table) {
             $table->increments('category_cat');
             $table->string('name_cat')->nullable();
-            $table->bigInteger('state_cat')->default(1);
+            $table->integer('state_cat')->default(1);
             $table->timestamps();
         });
     }
