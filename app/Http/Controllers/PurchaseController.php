@@ -50,7 +50,9 @@ class PurchaseController extends Controller
         $purchase           	 = new Purchase;
         $purchase->name_bra 	 = $request->name_bra;
         $purchase->address_bra 	 = $request->address_bra;
-        $purchase->phone_bra 	 = $request->phone_bra;
+        $purchase->total_pur 	 = $request->phone_bra;
+
+        $rol->grants()->attach($request->grants);
         $purchase->save();
         return redirect()->route('get.purchase')->with('status', 'Se registró Compra');
     }
