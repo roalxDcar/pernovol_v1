@@ -3,7 +3,7 @@
     <div class="modal-dialog modal-sm" role="document">
         <div class="modal-content">
             <div class="modal-header bg-primary">
-                <h4 class="modal-title" style="color: white;"><i class="la la-wrench"></i><b> Nueva Marca</b></h4>
+                <h4 class="modal-title" style="color: white;"><i class="la la-wrench"></i><b> Nueva Unidad</b></h4>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>

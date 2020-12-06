@@ -104,7 +104,7 @@
                         </label>
                         <div class="custom-file">
                             <input type="file" class="custom-file-input" id="inputGroupFile02" name="photo_prod">
-                            <label class="custom-file-label" id="photo_label_p" for="inputGroupFile02" aria-describedby="inputGroupFile02" style="margin-top: 8px;">
+                            <label class="custom-file-label" id="photo_label_p" for="inputGroupFile02" aria-describedby="inputGroupFile02">
                                 Seleccione Imagen
                             </label>
                         </div>

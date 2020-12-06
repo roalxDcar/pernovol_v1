@@ -18,6 +18,7 @@ class CreatePvBranchesTable extends Migration
             $table->string('name_bra');
             $table->string('address_bra');
             $table->string('phone_bra');
+            $table->string('nit_bra');
             $table->integer('state_bra')->default(1);
             $table->timestamps();
         });

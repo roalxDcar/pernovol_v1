@@ -32,6 +32,13 @@
                         </label>
                         <input type="text" id="phone_bra" name="phone_bra" class="form-control phone_edit" placeholder="Ingresar Tel/Cel">
                     </fieldset>
+
+                    <fieldset class="form-group floating-label-form-group col-md-12" style="float: left;">
+                        <label for="nit_bra">
+                            <b>NIT:</b>
+                        </label>
+                        <input type="text" id="nit_bra" name="nit_bra" class="form-control nit_edit" placeholder="Ingresar Tel/Cel">
+                    </fieldset>
                 </div>
                 <br>
 

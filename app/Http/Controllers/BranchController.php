@@ -30,6 +30,7 @@ class BranchController extends Controller
         $branch->name_bra 	 = $request->name_bra;
         $branch->address_bra = $request->address_bra;
         $branch->phone_bra 	 = $request->phone_bra;
+        $branch->nit_bra     = $request->nit_bra;
         $branch->save();
         return redirect()->route('get.branch')->with('status', 'Se registró Sucursal');
     }
@@ -45,6 +46,7 @@ class BranchController extends Controller
         $branch->name_bra 	 = $request->name_bra;
         $branch->address_bra = $request->address_bra;
         $branch->phone_bra 	 = $request->phone_bra;
+        $branch->nit_bra     = $request->nit_bra;
         $branch->update();
         return redirect()->route('get.branch')->with('status', 'Se actualizo la Sucursal');
     }

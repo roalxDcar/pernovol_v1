@@ -168,7 +168,7 @@
         let state = $(this).data('state');
         let prod_id = $(this).data('id');
         Swal.fire({
-            title: state?"¿Desea Activar Producto?":"¿Desea Deactivar Producto?",
+            title: state?"¿Desea Desactivar Producto?":"¿Desea Activar Producto?",
             icon: 'warning',
             showCancelButton: true,
             confirmButtonColor: '#673ab7',

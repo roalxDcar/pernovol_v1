@@ -152,7 +152,7 @@
         let state = $(this).data('state');
         let branch_id = $(this).data('id');
         Swal.fire({
-            title: state?"¿Desea Activar Sucursal?":"¿Desea Deactivar Sucursal?",
+            title: state?"¿Desea Desactivar Sucursal?":"¿Desea Activar Sucursal?",
             icon: 'warning',
             showCancelButton: true,
             confirmButtonColor: '#673ab7',

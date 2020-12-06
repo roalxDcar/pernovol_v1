@@ -53,16 +53,16 @@
                                                 <th aria-controls="DataTables_Table_0" aria-label="Name: activate to sort column descending" aria-sort="ascending" class="sorting_asc" colspan="1" rowspan="1" style="width: 50px;" tabindex="0">
                                                     ID
                                                 </th>
-                                                <th aria-controls="DataTables_Table_0" aria-label="Position: activate to sort column ascending" class="sorting" colspan="1" rowspan="1" style="width: 200px;" tabindex="0">
+                                                <th aria-controls="DataTables_Table_0" aria-label="Position: activate to sort column ascending" class="sorting" colspan="1" rowspan="1" style="width: 400px;" tabindex="0">
                                                     Unidad
                                                 </th>
-                                                <th aria-controls="DataTables_Table_0" aria-label="Position: activate to sort column ascending" class="sorting" colspan="1" rowspan="1" style="width: 200px;" tabindex="0">
+                                                <th aria-controls="DataTables_Table_0" aria-label="Position: activate to sort column ascending" class="sorting" colspan="1" rowspan="1" style="width: 400px;" tabindex="0">
                                                     Prefijo
                                                 </th>
-                                                <th aria-controls="DataTables_Table_0" aria-label="Salary: activate to sort column ascending" class="sorting" colspan="1" rowspan="1" style="width: 96px;" tabindex="0">
+                                                <th aria-controls="DataTables_Table_0" aria-label="Salary: activate to sort column ascending text-center" class="sorting" colspan="1" rowspan="1" style="width: 100px;" tabindex="0">
                                                     Estado
                                                 </th>
-                                                <th aria-controls="DataTables_Table_0" aria-label="Salary: activate to sort column ascending" class="sorting" colspan="1" rowspan="1" style="width: 56px;" tabindex="0">
+                                                <th aria-controls="DataTables_Table_0" aria-label="Salary: activate to sort column ascending" class="sorting text-center" colspan="1" rowspan="1" style="width: 200px;" tabindex="0">
                                                     Acciones
                                                 </th>
                                             </tr>
@@ -84,7 +84,7 @@
                                                         {{ $unit->state_uni?'Activo':'Inactivo' }}
                                                     </button>
                                                 </td>
-                                                <td>
+                                                <td class="text-center">
                                                     <button class="btn btn-icon btn-info waves-effect waves-light updateUnit" type="button" data-id="{{ $unit->unit_uni }}" data-name="{{ $unit->name_uni }}" data-prefix="{{ $unit->prefix_uni }}">
                                                         <i class="la la-pencil">
                                                         </i>
@@ -152,7 +152,7 @@
         let state = $(this).data('state');
         let unit_id = $(this).data('id');
         Swal.fire({
-            title: state?"¿Desea Activar Unidad?":"¿Desea Deactivar Unidad?",
+            title: state?"¿Desea Desactivar Unidad?":"¿Desea Activar Unidad?",
             icon: 'warning',
             showCancelButton: true,
             confirmButtonColor: '#673ab7',

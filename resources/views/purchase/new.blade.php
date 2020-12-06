@@ -317,12 +317,12 @@ function sumarTbody(){
 	var suma = 0;
 	var total = 0;
     $("#body_table tr").each(function(ind,ele){//recorre tr's
-    	var t0=0, sw = 0, sw1 = 0;
+    	var t0 = 1, sw = 0, sw1 = 0;
         $("td",ele).each(function(i,e){//recorre td's           
           if(i==3) {
           	// Valor Cantidad
           	if(Number($(e).find(".stock_prod").val())){
-          		t0+=Number($(e).find(".stock_prod").val());
+          		t0 = t0 * Number($(e).find(".stock_prod").val());
           	}
           	// Se verifica si existe un valor dentro del input
           	if($(e).find(".stock_prod").val()){
@@ -332,12 +332,12 @@ function sumarTbody(){
           if(i==4) {
           	// Valor precios
           	if(Number($(e).find(".price").val())){
-          		t0+=Number($(e).find(".price").val());
+          		t0 = t0 * Number($(e).find(".price").val());
           	}
           }
           if(i==5 && sw == 1) {
           	$(e).html(t0);
-          	suma += t0;
+          	suma  += t0;
          	total += t0+(t0*0.13);
           }
         });

@@ -54,19 +54,22 @@
                                                 <th style="width: 50px;">
                                                     ID
                                                 </th>
-                                                <th style="width: 80px;">
+                                                <th style="width: 150px;">
                                                     Sucursal
                                                 </th>
-                                                <th style="width: 150px;">
+                                                <th style="width: 350px;">
                                                     Dirección
                                                 </th>
-                                                <th style="width: 80px;">
+                                                <th style="width: 110px;">
                                                     Tel/Cel
                                                 </th>
-                                                <th style="width: 96px;">
+                                                <th style="width: 110px;">
+                                                    NIT
+                                                </th>
+                                                <th style="width: 80px;">
                                                     Estado
                                                 </th>
-                                                <th style="width: 56px;">
+                                                <th style="width: 56px;" class="text-center">
                                                     Acciones
                                                 </th>
                                             </tr>
@@ -91,14 +94,18 @@
                                                     {{ $branch->phone_bra }}
                                                 </td>
 
+                                                <td class="sorting_1">
+                                                    {{ $branch->nit_bra }}
+                                                </td>
+
                                                 <td class="text-center">
                                                     <button class="btn mr-1 btn-{{ $branch->state_bra?'success':'danger' }} btn-sm waves-effect waves-light" type="text">
                                                         {{ $branch->state_bra?'Activo':'Inactivo' }}
                                                     </button>
                                                 </td>
 
-                                                <td>
-                                                    <button class="btn btn-icon btn-info waves-effect waves-light updateBranch" type="button" data-id="{{ $branch->branch_bra }}" data-name="{{ $branch->name_bra }}" data-address="{{ $branch->address_bra }}" data-phone="{{ $branch->phone_bra }}">
+                                                <td  class="text-center">
+                                                    <button class="btn btn-icon btn-info waves-effect waves-light updateBranch" type="button" data-id="{{ $branch->branch_bra }}" data-name="{{ $branch->name_bra }}" data-address="{{ $branch->address_bra }}" data-phone="{{ $branch->phone_bra }}" data-nit="{{ $branch->nit_bra }}">
                                                         <i class="la la-pencil">
                                                         </i>
                                                     </button>
@@ -166,7 +173,7 @@
         let state = $(this).data('state');
         let branch_id = $(this).data('id');
         Swal.fire({
-            title: state?"¿Desea Activar Sucursal?":"¿Desea Deactivar Sucursal?",
+            title: state?"¿Desea Desactivar Sucursal?":"¿Desea Activar Sucursal?",
             icon: 'warning',
             showCancelButton: true,
             confirmButtonColor: '#673ab7',
@@ -186,10 +193,12 @@
         let name    = $(this).data('name');
         let address = $(this).data('address');
         let phone   = $(this).data('phone');
+        let nit   = $(this).data('nit');
         $('.form-edit').attr('action',"{{ url('editar-sucursal/actualizar') }}/"+id);
         $('.name_edit').val(name);
         $('.address_edit').val(address);
         $('.phone_edit').val(phone);
+        $('.nit_edit').val(nit);
         $('#small_edit').modal('show');
     });
 
