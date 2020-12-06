@@ -39,6 +39,31 @@
 
 @endsection
 @section('content')
+
+<section id="basic-buttons">
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-content collapse show">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-12">
+                                <h3><b>Reporte de Productos</b></h3>
+                                <div class="form-group">
+                                    <a href="{{ route('print.product') }}">
+                                        <button type="button" class="btn btn-danger btn-block mr-1 mb-1">Generar PDF</button>
+                                    </a>
+                                    <button type="button" class="btn btn-success btn-block mr-1 mb-1">Generar Excel</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
 <section id="html">
     <div class="row">
         <div class="col-md-12">

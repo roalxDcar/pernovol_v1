@@ -77,20 +77,17 @@
 	                                        <th style="width: 50px;">
 	                                            ID-PRO
 	                                        </th>
-	                                        <th style="width: 50px;">
+	                                        <th style="width: 200px;">
 	                                            Producto
 	                                        </th>
 	                                        <th style="width: 100px;">
-	                                            Cantidad Actual
-	                                        </th>
-	                                        <th style="width: 80px;">
 	                                            Cantidad
 	                                        </th>
 	                                        <th style="width: 100px;">
-	                                            Precio Compra
+	                                            Precio Unitario
 	                                        </th>
 	                                        <th style="width: 10px;">
-	                                        	SubTotal
+	                                        	Sub-Total
 	                                        </th>
 	                                        <th style="width: 50px;">
 	                                            Acciones
@@ -99,8 +96,6 @@
 	                                </thead>
 	                                <tbody id="body_table">
 	                                    <tr>
-	                                        <td>
-	                                        </td>
 	                                        <td>
 	                                        </td>
 	                                        <td>
@@ -124,11 +119,9 @@
 	                                        <td>
 	                                        </td>
 	                                        <td>
-	                                        </td>
-	                                        <td>
 	                                            <b>IVA %</b> 
 	                                        </td>
-	                                        <td>
+	                                        <td class="iva">
 	                                            13
 	                                        </td>
 	                                        <td>
@@ -140,14 +133,28 @@
 	                                        <td>
 	                                        </td>
 	                                        <td>
-	                                        </td>
-	                                        <td>
 
 	                                        <td>
 	                                            <b>TOTAL</b> 
 	                                        </td>
 	                                        <td class="total_val">
-	                                            0
+	                                        	<input readonly="readonly" type="number" class="form-control" value="0" id="total_purchase" name="total_purchase">
+	                                        </td>
+	                                        <td>
+	                                        </td>
+	                                    </tr>
+	                                    <tr>
+	                                        <td>
+	                                        </td>
+	                                        <td>
+	                                        </td>
+	                                        <td>
+
+	                                        <td>
+	                                            <b>DESCUENTO</b> 
+	                                        </td>
+	                                        <td class="total_val">
+	                                        	<input type="number" class="form-control" value="0" id="discount" name="discount">
 	                                        </td>
 	                                        <td>
 	                                        </td>
@@ -182,7 +189,7 @@
 						                        </select>
 		                                    </fieldset>
 		                                    <br>
-		                                    <fieldset>
+		                                    {{-- <fieldset>
 	                                        	<label style="color: black;" class="col-md-4"><b>Sucursal: </b></label>
 	                                            <select class="form-control" name="branch">
 						                            <option value="0" selected="">
@@ -195,10 +202,15 @@
 						                            @endforeach
 						                        </select>
 		                                    </fieldset>
+		                                    <br> --}}
+		                                    <fieldset>
+	                                        	<label style="color: black;" class="col-md-4"><b>Fecha: </b></label>
+	                                        	<input type="date" class="form-control" name="date" placeholder="Fecha de Compra">
+		                                    </fieldset>
 		                                    <br>
 	                                    	<fieldset class="col-md-6" style="float: left;">
 	                                        	<label style="color: black;"><b>Impuesto: </b></label>
-	                                        	<input type="text" readonly="readonly" class="form-control" name="tribute" value="13">
+	                                        	<input type="number" readonly="readonly" class="form-control impuesto" name="tribute">
 		                                    </fieldset>
 	                                     	<fieldset class="col-md-6" style="float: left;">
 	                                        	<label style="color: black;"><b>N° Factura: </b></label>
@@ -207,12 +219,15 @@
 		                                    <br><br><br><br>
 	                                    	<fieldset class="col-md-6" style="float: left;">
 	                                        	<label style="color: black;"><b>Tipo Comprobante: </b></label>
-	                                            <select class="form-control" name="type">
+	                                            <select class="form-control" name="type" id="type">
 						                            <option value="0" selected="">
 						                                Seleccione Comprobante
 						                            </option>
 						                            <option value="1">
-						                                Normal
+						                                Factura
+						                            </option>
+						                            <option value="2">
+						                                Recibo
 						                            </option>
 						                        </select>
 		                                    </fieldset>
@@ -223,6 +238,9 @@
 						                                Seleccione Pago
 						                            </option>
 						                            <option value="1">
+						                                Credito
+						                            </option>
+						                            <option value="2">
 						                                Contado
 						                            </option>
 						                        </select>
@@ -270,11 +288,7 @@ $('#push').on('click', function(){
                 </td>
 
                 <td class="sorting_1">
-                    ${data.stock_prod}
-                </td>
-
-                <td class="sorting_1">
-                    <input type="number" class="form-control stock_prod NAN" value="15" name="quantity[]">
+                    <input type="number" class="form-control stock_prod NAN" name="quantity[]">
                 </td>
 
                 <td class="sorting_1">
@@ -282,7 +296,6 @@ $('#push').on('click', function(){
                 </td>
 
                 <td class="text-center val_${data.product_prod}">
-                	12
                 </td>
 
                 <td class="text-center">
@@ -310,6 +323,7 @@ $(document).on('click','.trash-item', function(){
 });
 
 $(document).change(function(){
+	$('.iva').html($('.impuesto').val());
 	sumarTbody();
 })
 
@@ -319,7 +333,7 @@ function sumarTbody(){
     $("#body_table tr").each(function(ind,ele){//recorre tr's
     	var t0 = 1, sw = 0, sw1 = 0;
         $("td",ele).each(function(i,e){//recorre td's           
-          if(i==3) {
+          if(i==2) {
           	// Valor Cantidad
           	if(Number($(e).find(".stock_prod").val())){
           		t0 = t0 * Number($(e).find(".stock_prod").val());
@@ -329,25 +343,35 @@ function sumarTbody(){
           		sw = 1;
           	}
           }
-          if(i==4) {
+          if(i==3) {
           	// Valor precios
           	if(Number($(e).find(".price").val())){
           		t0 = t0 * Number($(e).find(".price").val());
           	}
           }
-          if(i==5 && sw == 1) {
+          if(i==4 && sw == 1) {
           	$(e).html(t0);
           	suma  += t0;
-         	total += t0+(t0*0.13);
+
+         	total += t0+(($('.impuesto').val()==13)?(t0*(0.13)):0);
           }
         });
     })
     $('.suma').html(suma.toFixed(2));
 
-    $('.total_val').html(total.toFixed(2));
+    $('#total_purchase').val(total.toFixed(2));
     // console.log(t0,t1);//renderiza tu footer con estos valores
     $('.title-total').html("Total: "+total.toFixed(2)+" Bs.");
 }
+
+$(document).on('change', '#type', function(event) {
+	let typ = $("#type option:selected").val();
+	if(typ == 1){
+		$('.impuesto').val(13);
+	}else if(typ == 2){
+		$('.impuesto').val(0);
+	}
+});
 
 </script>		
 @endsection

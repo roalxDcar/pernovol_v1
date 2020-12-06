@@ -30,6 +30,8 @@
     <!-- BEGIN: Page CSS-->
     <link rel="stylesheet" type="text/css" href="{!! asset('assets/app-assets/css/core/menu/menu-types/material-vertical-menu-modern.css')!!}">
     <link rel="stylesheet" type="text/css" href="{!! asset('assets/app-assets/vendors/css/forms/toggle/switchery.min.css') !!}">
+    {{-- Estilos para imprimir --}}
+    <link rel="stylesheet" type="text/css" href="{!! asset('assets/app-assets/css/pages/invoice.css') !!}">
     <!-- END: Page CSS-->
 
     <!-- BEGIN: Custom CSS-->
@@ -123,6 +125,9 @@
 
 
     <script src="{!! asset('assets/app-assets/js/scripts/ui/jquery-ui/buttons-selects.js') !!}"></script>
+
+    {{-- Js para Imprimir PDF --}}
+    <script src="{!! asset('assets/app-assets/js/scripts/pages/invoice-template.js') !!}"></script>
     <!-- END: Page JS-->
 
 </body>

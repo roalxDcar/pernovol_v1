@@ -140,4 +140,12 @@ class ProductController extends Controller
         $product->update();
         return redirect()->route('get.product')->with('status', 'Se actualizo estado de Producto');
     }
+
+    public function reportProduct(){
+        $products = Product::with('category', 'brand', 'unit')->get();
+        // return $products->all();
+        return view('product.print',[
+            'products' => $products
+        ]);
+    }
 }
