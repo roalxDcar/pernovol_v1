@@ -53,7 +53,7 @@ class CategoryController extends Controller
         $category           = new Category;
         $category->name_cat = $request->name_cat;
         $category->save();
-        return redirect()->route('get.category');
+        return redirect()->route('get.category')->with('status', 'Se registró Categoria');
     }
 
     /**
@@ -66,7 +66,7 @@ class CategoryController extends Controller
         $category           = Category::findOrFail($id);
         $category->name_cat = $request->name_cat;
         $category->update();
-        return redirect()->route('get.category');
+        return redirect()->route('get.category')->with('status', 'Se actualizo la Categoria');
     }
 
     /**
@@ -79,6 +79,6 @@ class CategoryController extends Controller
         $category            = Category::findOrFail($id);
         $category->state_cat = $category->state_cat ? 0 : 1;
         $category->update();
-        return redirect()->route('get.category');
+        return redirect()->route('get.category')->with('status', 'Se actualizo estado de Categoria');
     }
 }
