@@ -61,7 +61,6 @@
         <div id="invoice-customer-details" class="row pt-2">
             <div class="col-sm-6 col-12 text-center text-sm-left">
                 <p><span class="text-muted"><b>Municipio :</b></span> Viacha</p>
-                <p><span class="text-muted"><b>Actividad Principal :</b></span> 60204 - Venta al por menor de artículos de ferreteria, pinturas y productos de vidrio</p>
                 <p><span class="text-muted"><b>Tipo de Contribuyente :</b></span> Empresas Unipersonales</p>
             </div>
             <div class="col-sm-6 col-12 text-center text-sm-right">

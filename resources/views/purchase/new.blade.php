@@ -135,10 +135,10 @@
 	                                        <td>
 
 	                                        <td>
-	                                            <b>TOTAL</b> 
+	                                            <b>DESCUENTO</b> 
 	                                        </td>
 	                                        <td class="total_val">
-	                                        	<input readonly="readonly" type="number" class="form-control" value="0" id="total_purchase" name="total_purchase">
+	                                        	<input type="number" class="form-control" value="0" id="discount" name="discount">
 	                                        </td>
 	                                        <td>
 	                                        </td>
@@ -151,10 +151,10 @@
 	                                        <td>
 
 	                                        <td>
-	                                            <b>DESCUENTO</b> 
+	                                            <b>TOTAL</b> 
 	                                        </td>
 	                                        <td class="total_val">
-	                                        	<input type="number" class="form-control" value="0" id="discount" name="discount">
+	                                        	<input readonly="readonly" type="number" class="form-control" value="0" id="total_purchase" name="total_purchase">
 	                                        </td>
 	                                        <td>
 	                                        </td>
@@ -359,9 +359,9 @@ function sumarTbody(){
     })
     $('.suma').html(suma.toFixed(2));
 
-    $('#total_purchase').val(total.toFixed(2));
+    $('#total_purchase').val(total.toFixed(2)-$('#discount').val());
     // console.log(t0,t1);//renderiza tu footer con estos valores
-    $('.title-total').html("Total: "+total.toFixed(2)+" Bs.");
+    $('.title-total').html("Total: "+$('#total_purchase').val()+" Bs.");
 }
 
 $(document).on('change', '#type', function(event) {
