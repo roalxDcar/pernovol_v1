@@ -53,7 +53,6 @@
                                     <a href="{{ route('print.product') }}">
                                         <button type="button" class="btn btn-danger btn-block mr-1 mb-1">Generar PDF</button>
                                     </a>
-                                    <button type="button" class="btn btn-success btn-block mr-1 mb-1">Generar Excel</button>
                             </div>
                         </div>
                     </div>

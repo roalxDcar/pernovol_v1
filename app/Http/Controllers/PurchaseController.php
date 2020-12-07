@@ -46,14 +46,30 @@ class PurchaseController extends Controller
      */
     public function storePurchase(Request $request)
     {
-        return $request->all();
-        $purchase           	 = new Purchase;
-        $purchase->name_bra 	 = $request->name_bra;
-        $purchase->address_bra 	 = $request->address_bra;
-        $purchase->total_pur 	 = $request->phone_bra;
-
-        $rol->grants()->attach($request->grants);
+        //return $request->all();
+        for($i=0; $i<count($request->product_pro); $i++)
+        {
+            //Actualizar cantidad de producto
+            $product                      = Product::findOrFail($request->product_pro[$i]);
+            $product->stock_prod          = $product->stock_prod + $request->quantity[$i];
+            $product->purchase_price_prod = $request->price[$i];
+            $product->update();
+        }
+        $purchase           	        = new Purchase;
+        //$purchase->branch_pur           = $request->branch;
+        $purchase->provider_pur         = $request->provider;
+        $purchase->user_pur             = auth()->user()->id;
+        $purchase->invoice_number_pur   = $request->invoice_number;
+        $purchase->purchase_date_pur    = $request->date;
+        $purchase->tribute_pur          = $request->tribute;
+        $purchase->total_pur            = $request->total_purchase;
+        $purchase->type_pur             = $request->type;
+        $purchase->type_purchase_pur    = $request->type_purchase;
+        $purchase->discount_pur         = $request->discount;
         $purchase->save();
+
+        $purchase->purchases()->attach($request->product_pro);
+        //$purchase->save();
         return redirect()->route('get.purchase')->with('status', 'Se registró Compra');
     }
 

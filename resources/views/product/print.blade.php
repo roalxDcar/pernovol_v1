@@ -38,19 +38,20 @@
                     <div class="col-12 col-sm-9 col-xl-10">
                         <div class="media-body">
                             <ul class="ml-2 px-0 list-unstyled">
-                                <li class="text-bold-800">Pernovol</li>
-                                <li>Av. 6 de Agosto, Nro.47,</li>
-                                <li>Zona 21 de Enero,</li>
-                                <li>Entre Av. Esquina 6 de Agosto y Av. hacia el Mar</li>
-                                <li>frente al cuartel Ingavi</li>
+                                <li class="text-bold-800"><b>"PERNOVOL"</b></li>
+                                <li><b>De: </b>Hugo Orlando Tunqui Quirijota</li>
+                                <li><b>CASA MATRIZ</b></li>
+                                <li>Av. 6 de Agosto, Nro.47, Zona 21 de Enero,</li>
+                                <li>Entre Av. Esquina 6 de Agosto y Av. hacia el Mar frente al cuartel Ingavi</li>
+                                <li>Viacha, La Paz - Bolivia</li>
                             </ul>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="col-sm-6 col-12 text-center text-sm-right">
-                <h2>REPORTE DE PRODUCTOS</h2>
-                <p class="pb-sm-3"># INV-00001</p>
+                <h2><b>REPORTE DE PRODUCTOS</b></h2>
+                <p class="pb-sm-3"><b>NIT:</b> 4795683010</p>
                 <ul class="px-0 list-unstyled">
                 </ul>
             </div>
@@ -60,15 +61,14 @@
         <div id="invoice-customer-details" class="row pt-2">
             <div class="col-sm-6 col-12 text-center text-sm-left">
                 <p><span class="text-muted"><b>Municipio :</b></span> Viacha</p>
-                <p><span class="text-muted"><b>Gran Actividad :</b></span> Comercio Minorista</p>
                 <p><span class="text-muted"><b>Actividad Principal :</b></span> 60204 - Venta al por menor de artículos de ferreteria, pinturas y productos de vidrio</p>
                 <p><span class="text-muted"><b>Tipo de Contribuyente :</b></span> Empresas Unipersonales</p>
             </div>
             <div class="col-sm-6 col-12 text-center text-sm-right">
                 <ul class="px-0 list-unstyled">
-                    <li class="text-bold-800"><b>NIT:</b></li>
-                    <li>Régimen General,</li>
-                    <li>4795683010</li>
+                    <li>Venta al por menor de artículos de ferretería,</li>
+                    <li>pinturas y productos de vídrios - Venta de </li>
+                    <li>partes, piezas y accesorios de vehiculos automotores</li>
                 </ul>
             </div>
         </div>

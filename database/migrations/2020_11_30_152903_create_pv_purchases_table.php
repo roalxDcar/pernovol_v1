@@ -15,13 +15,14 @@ class CreatePvPurchasesTable extends Migration
     {
         Schema::create('pv_purchases', function (Blueprint $table) {
             $table->increments('purchase_pur');
-            $table->integer('branch_pur')->unsigned();
+            $table->integer('branch_pur')->unsigned()->nullable();
             $table->integer('provider_pur')->unsigned();
             $table->integer('user_pur')->unsigned();
             $table->string('invoice_number_pur');
             $table->dateTime('purchase_date_pur');
             $table->double('tribute_pur');
             $table->double('total_pur');
+            $table->double('discount_pur')->nullable();
             $table->integer('state_pur')->default(1);
 
             $table->integer('type_pur')->default(1);

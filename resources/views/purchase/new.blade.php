@@ -182,7 +182,7 @@
 						                                Seleccione Proveedor
 						                            </option>
 						                            @foreach($providers as $provider)
-						                                <option value="{{ $provider->provider_pro }}">
+						                                <option value="{{ $provider->provider_prov }}">
 						                                    {{ $provider->company_name_prov }}
 						                                </option>
 						                            @endforeach
