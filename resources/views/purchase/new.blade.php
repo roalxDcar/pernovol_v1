@@ -288,7 +288,7 @@ $('#push').on('click', function(){
                 </td>
 
                 <td class="sorting_1">
-                    <input type="number" class="form-control stock_prod NAN" name="quantity[]">
+                    <input type="number" class="form-control stock_prod NAN" value="1" name="quantity[]">
                 </td>
 
                 <td class="sorting_1">
