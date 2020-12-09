@@ -76,7 +76,7 @@
                                             <tr class="odd" role="row">
                                                 
                                                 <td>
-                                                    {{ $sale->purchase_sal }}
+                                                    {{ $sale->sale_sal }}
                                                 </td>
 
                                                 <td class="sorting_1">
