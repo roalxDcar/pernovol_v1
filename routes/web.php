@@ -76,3 +76,4 @@ Route::get('lista-productos/venta/{id}','PurchaseController@getProduct')->name('
 Route::get('lista-ventas', 'SaleController@getSale')->name('get.sale');
 Route::get('nueva-venta', 'SaleController@createSale')->name('create.sale');
 Route::post('nuevo-venta/guardar', 'SaleController@storeSale')->name('store.sale');
+Route::post('nuevo-cliente/guardar', 'SaleController@storeClient')->name('newClient.sale');

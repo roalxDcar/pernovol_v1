@@ -48,17 +48,17 @@
 	                                    </div>
 	                                    <div class="col-md-4">
 	                                        <div class="form-group row mx-auto">
-	                                            <label class="col-md-3 label-control text-form-aling" for="userinput2">NIT</label>
+	                                            <label class="col-md-3 label-control text-form-aling" for="userinput2">CI/NIT</label>
 	                                            <div class="col-md-9">
-	                                                <input type="text" id="userinput2" class="form-control border-primary" placeholder="Ingresar NIT" name="nit" value="{{ $client->nit_cli }}">
+	                                                <input type="text" id="userinput2" class="form-control border-primary" placeholder="Ingresar NIT" name="nit" value="{{ $client->ci_nit_cli }}">
 	                                            </div>
 	                                        </div>
 	                                    </div>
 	                                    <div class="col-md-4">
 	                                        <div class="form-group row mx-auto">
-	                                            <label class="col-md-3 label-control text-form-aling" for="userinput2">CI</label>
+	                                            <label class="col-md-3 label-control text-form-aling" for="userinput2">Email</label>
 	                                            <div class="col-md-9">
-	                                                <input type="text" id="userinput2" class="form-control border-primary" placeholder="Ingresar Cédula de Identidad" name="ci" value="{{ $client->ci_cli }}">
+	                                                <input type="text" id="userinput2" class="form-control border-primary" placeholder="Ingresar Cédula de Identidad" name="ci" value="{{ $client->email_cli }}">
 	                                            </div>
 	                                        </div>
 	                                    </div>

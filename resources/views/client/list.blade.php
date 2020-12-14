@@ -35,22 +35,13 @@
     <div class="row">
         <div class="col-12">
             <div class="card">
-                <div class="card-header">
-                    {{-- contenido de header --}}
-                </div>
                 <div class="card-content collpase show">
                     <div class="card-body card-dashboard dataTables_wrapper dt-bootstrap">
-                        <div class="table-responsive">
+                        <div style="margin: 10px 20px 20px 20px;">
                             <div class="dataTables_wrapper dt-bootstrap4" id="DataTables_Table_0_wrapper">
                                 <div class="row">
-                                    <div class="col-sm-12 col-md-6">
-                                        {{-- Contenido list --}}
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-sm-12">
-                                        <table aria-describedby="DataTables_Table_0_info" class="table table-striped table-bordered sourced-data dataTable" id="DataTables_Table_0" role="grid">
-                                            <thead>
+                                    <table class="table table-striped sourced-data dataTable" id="client_table" role="grid">
+                                        <thead>
                                                 <tr role="row">
                                                     <th aria-controls="DataTables_Table_0" aria-label="Name: activate to sort column descending" aria-sort="ascending" class="sorting_asc" colspan="1" rowspan="1" style="width: 50px;" tabindex="0">
                                                         ID
@@ -59,10 +50,10 @@
                                                         Nombre
                                                     </th>
                                                     <th aria-controls="DataTables_Table_0" aria-label="Office: activate to sort column ascending" class="sorting" colspan="1" rowspan="1" style="width: 103px;" tabindex="0">
-                                                        NIT
+                                                        CI/NIT
                                                     </th>
                                                     <th aria-controls="DataTables_Table_0" aria-label="Age: activate to sort column ascending" class="sorting" colspan="1" rowspan="1" style="width: 100px;" tabindex="0">
-                                                        CI
+                                                        Email
                                                     </th>
                                                     <th aria-controls="DataTables_Table_0" aria-label="Start date: activate to sort column ascending" class="sorting" colspan="1" rowspan="1" style="width: 100px;" tabindex="0">
                                                         Telefono
@@ -88,10 +79,10 @@
                                                         {{ $client->name_cli }}
                                                     </td>
                                                     <td>
-                                                        {{ $client->nit_cli }}
+                                                        {{ $client->ci_nit_cli }}
                                                     </td>
                                                     <td>
-                                                        {{ $client->ci_cli }}
+                                                        {{ $client->email_cli }}
                                                     </td>
                                                     <td>
                                                         {{ $client->phone_cli }}
@@ -121,21 +112,8 @@
                                                     </td>
                                                 </tr>
                                                 @endforeach
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-sm-12 col-md-5">
-                                        <div aria-live="polite" class="dataTables_info" id="DataTables_Table_0_info" role="status">
-                                            Showing 1 to 10 of 57 entries
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-12 col-md-7">
-                                        <div class="dataTables_paginate paging_simple_numbers" id="DataTables_Table_0_paginate">
-                                            {{-- paginación --}}
-                                        </div>
-                                    </div>
+                                        </tbody>
+                                    </table>
                                 </div>
                             </div>
                         </div>
@@ -145,4 +123,38 @@
         </div>
     </div>
 </section>
+@endsection
+@section('js')
+    {{-- DataTable Products --}}
+    <script type="text/javascript" src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/1.10.22/js/dataTables.bootstrap4.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/responsive/2.2.6/js/dataTables.responsive.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/responsive/2.2.6/js/responsive.bootstrap4.min.js"></script>
+    <script>
+        $('#client_table').DataTable({
+            "scrollX": false,
+            "language": {
+                "lengthMenu":  "Mostrar "+
+                            `
+                            <select class="">
+                                <option value="5">5</option>
+                                <option value="10">10</option>
+                                <option value="25">25</option>
+                                <option value="50">50</option>
+                                <option value="100">100</option>
+                            </select>
+                            `
+                            +" registros por pagina",
+                "zeroRecords": "No existen registros",
+                "info": "Mostrando la página _PAGE_ de _PAGES_",
+                "infoEmpty": "No records available",
+                "infoFiltered": "(Filtrado de _MAX_ registros totales)",
+                "search": "Buscar :",
+                "paginate":{
+                    "next": "Siguiente",
+                    "previous": "Anterior"
+                }
+            }
+        });
+    </script>
 @endsection

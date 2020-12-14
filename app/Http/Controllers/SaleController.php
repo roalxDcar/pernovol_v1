@@ -95,4 +95,15 @@ class SaleController extends Controller
         return redirect()->route('get.purchase')->with('status', 'Se actualizo la Compra');
     }
 
+    public function storeClient(Request $request){
+        $client = new Client;
+        $client->name_cli    = $request->name;
+        $client->ci_nit_cli  = $request->ci_nit;
+        $client->email_cli   = $request->email;
+        $client->phone_cli   = $request->phone;
+        $client->address_cli = $request->address;
+        $client->save();
+        return $client;
+    }
+
 }

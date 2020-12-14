@@ -21,6 +21,13 @@
         </div>
     </div>
 </div>
+<div class="content-header-right col-md-6 col-12">
+    <div class="btn-group float-md-right">
+        <button aria-expanded="false" aria-haspopup="true" class="btn btn-success round dropdown-menu-right px-2" style="margin-top: 5px;" type="button" id="newClient">
+            Agregar Nuevo Cliente
+        </button>
+    </div>
+</div>
 @endsection
 @section('content')
 	<section id="row-separator-form-layouts">
@@ -33,7 +40,7 @@
 		                	<div class="card-header bg-primary">
 		                		<div class="row">
                                 	<div class="col-md-12" style="padding-left: 0px;">
-	                                	<div class="col-md-4" style="float: left; padding-top: 10px;">
+	                                	<div class="col-md-9" style="float: left; padding-top: 10px;">
 	                                		<h4 style="color: white;"><b><span class="material-icons">
                                 			shopping_cart
                                 		</span> Detalle de Venta</b></h4>
@@ -170,7 +177,7 @@
 		                                <div class="col-md-12">
 		                                    <fieldset>
 	                                        	<label style="color: black;" class="col-md-4"><b>Cliente: </b></label><br>
-	                                            <select class="form-control" name="client">
+	                                            <select class="form-control" name="client" id="client">
 						                            <option value="0" selected="">
 						                                Seleccione Cliente
 						                            </option>
@@ -255,6 +262,9 @@
 	        </div>
         </form>
 	</section>
+
+@include('sale.newClient')
+
 @endsection
 @section('js')
 <script>
@@ -364,6 +374,10 @@ $(document).on('change', '#type', function(event) {
 	}else if(typ == 2){
 		$('.impuesto').val(0);
 	}
+});
+
+$('#newClient').on('click', function(){
+	$('#smallCliente').modal('show');
 });
 
 </script>		
