@@ -77,3 +77,8 @@ Route::get('lista-ventas', 'SaleController@getSale')->name('get.sale');
 Route::get('nueva-venta', 'SaleController@createSale')->name('create.sale');
 Route::post('nuevo-venta/guardar', 'SaleController@storeSale')->name('store.sale');
 Route::post('nuevo-cliente/guardar', 'SaleController@storeClient')->name('newClient.sale');
+
+Route::get('lista-usuarios', 'UserController@getUser')->name('get.user');
+Route::post('nuevo-usuario/guardar', 'UserController@storeUser')->name('store.user');
+Route::put('editar-usuario/actualizar/{id}', 'UserController@updateUser')->name('update.user');
+Route::get('usuario/cambiar-estado/{id}', 'UserController@stateUser')->name('state.user');

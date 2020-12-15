@@ -102,6 +102,15 @@
                             </span>
                         </a>
                     </li>
+                    <li class="">
+                        <a class="menu-item" href="{{ route('get.user') }}">
+                            <i class="material-icons">
+                            </i>
+                            <span data-i18n="Users List">
+                                Usuarios
+                            </span>
+                        </a>
+                    </li>
                 </ul>
             </li>
             <li class=" nav-item">
@@ -219,17 +228,15 @@
                             </span>
                         </a>
                     </li>
-                    <ul class="menu-content">
-                        <li class="">
-                            <a class="menu-item" href="{{ route('get.client') }}">
-                                <i class="material-icons">
-                                </i>
-                                <span data-i18n="Users List">
-                                    Clientes
-                                </span>
-                            </a>
-                        </li>
-                    </ul>
+                    <li class="">
+                        <a class="menu-item" href="{{ route('get.client') }}">
+                            <i class="material-icons">
+                            </i>
+                            <span data-i18n="Users List">
+                                Clientes
+                            </span>
+                        </a>
+                    </li>
                 </ul>
             </li>
         </ul>
