@@ -53,7 +53,7 @@ class ClientController extends Controller
         $client              = new Client;
         $client->name_cli    = $request->name;
         $client->ci_nit_cli  = $request->nit;
-        $client->email_cli      = $request->ci;
+        $client->email       = $request->ci;
         $client->phone_cli   = $request->phone;
         $client->address_cli = $request->address;
         $client->save();
@@ -70,7 +70,7 @@ class ClientController extends Controller
         $client              = Client::findOrFail($id);
         $client->name_cli    = $request->name;
         $client->ci_nit_cli  = $request->nit;
-        $client->email_cli   = $request->ci;
+        $client->email       = $request->ci;
         $client->phone_cli   = $request->phone;
         $client->address_cli = $request->address;
         $client->update();

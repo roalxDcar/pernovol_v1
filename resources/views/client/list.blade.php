@@ -82,7 +82,7 @@
                                                         {{ $client->ci_nit_cli }}
                                                     </td>
                                                     <td>
-                                                        {{ $client->email_cli }}
+                                                        {{ $client->email }}
                                                     </td>
                                                     <td>
                                                         {{ $client->phone_cli }}

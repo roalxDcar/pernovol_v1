@@ -65,11 +65,11 @@
             headers: {'X-CSRF-TOKEN':$('meta[name="csrf-token"]').attr('content')},
             method:  "POST",
             data:{
-                name 	: $('#name_cli').val(),
-                ci_nit 	: $('#ci_nit_cli').val(),
-                email 	: $('#email_cli').val(),
-                phone 	: $('#phone_cli').val(),
-                address : $('#address_cli').val()
+                name: $('#name_cli').val(),
+                ci_nit: $('#ci_nit_cli').val(),
+                email: $('#email_cli').val(),
+                phone: $('#phone_cli').val(),
+                address: $('#address_cli').val()
             },
 			success: function(data){
 				$("#form_client")[0].reset();

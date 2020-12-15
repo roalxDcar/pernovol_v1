@@ -87,6 +87,9 @@
 	                                            Precio Unitario
 	                                        </th>
 	                                        <th style="width: 10px;">
+	                                        	Descuento
+	                                        </th>
+	                                        <th style="width: 10px;">
 	                                        	Sub-Total
 	                                        </th>
 	                                        <th style="width: 50px;">
@@ -96,6 +99,8 @@
 	                                </thead>
 	                                <tbody id="body_table">
 	                                    <tr>
+	                                        <td>
+	                                        </td>
 	                                        <td>
 	                                        </td>
 	                                        <td>
@@ -119,6 +124,8 @@
 	                                        <td>
 	                                        </td>
 	                                        <td>
+	                                        </td>
+	                                        <td>
 	                                            <b>IVA %</b> 
 	                                        </td>
 	                                        <td class="iva">
@@ -128,6 +135,8 @@
 	                                        </td>
 	                                    </tr>
 	                                    <tr>
+	                                        <td>
+	                                        </td>
 	                                        <td>
 	                                        </td>
 	                                        <td>
@@ -144,6 +153,8 @@
 	                                        </td>
 	                                    </tr>
 	                                    <tr>
+	                                        <td>
+	                                        </td>
 	                                        <td>
 	                                        </td>
 	                                        <td>
@@ -298,6 +309,10 @@ $('#push').on('click', function(){
                     <input type="number" class="form-control price NAN" value="${data.sale_price_prod}" name="price[]">
                 </td>
 
+                <td class="sorting_1">
+                    <input type="number" class="form-control discount" value="0" name="discount[]">
+                </td>
+
                 <td class="text-center val_${data.product_prod}">
                 </td>
 
@@ -333,6 +348,7 @@ $(document).change(function(){
 function sumarTbody(){
 	var suma = 0;
 	var total = 0;
+	var discount = 0;
     $("#body_table tr").each(function(ind,ele){//recorre tr's
     	var t0 = 1, sw = 0, sw1 = 0;
         $("td",ele).each(function(i,e){//recorre td's           
@@ -352,7 +368,11 @@ function sumarTbody(){
           		t0 = t0 * Number($(e).find(".price").val());
           	}
           }
-          if(i==4 && sw == 1) {
+          if(i == 4){
+      		t0 = t0 - Number($(e).find(".discount").val());
+      		discount = discount + $(e).find(".discount").val();
+          }
+          if(i==5 && sw == 1) {
           	$(e).html(t0);
           	suma  += t0;
 

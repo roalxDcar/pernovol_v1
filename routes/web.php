@@ -34,7 +34,7 @@ Route::get('proveedor/cambiar-estado/{id}', 'ProviderController@stateProvider')-
 
 Route::get('lista-clientes', 'ClientController@getClient')->name('get.client');
 Route::get('nuevo-cliente', 'ClientController@createClient')->name('create.client');
-Route::post('nuevo-cliente/guardar', 'ClientController@storeClient')->name('store.client');
+Route::post('nuevo-cliente/guardar/tabla', 'ClientController@storeClient')->name('store.client');
 Route::get('editar-cliente/{id}', 'ClientController@editClient')->name('edit.client');
 Route::put('editar-cliente/actualizar/{id}', 'ClientController@updateClient')->name('update.client');
 Route::get('cliente/cambiar-estado/{id}', 'ClientController@stateClient')->name('state.client');
@@ -76,7 +76,7 @@ Route::get('lista-productos/venta/{id}','PurchaseController@getProduct')->name('
 Route::get('lista-ventas', 'SaleController@getSale')->name('get.sale');
 Route::get('nueva-venta', 'SaleController@createSale')->name('create.sale');
 Route::post('nuevo-venta/guardar', 'SaleController@storeSale')->name('store.sale');
-Route::post('nuevo-cliente/guardar', 'SaleController@storeClient')->name('newClient.sale');
+Route::post('nuevo-cliente/guardar', 'SaleController@storeNewClient')->name('newClient.sale');
 
 Route::get('lista-usuarios', 'UserController@getUser')->name('get.user');
 Route::post('nuevo-usuario/guardar', 'UserController@storeUser')->name('store.user');
