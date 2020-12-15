@@ -58,7 +58,6 @@ class SaleController extends Controller
         $sale->total_sal            = $request->total_purchase;
         $sale->type_sal             = $request->type;
         $sale->type_purchase_sal    = $request->type_purchase;
-        $sale->discount_sal         = $request->discount;
         $sale->save();
 
         for($i=0; $i<count($request->product_pro); $i++)
@@ -72,6 +71,7 @@ class SaleController extends Controller
             $detailSale->sales_dsal    = $sale->sale_sal;
             $detailSale->product_dsal  = $product->product_prod;
             $detailSale->quantity_dsal = $request->quantity[$i];
+            $detailSale->discount_dsal = $request->discount[$i];
             $detailSale->price_dsal	   = $request->price[$i];
             $detailSale->total_dsal	   = $request->price[$i] * $request->quantity[$i];
             $detailSale->save();

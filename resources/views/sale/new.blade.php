@@ -144,24 +144,6 @@
 	                                        <td>
 
 	                                        <td>
-	                                            <b>DESCUENTO</b> 
-	                                        </td>
-	                                        <td class="total_val">
-	                                        	<input type="number" class="form-control" value="0" id="discount" name="discount">
-	                                        </td>
-	                                        <td>
-	                                        </td>
-	                                    </tr>
-	                                    <tr>
-	                                        <td>
-	                                        </td>
-	                                        <td>
-	                                        </td>
-	                                        <td>
-	                                        </td>
-	                                        <td>
-
-	                                        <td>
 	                                            <b>TOTAL</b> 
 	                                        </td>
 	                                        <td class="total_val">
@@ -382,7 +364,7 @@ function sumarTbody(){
     })
     $('.suma').html(suma.toFixed(2));
 
-    $('#total_purchase').val(total.toFixed(2)-$('#discount').val());
+    $('#total_purchase').val(total.toFixed(2));
     // console.log(t0,t1);//renderiza tu footer con estos valores
     $('.title-total').html("Total: "+$('#total_purchase').val()+" Bs.");
 }
