@@ -31,7 +31,7 @@
                     <div class="card-body">
                         <div class="row">
                             <div class="col-md-12">
-                                <h3 class="form-group col-md-2" style="float: left; padding-top: 25px;"><b>Reporte Ventas</b></h3>
+                                <h3 class="form-group col-md-2" style="float: left; padding-top: 25px;"><b>Ventas</b></h3>
                                 <form action="{{ route('sale.report') }}" method="POST">
                                     @csrf
                                     <div class="form-group col-md-2" style="float: left;">

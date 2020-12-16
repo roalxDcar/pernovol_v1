@@ -31,7 +31,7 @@
                     <div class="card-body">
                         <div class="row">
                             <div class="col-md-12">
-                                <h3 class="form-group col-md-2" style="float: left; padding-top: 25px;"><b>Reporte Ventas</b></h3>
+                                <h3 class="form-group col-md-2" style="float: left; padding-top: 25px;"><b>Ventas</b></h3>
                                 <form action="{{ route('sale.report') }}" method="POST">
                                     @csrf
                                     <div class="form-group col-md-2" style="float: left;">
@@ -88,23 +88,7 @@
                 </ul>
             </div>
         </div>
-        <!-- Invoice Company Details -->
-
-        <div id="invoice-customer-details" class="row pt-2">
-            <div class="col-sm-6 col-12 text-center text-sm-left">
-                <p><span class="text-muted"><b>Municipio :</b></span> Viacha</p>
-                <p><span class="text-muted"><b>Tipo de Contribuyente :</b></span> Empresas Unipersonales</p>
-            </div>
-            <div class="col-sm-6 col-12 text-center text-sm-right">
-                <ul class="px-0 list-unstyled">
-                    <li>Venta al por menor de artículos de ferretería,</li>
-                    <li>pinturas y productos de vídrios - Venta de </li>
-                    <li>partes, piezas y accesorios de vehiculos automotores</li>
-                </ul>
-            </div>
-        </div>
-
-        <!-- Invoice Items Details -->
+        
         <div id="invoice-items-details" class="pt-2">
             <div class="row">
                 <div class="table-responsive col-md-12">
