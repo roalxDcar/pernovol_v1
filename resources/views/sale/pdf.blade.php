@@ -50,27 +50,24 @@
                 </div>
             </div>
             <div class="col-sm-6 col-12 text-center text-sm-right">
-                <h2><b>REPORTE DE PRODUCTOS</b></h2>
-                <p class="pb-sm-3"><b>NIT:</b> 4795683010</p>
+                <ul class="ml-2 px-0 list-unstyled">
+                    <li><h2><b>{{ $sale->type_sal==1?"FACTURA":"RECIBO" }}</b></h2></li>
+                    <li><b>{{ $sale->type_sal==1?"N° DE FACTURA:":"N° DE RECIBO:" }}</b> {{ $sale->invoice_number_sal }}</li>
+                    @if($sale->type_sal==1)
+                        <li><b>NIT:</b>4795683010</li>
+                    @endif
+                    <li><b>Cliente :</b>{{ $sale->client->name_cli }}</li>
+
+                    <li><b>NIT/CI :</b>{{ $sale->client->ci_nit_cli }}</li>
+
+                    <li><b>Telf/Cel :</b>{{ $sale->client->phone_cli }}</li>
+                </ul>
+
                 <ul class="px-0 list-unstyled">
                 </ul>
             </div>
         </div>
         <!-- Invoice Company Details -->
-
-        <div id="invoice-customer-details" class="row pt-2">
-            <div class="col-sm-6 col-12 text-center text-sm-left">
-                <p><span class="text-muted"><b>Municipio :</b></span> Viacha</p>
-                <p><span class="text-muted"><b>Tipo de Contribuyente :</b></span> Empresas Unipersonales</p>
-            </div>
-            <div class="col-sm-6 col-12 text-center text-sm-right">
-                <ul class="px-0 list-unstyled">
-                    <li>Venta al por menor de artículos de ferretería,</li>
-                    <li>pinturas y productos de vídrios - Venta de </li>
-                    <li>partes, piezas y accesorios de vehiculos automotores</li>
-                </ul>
-            </div>
-        </div>
 
         <!-- Invoice Items Details -->
         <div id="invoice-items-details" class="pt-2">
@@ -81,27 +78,53 @@
                             <tr>
                                 <th>Código</th>
                                 <th class="text-right">Producto</th>
-                                <th class="text-right">Categoria</th>
-                                <th class="text-right">Marca</th>
-                                <th class="text-right">U. de Medida</th>
-                                <th class="text-right">Stock</th>
+                                <th class="text-right">Cantidad</th>
                                 <th class="text-right">Precio C.</th>
-                                <th class="text-right">Precio V.</th>
+                                <th class="text-right">Descuento</th>
+                                <th class="text-right">Total</th>
                             </tr>
                         </thead>
                         <tbody>
+                            @php
+                                $sum = 0;
+                            @endphp
                             @foreach($products as $product)
                                 <tr>
                                     <td>{{ $product->code_prod }}</td>
                                     <td class="text-right">{{ $product->name_prod }}</td>
-                                    <td class="text-right">{{ $product->category->name_cat }}</td>
-                                    <td class="text-right">{{ $product->brand->name_bra }}</td>
-                                    <td class="text-right">{{ $product->unit->name_uni }}</td>
-                                    <td class="text-right">{{ $product->stock_prod }}</td>
-                                    <td class="text-right">{{ $product->purchase_price_prod }}</td>
-                                    <td class="text-right">{{ $product->sale_price_prod }}</td>
+                                    <td class="text-right">{{ $product->quantity_dsal }}</td>
+                                    <td class="text-right">{{ $product->price_dsal }} Bs.</td>
+                                    <td class="text-right">{{ $product->discount_dsal }} Bs.</td>
+                                    <td class="text-right">{{ $product->total_dsal-$product->discount_dsal }} Bs.</td>
+                                    @php
+                                       $sum+=$product->total_dsal-$product->discount_dsal; 
+                                    @endphp
                                 </tr>
                             @endforeach
+                                <tr>
+                                    <td></td>
+                                    <td class="text-right"></td>
+                                    <td class="text-right"></td>
+                                    <td class="text-right"></td>
+                                    <td class="text-right"><b>SUMA</b></td>
+                                    <td class="text-right">{{ $sum }} Bs.</td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td class="text-right"></td>
+                                    <td class="text-right"></td>
+                                    <td class="text-right"></td>
+                                    <td class="text-right"><b>IVA%</b></td>
+                                    <td class="text-right">{{ $sale->tribute_sal }} %</td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td class="text-right"></td>
+                                    <td class="text-right"></td>
+                                    <td class="text-right"></td>
+                                    <td class="text-right"><b>TOTAL</b></td>
+                                    <td class="text-right">{{ $sale->total_sal }} Bs.</td>
+                                </tr>
                         </tbody>
                     </table>
                 </div>

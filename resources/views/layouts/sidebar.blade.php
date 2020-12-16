@@ -72,7 +72,7 @@
                 </a>
                 <ul class="menu-content">
                     <li>
-                        <a class="menu-item" href="#">
+                        <a class="menu-item" href="{{ route('sale.getReport') }}">
                             <i class="material-icons">
                             </i>
                             <span data-i18n="eCommerce">

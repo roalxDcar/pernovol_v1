@@ -18,4 +18,13 @@ class Sale extends Model
     {
     	return $this->hasMany(DetailSale::class, 'sales_dsal');	
     }
+    public function user()
+    {
+        return $this->belongsTo(User::class, 'user_sal'); 
+    }
+    public function client()
+    {
+        return $this->belongsTo(Client::class, 'client_sal'); 
+    }
+    
 }

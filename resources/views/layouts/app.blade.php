@@ -30,6 +30,14 @@
     <!-- BEGIN: Page CSS-->
     <link rel="stylesheet" type="text/css" href="{!! asset('assets/app-assets/css/core/menu/menu-types/material-vertical-menu-modern.css')!!}">
     <link rel="stylesheet" type="text/css" href="{!! asset('assets/app-assets/vendors/css/forms/toggle/switchery.min.css') !!}">
+
+    {{-- Chart --}}
+    <link rel="stylesheet" type="text/css" href="{!! asset('assets/app-assets/vendors/css/vendors.min.css') !!}">
+    <link rel="stylesheet" type="text/css" href="{!! asset('assets/app-assets/vendors/css/weather-icons/climacons.min.css') !!}">
+    <link rel="stylesheet" type="text/css" href="{!! asset('assets/app-assets/fonts/meteocons/style.css') !!}">
+    <link rel="stylesheet" type="text/css" href="{!! asset('assets/app-assets/vendors/css/charts/morris.css') !!}">
+    <link rel="stylesheet" type="text/css" href="{!! asset('assets/app-assets/vendors/css/charts/chartist.css') !!}">
+    <link rel="stylesheet" type="text/css" href="{!! asset('assets/app-assets/vendors/css/charts/chartist-plugin-tooltip.css') !!}">
     {{-- Estilos para imprimir --}}
     <link rel="stylesheet" type="text/css" href="{!! asset('assets/app-assets/css/pages/invoice.css') !!}">
     <!-- END: Page CSS-->
@@ -37,6 +45,14 @@
     <!-- BEGIN: Custom CSS-->
     <link rel="stylesheet" type="text/css" href="{!! asset('assets/app-assets/css/plugins/forms/switch.css') !!}">
     <link rel="stylesheet" type="text/css" href="{!! asset('assets/assets/css/style.css')!!}">
+
+    {{-- Chart --}}
+    <link rel="stylesheet" type="text/css" href="{!! asset('assets/app-assets/css/core/menu/menu-types/vertical-menu-modern.css') !!}">
+    <link rel="stylesheet" type="text/css" href="{!! asset('assets/app-assets/css/core/colors/palette-gradient.css') !!}">
+    <link rel="stylesheet" type="text/css" href="{!! asset('assets/app-assets/fonts/simple-line-icons/style.css') !!}">
+    <link rel="stylesheet" type="text/css" href="{!! asset('assets/app-assets/css/core/colors/palette-gradient.css') !!}">
+    <link rel="stylesheet" type="text/css" href="{!! asset('assets/app-assets/css/pages/timeline.css') !!}">
+    <link rel="stylesheet" type="text/css" href="{!! asset('assets/app-assets/css/pages/dashboard-ecommerce.css') !!}">
     <!-- END: Custom CSS-->
 
 {{-- ////////////////////////////////////////////////////////////////////////////////////////////////////////////////// --}}
@@ -100,6 +116,13 @@
 
     <!-- BEGIN: Page Vendor JS-->
     <script src="{!! asset('assets/app-assets/vendors/js/ui/prism.min.js')!!}"></script>
+
+
+    <script src="{!! asset('assets/app-assets/vendors/js/charts/chartist.min.js') !!}"></script>
+    <script src="{!! asset('assets/app-assets/vendors/js/charts/chartist-plugin-tooltip.min.js') !!}"></script>
+    <script src="{!! asset('assets/app-assets/vendors/js/charts/raphael-min.js') !!}"></script>
+    <script src="{!! asset('assets/app-assets/vendors/js/charts/morris.min.js') !!}"></script>
+    <script src="{!! asset('assets/app-assets/vendors/js/timeline/horizontal-timeline.js') !!}"></script>
     <!-- END: Page Vendor JS-->
 
 
@@ -125,6 +148,10 @@
 
 
     <script src="{!! asset('assets/app-assets/js/scripts/ui/jquery-ui/buttons-selects.js') !!}"></script>
+
+    {{-- dashboar --}}
+
+    <script src="{!! asset('assets/app-assets/js/scripts/pages/dashboard-ecommerce.js') !!}"></script>
 
     {{-- Js para Imprimir PDF --}}
     <script src="{!! asset('assets/app-assets/js/scripts/pages/invoice-template.js') !!}"></script>

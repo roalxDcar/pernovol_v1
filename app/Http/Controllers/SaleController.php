@@ -18,7 +18,7 @@ class SaleController extends Controller
      */
     public function getSale()
     {
-        $sales = Sale::orderBy('sale_sal', 'DESC')->get();
+        $sales = Sale::with('user','client')->orderBy('sale_sal', 'DESC')->get();
         return view('sale.list', [
             'sales' => $sales,
         ]);
@@ -113,12 +113,35 @@ class SaleController extends Controller
 
     public function pdfSale($id){
         // $pdf = Sale::with('sales','detailSale')->where('sale_sal',$id)->first(); ->where('sale_sal',$id)
-        $pdf = Sale::where('sale_sal',$id)->first();
-        $pdf = Sale::leftjoin('pv_detail_sales','pv_detail_sales.sales_dsal','=','pv_sales.sale_sal')
-                    ->leftjoin('pv_products','pv_products.product_prod','=','pv_detail_sales.product_dsal')
-                    ->where('sale_sal',$id)
+        $sale     = Sale::where('sale_sal',$id)->first();
+        $products = Sale::with('user','client')
+                        ->leftjoin('pv_detail_sales','pv_detail_sales.sales_dsal','=','pv_sales.sale_sal')
+                        ->leftjoin('pv_products','pv_products.product_prod','=','pv_detail_sales.product_dsal')
+                        ->where('sale_sal',$id)
+                        ->get();
+        // return [
+        //     'sale'       =>  $sale, 
+        //     'products'   =>  $products
+        // ]; 
+        return view('sale.pdf', [
+            'sale'       =>  $sale, 
+            'products'   =>  $products
+        ]);
+    }
+
+    public function getReportSale(){
+        return view('report.list');
+    }
+
+    public function reportSale(Request $request){
+        $sales = Sale::with('user','client')
+                    ->whereDate('purchase_date_sal','>=',$request->start)
+                    ->whereDate('purchase_date_sal','<=',$request->end)
+                    ->orderBy('sale_sal', 'DESC')
                     ->get();
-        return $pdf;
+        return view('report.filter', [
+            'sales' => $sales,
+        ]);
     }
 
 }

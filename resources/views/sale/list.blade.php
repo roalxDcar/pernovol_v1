@@ -42,6 +42,7 @@
 
 @endsection
 @section('content')
+
 <section id="html">
     <div class="row">
         <div class="col-12">
@@ -54,20 +55,23 @@
                                     <table class="table table-striped sourced-data dataTable" id="branches_table" role="grid">
                                         <thead>
                                             <tr role="row">
-                                                <th style="width: 50px;">
+                                                <th style="width: 20px;">
                                                     ID
                                                 </th>
                                                 <th style="width: 80px;">
-                                                    Número de Factura
+                                                    Vendedor
+                                                </th>
+                                                <th style="width: 100px;">
+                                                    Cliente
+                                                </th>
+                                                <th style="width: 80px;">
+                                                    Tipo Doc.
+                                                </th>
+                                                <th style="width: 80px;">
+                                                    N° Doc.
                                                 </th>
                                                 <th style="width: 150px;">
                                                     Fecha Venta
-                                                </th>
-                                                <th style="width: 150px;" class="text-center">
-                                                    Tipo Comprobante
-                                                </th>
-                                                <th style="width: 80px;">
-                                                    Impuesto
                                                 </th>
                                                 <th style="width: 80px;">
                                                     Total
@@ -84,6 +88,18 @@
                                                 <td>
                                                     {{ $sale->sale_sal }}
                                                 </td>
+                                                
+                                                <td>
+                                                    {{ $sale->user->name }} {{ $sale->user->paternal }} {{ $sale->user->maternal }}
+                                                </td>
+
+                                                <td>
+                                                    {{ $sale->client->name_cli }}
+                                                </td>
+
+                                                <td class="sorting_1">
+                                                    {{ $sale->type_sal==1?"Factura":"Recibo" }}
+                                                </td>
 
                                                 <td class="sorting_1">
                                                     {{ $sale->invoice_number_sal }}
@@ -91,14 +107,6 @@
 
                                                 <td class="sorting_1">
                                                     {{ $sale->purchase_date_sal }}
-                                                </td>
-
-                                                <td class="text-center">
-                                                    {{ $sale->tribute_sal==0?"-":$sale->tribute_sal }}
-                                                </td>
-
-                                                <td class="sorting_1">
-                                                    {{ $sale->type_sal==1?"Factura":"Recibo" }}
                                                 </td>
 
                                                 <td class="sorting_1">
