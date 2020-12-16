@@ -18,6 +18,7 @@ class CreatePvDetailSalesTable extends Migration
             $table->integer('sales_dsal')->unsigned();
             $table->integer('product_dsal')->unsigned();
             $table->double('quantity_dsal');
+            $table->double('discount_dsal')->nullable();
             $table->double('price_dsal');
             $table->double('total_dsal');
             $table->timestamps();
