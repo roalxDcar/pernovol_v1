@@ -77,6 +77,7 @@ Route::get('lista-ventas', 'SaleController@getSale')->name('get.sale');
 Route::get('nueva-venta', 'SaleController@createSale')->name('create.sale');
 Route::post('nuevo-venta/guardar', 'SaleController@storeSale')->name('store.sale');
 Route::post('nuevo-cliente/guardar', 'SaleController@storeNewClient')->name('newClient.sale');
+Route::get('generar-pdf/{id}', 'SaleController@pdfSale')->name('pdf.sale');
 
 Route::get('lista-usuarios', 'UserController@getUser')->name('get.user');
 Route::post('nuevo-usuario/guardar', 'UserController@storeUser')->name('store.user');

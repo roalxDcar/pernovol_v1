@@ -63,10 +63,16 @@
                                                 <th style="width: 150px;">
                                                     Fecha Venta
                                                 </th>
+                                                <th style="width: 150px;" class="text-center">
+                                                    Tipo Comprobante
+                                                </th>
+                                                <th style="width: 80px;">
+                                                    Impuesto
+                                                </th>
                                                 <th style="width: 80px;">
                                                     Total
                                                 </th>
-                                                <th style="width: 56px;">
+                                                <th style="width: 56px;" class="text-center">
                                                     Acciones
                                                 </th>
                                             </tr>
@@ -87,16 +93,25 @@
                                                     {{ $sale->purchase_date_sal }}
                                                 </td>
 
+                                                <td class="text-center">
+                                                    {{ $sale->tribute_sal==0?"-":$sale->tribute_sal }}
+                                                </td>
+
+                                                <td class="sorting_1">
+                                                    {{ $sale->type_sal==1?"Factura":"Recibo" }}
+                                                </td>
+
                                                 <td class="sorting_1">
                                                     {{ $sale->total_sal }}
                                                 </td>
-                                                <td>
-                                                    <button class="btn btn-icon btn-info waves-effect waves-light" type="button">
-                                                        <i class="la la-pencil">
-                                                        </i>
-                                                    </button>
+                                                <td class="text-center">
+                                                    <a href="generar-pdf/{{ $sale->sale_sal }}">
+                                                        <button class="btn btn-danger waves-effect waves-light" type="button">
+                                                            <i class="la la-file-pdf-o">
+                                                            </i>
+                                                        </button>
+                                                    </a>
                                                 </td>
-
                                             </tr>
                                             @endforeach
                                         </tbody>

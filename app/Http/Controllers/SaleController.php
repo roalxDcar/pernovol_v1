@@ -111,4 +111,14 @@ class SaleController extends Controller
         return $client;
     }
 
+    public function pdfSale($id){
+        // $pdf = Sale::with('sales','detailSale')->where('sale_sal',$id)->first(); ->where('sale_sal',$id)
+        $pdf = Sale::where('sale_sal',$id)->first();
+        $pdf = Sale::leftjoin('pv_detail_sales','pv_detail_sales.sales_dsal','=','pv_sales.sale_sal')
+                    ->leftjoin('pv_products','pv_products.product_prod','=','pv_detail_sales.product_dsal')
+                    ->where('sale_sal',$id)
+                    ->get();
+        return $pdf;
+    }
+
 }
