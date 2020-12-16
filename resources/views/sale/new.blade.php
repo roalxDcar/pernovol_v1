@@ -207,7 +207,7 @@
 		                                    </fieldset>
 	                                     	<fieldset class="col-md-6" style="float: left;">
 	                                        	<label style="color: black;"><b>N° Factura: </b></label>
-	                                        	<input type="text" class="form-control" name="invoice_number" placeholder="Ingresar N°">
+	                                        	<input type="text" readonly="readonly" class="form-control" id="invoice_number" name="invoice_number" placeholder="Ingresar N°">
 		                                    </fieldset>  
 		                                    <br><br><br><br>
 	                                    	<fieldset class="col-md-6" style="float: left;">
@@ -373,8 +373,12 @@ $(document).on('change', '#type', function(event) {
 	let typ = $("#type option:selected").val();
 	if(typ == 1){
 		$('.impuesto').val(13);
+		let prod = ('000000' + {{ $id_f+1 }}).slice(-6);
+		$('#invoice_number').val(prod);
 	}else if(typ == 2){
 		$('.impuesto').val(0);
+		let prod = ('000000' + {{ $id_r+1 }}).slice(-6);
+		$('#invoice_number').val(prod);
 	}
 });
 

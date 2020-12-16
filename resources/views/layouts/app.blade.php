@@ -1,4 +1,4 @@
-<html class="loading" lang="en" data-textdirection="ltr">
+<html lang="en" data-textdirection="ltr">
 <!-- BEGIN: Head-->
 
 <head>

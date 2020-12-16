@@ -34,10 +34,14 @@ class SaleController extends Controller
         $products  = Product::get();
         $clients   = Client::get();
         $branches  = Branch::get();
+        $id_f      = Sale::where('type_sal',1)->orderBy('sale_sal','DESC')->first();
+        $id_r      = Sale::where('type_sal',2)->orderBy('sale_sal','DESC')->first();
         return view('sale.new',[
             'clients'	=> $clients,
             'branches'  => $branches,
-            'products'  => $products
+            'products'  => $products,
+            'id_f'      => empty($id_f)?0:$id_f->number_sal,
+            'id_r'      => empty($id_r)?0:$id_r->number_sal,
         ]);
     }
     /**
@@ -53,6 +57,7 @@ class SaleController extends Controller
         $sale->client_sal           = $request->client;
         $sale->user_sal             = auth()->user()->id;
         $sale->invoice_number_sal   = $request->invoice_number;
+        $sale->number_sal           = $request->invoice_number;
         $sale->purchase_date_sal    = $request->date;
         $sale->tribute_sal          = $request->tribute;
         $sale->total_sal            = $request->total_purchase;

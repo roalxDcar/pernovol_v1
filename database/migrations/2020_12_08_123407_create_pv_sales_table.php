@@ -18,6 +18,7 @@ class CreatePvSalesTable extends Migration
             $table->integer('branch_sal')->unsigned()->nullable();
             $table->integer('client_sal')->unsigned();
             $table->integer('user_sal')->unsigned();
+            $table->integer('number_sal')->nullable();
             $table->string('invoice_number_sal');
             $table->dateTime('purchase_date_sal');
             $table->double('tribute_sal');
