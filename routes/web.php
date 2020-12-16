@@ -72,6 +72,8 @@ Route::get('lista-compras', 'PurchaseController@getPurchase')->name('get.purchas
 Route::get('nueva-compra', 'PurchaseController@createPurchase')->name('create.purchase');
 Route::post('nuevo-compra/guardar', 'PurchaseController@storePurchase')->name('store.purchase');
 Route::get('lista-productos/venta/{id}','PurchaseController@getProduct')->name('product.purchase');
+Route::get('reporte-compra/', 'PurchaseController@getReportPurchase')->name('purchase.getReport');
+Route::post('reporte-compra/filtrado', 'PurchaseController@reportPurchase')->name('purchase.report');
 
 Route::get('lista-ventas', 'SaleController@getSale')->name('get.sale');
 Route::get('nueva-venta', 'SaleController@createSale')->name('create.sale');

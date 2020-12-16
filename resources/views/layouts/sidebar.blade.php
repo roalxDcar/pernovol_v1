@@ -244,6 +244,15 @@
                             </span>
                         </a>
                     </li>
+                    <li class="">
+                        <a class="menu-item" href="{{ route('purchase.getReport') }}">
+                            <i class="material-icons">
+                            </i>
+                            <span data-i18n="Users List">
+                                Reporte Compras
+                            </span>
+                        </a>
+                    </li>
                 </ul>
             </li>
         </ul>

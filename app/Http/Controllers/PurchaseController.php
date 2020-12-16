@@ -93,4 +93,19 @@ class PurchaseController extends Controller
         return $product;
     }
 
+    public function getReportPurchase(){
+        return view('report.listPurchase');
+    }
+
+    public function reportPurchase(Request $request){
+        $sales = Purchase::with('user','provider')
+                    ->whereDate('purchase_date_pur','>=',$request->start)
+                    ->whereDate('purchase_date_pur','<=',$request->end)
+                    ->orderBy('purchase_pur', 'DESC')
+                    ->get();
+        return view('report.filterPurchase', [
+            'sales' => $sales,
+        ]);
+    }
+
 }
