@@ -59,28 +59,14 @@
     <div class="main-menu-content">
         <ul class="navigation navigation-main" data-menu="menu-navigation" id="main-menu-navigation">
             <li class=" nav-item">
-                <a href="index.html">
+                <a href="{{ route('home') }}">
                     <i class="material-icons">
                         settings_input_svideo
                     </i>
                     <span class="menu-title" data-i18n="Dashboard">
                         Dashboard
                     </span>
-                    <span class="badge badge badge-info badge-pill float-right mr-2">
-                        3
-                    </span>
                 </a>
-                <ul class="menu-content">
-                    <li>
-                        <a class="menu-item" href="{{ route('sale.getReport') }}">
-                            <i class="material-icons">
-                            </i>
-                            <span data-i18n="eCommerce">
-                                Reportes Ventas
-                            </span>
-                        </a>
-                    </li>
-                </ul>
             </li>
 
             <li class=" nav-item">
@@ -234,6 +220,27 @@
                             </i>
                             <span data-i18n="Users List">
                                 Clientes
+                            </span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li class=" nav-item">
+                <a href="#">
+                    <i class="material-icons">
+                        filter_2
+                    </i>
+                    <span class="menu-title" data-i18n="Users">
+                        Reportes
+                    </span>
+                </a>
+                <ul class="menu-content">
+                    <li class="">
+                        <a class="menu-item" href="{{ route('sale.getReport') }}">
+                            <i class="material-icons">
+                            </i>
+                            <span data-i18n="Users List">
+                                Reporte Ventas
                             </span>
                         </a>
                     </li>
