@@ -76,7 +76,7 @@
                             <i class="material-icons">
                             </i>
                             <span data-i18n="eCommerce">
-                                Reportes
+                                Reportes Ventas
                             </span>
                         </a>
                     </li>
