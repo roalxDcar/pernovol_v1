@@ -15,7 +15,7 @@
                         <label for="name_bra">
                             <b>Nombre de la Marca:</b>
                         </label>
-                        <input type="text" id="name_bra" name="name_bra" class="form-control" placeholder="Ingresar Código">
+                        <input type="text" id="name_bra" name="name_bra" class="form-control" placeholder="Ingresar Marca">
                     </fieldset>
                 </div>
                 <br>

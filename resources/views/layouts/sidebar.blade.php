@@ -64,7 +64,7 @@
                         settings_input_svideo
                     </i>
                     <span class="menu-title" data-i18n="Dashboard">
-                        Dashboard
+                        Inicio
                     </span>
                 </a>
             </li>
@@ -79,15 +79,6 @@
                     </span>
                 </a>
                 <ul class="menu-content">
-                    <li class="">
-                        <a class="menu-item" href="{{ route('get.provider') }}">
-                            <i class="material-icons">
-                            </i>
-                            <span data-i18n="Users List">
-                                Proveedores
-                            </span>
-                        </a>
-                    </li>
                     <li class="">
                         <a class="menu-item" href="{{ route('get.user') }}">
                             <i class="material-icons">
@@ -126,7 +117,7 @@
                         dvr
                     </i>
                     <span class="menu-title" data-i18n="Users">
-                        Catalogo
+                        Gestión de Productos
                     </span>
                 </a>
                 <ul class="menu-content">
@@ -185,6 +176,15 @@
                 </a>
                 <ul class="menu-content">
                     <li class="">
+                        <a class="menu-item" href="{{ route('get.provider') }}">
+                            <i class="material-icons">
+                            </i>
+                            <span data-i18n="Users List">
+                                Proveedores
+                            </span>
+                        </a>
+                    </li>
+                    <li class="">
                         <a class="menu-item" href="{{ route('get.purchase') }}">
                             <i class="material-icons">
                             </i>
@@ -206,20 +206,20 @@
                 </a>
                 <ul class="menu-content">
                     <li class="">
-                        <a class="menu-item" href="{{ route('get.sale') }}">
-                            <i class="material-icons">
-                            </i>
-                            <span data-i18n="Users List">
-                                Ventas
-                            </span>
-                        </a>
-                    </li>
-                    <li class="">
                         <a class="menu-item" href="{{ route('get.client') }}">
                             <i class="material-icons">
                             </i>
                             <span data-i18n="Users List">
                                 Clientes
+                            </span>
+                        </a>
+                    </li>
+                    <li class="">
+                        <a class="menu-item" href="{{ route('get.sale') }}">
+                            <i class="material-icons">
+                            </i>
+                            <span data-i18n="Users List">
+                                Ventas
                             </span>
                         </a>
                     </li>

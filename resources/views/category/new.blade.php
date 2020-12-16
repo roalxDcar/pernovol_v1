@@ -13,9 +13,9 @@
                 <div class="modal-body" style="padding: 15px 25px 0px 25px;">
                     <fieldset class="form-group floating-label-form-group col-md-12" style="float: left;">
                         <label for="name_cat">
-                            <b>Descripción:</b>
+                            <b>Nombre de la categoría</b>
                         </label>
-                        <input type="text" id="name_cat" name="name_cat" class="form-control" placeholder="Ingresar Código">
+                        <input type="text" id="name_cat" name="name_cat" class="form-control" placeholder="Ingresar Categoría">
                     </fieldset>
                 </div>
                 <br>

@@ -55,7 +55,7 @@
 
 <!-- BEGIN: Body-->
 
-<body class="vertical-layout vertical-menu-modern material-vertical-layout material-layout 1-column   blank-page" data-open="click" data-menu="vertical-menu-modern" data-col="1-column" background="{!! asset('assets/app-assets/images/logo/motor.jpg') !!}" style="background-repeat: no-repeat;background-position: center;">
+<body class="vertical-layout vertical-menu-modern material-vertical-layout material-layout 1-column   blank-page" data-open="click" data-menu="vertical-menu-modern" data-col="1-column" background="{!! asset('assets/app-assets/images/logo/motor1.jpg') !!}" style="background-repeat: no-repeat;background-position: center;">
     <!-- BEGIN: Content-->
     @yield('content')
     <!-- END: Content-->

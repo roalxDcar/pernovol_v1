@@ -14,7 +14,7 @@
 <div class="content-header-left col-md-6 col-12 mb-2 breadcrumb-new">
     <h3 class="content-header-title mb-0 d-inline-block">            
         <strong>
-            Sucursal
+            SUCURSAL
         </strong>
     </h3>
     <div class="row breadcrumbs-top d-inline-block">
@@ -22,7 +22,7 @@
             <ol class="breadcrumb">
                 <li class="breadcrumb-item">
                     <a href="{{ route('get.branch') }}" style="color:black;">
-                        Lista de Sucursales
+                        LISTA DE SUCURSALES
                     </a>
                 </li>
             </ol>
@@ -54,23 +54,24 @@
                                                 <th style="width: 50px;">
                                                     ID
                                                 </th>
-                                                <th style="width: 150px;">
-                                                    Sucursal
-                                                </th>
-                                                <th style="width: 350px;">
-                                                    Dirección
-                                                </th>
-                                                <th style="width: 110px;">
-                                                    Tel/Cel
-                                                </th>
                                                 <th style="width: 110px;">
                                                     NIT
                                                 </th>
+                                                <th style="width: 150px;">
+                                                    SUCURSAL
+                                                </th>
+                                                <th style="width: 250px;">
+                                                    DIRECCIÓN
+                                                </th>
+                                                <th style="width: 110px;">
+                                                    TEL./CEL.
+                                                </th>
+                                                
                                                 <th style="width: 80px;">
-                                                    Estado
+                                                    ESTADO
                                                 </th>
                                                 <th style="width: 56px;" class="text-center">
-                                                    Acciones
+                                                    ACCIONES
                                                 </th>
                                             </tr>
                                         </thead>
@@ -80,6 +81,10 @@
                                                 
                                                 <td>
                                                     {{ $branch->branch_bra }}
+                                                </td>
+
+                                                <td class="sorting_1">
+                                                    {{ $branch->nit_bra }}
                                                 </td>
 
                                                 <td class="sorting_1">
@@ -94,10 +99,7 @@
                                                     {{ $branch->phone_bra }}
                                                 </td>
 
-                                                <td class="sorting_1">
-                                                    {{ $branch->nit_bra }}
-                                                </td>
-
+                                                
                                                 <td class="text-center">
                                                     <button class="btn mr-1 btn-{{ $branch->state_bra?'success':'danger' }} btn-sm waves-effect waves-light" type="text">
                                                         {{ $branch->state_bra?'Activo':'Inactivo' }}
