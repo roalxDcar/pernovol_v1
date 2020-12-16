@@ -209,15 +209,6 @@
 		                                    </fieldset>
 		                                    <br>
 	                                    	<fieldset class="col-md-6" style="float: left;">
-	                                        	<label style="color: black;"><b>Impuesto: </b></label>
-	                                        	<input type="number" readonly="readonly" class="form-control impuesto" name="tribute">
-		                                    </fieldset>
-	                                     	<fieldset class="col-md-6" style="float: left;">
-	                                        	<label style="color: black;"><b>N° Factura: </b></label>
-	                                        	<input type="text" class="form-control" name="invoice_number" placeholder="Ingresar N°">
-		                                    </fieldset>  
-		                                    <br><br><br><br>
-	                                    	<fieldset class="col-md-6" style="float: left;">
 	                                        	<label style="color: black;"><b>Tipo Comprobante: </b></label>
 	                                            <select class="form-control" name="type" id="type">
 						                            <option value="0" selected="">
@@ -232,6 +223,12 @@
 						                        </select>
 		                                    </fieldset>
 	                                     	<fieldset class="col-md-6" style="float: left;">
+	                                        	<label style="color: black;"><b>N° Factura: </b></label>
+	                                        	<input type="text" class="form-control" name="invoice_number" placeholder="Ingresar N°">
+		                                    </fieldset>  
+		                                    
+											<br>
+	                                     	<fieldset class="col-md-6" style="float: left;">
 	                                        	<label style="color: black;"><b>Tipo de Pago: </b></label>
 	                                            <select class="form-control" name="type_purchase">
 						                            <option value="0" selected="">
@@ -244,7 +241,11 @@
 						                                Contado
 						                            </option>
 						                        </select>
-		                                    </fieldset>                              
+		                                    </fieldset>  
+												<fieldset class="col-md-6" style="float: left;">
+	                                        	<label style="color: black;"><b>Impuesto: </b></label>
+	                                        	<input type="number" readonly="readonly" class="form-control impuesto" name="tribute">
+		                                    </fieldset>                            
 		                                </div>
 		                            </div>
 		                        </div>

@@ -11,7 +11,7 @@
                                     <div class="media d-flex">
                                         <div class="media-body text-left">
                                             <h3 class="info">850</h3>
-                                            <h6>Products Sold</h6>
+                                            <h6>Productos Vendidos</h6>
                                         </div>
                                         <div>
                                             <i class="icon-basket-loaded info font-large-2 float-right"></i>
@@ -30,8 +30,8 @@
                                 <div class="card-body">
                                     <div class="media d-flex">
                                         <div class="media-body text-left">
-                                            <h3 class="warning">$748</h3>
-                                            <h6>Net Profit</h6>
+                                            <h3 class="warning">30.456 Bs.</h3>
+                                            <h6>Compras</h6>
                                         </div>
                                         <div>
                                             <i class="icon-pie-chart warning font-large-2 float-right"></i>
@@ -51,7 +51,7 @@
                                     <div class="media d-flex">
                                         <div class="media-body text-left">
                                             <h3 class="success">146</h3>
-                                            <h6>New Customers</h6>
+                                            <h6>Clientes</h6>
                                         </div>
                                         <div>
                                             <i class="icon-user-follow success font-large-2 float-right"></i>
@@ -70,8 +70,8 @@
                                 <div class="card-body">
                                     <div class="media d-flex">
                                         <div class="media-body text-left">
-                                            <h3 class="danger">99.89 %</h3>
-                                            <h6>Customer Satisfaction</h6>
+                                            <h3 class="danger">25.000 Bs.</h3>
+                                            <h6>Ventas</h6>
                                         </div>
                                         <div>
                                             <i class="icon-heart danger font-large-2 float-right"></i>
@@ -93,17 +93,17 @@
                         <div class="card card-shadow">
                             <div class="card-header card-header-transparent py-20">
                                 <div class="btn-group dropdown">
-                                    <a href="#" class="text-body dropdown-toggle blue-grey-700" data-toggle="dropdown">PRODUCTS SALES</a>
+                                    <a href="#" class="text-body dropdown-toggle blue-grey-700" data-toggle="dropdown">PRODUCTOS VENDIDOS</a>
                                     <div class="dropdown-menu animate" role="menu">
-                                        <a class="dropdown-item" href="#" role="menuitem">Sales</a>
-                                        <a class="dropdown-item" href="#" role="menuitem">Total sales</a>
-                                        <a class="dropdown-item" href="#" role="menuitem">profit</a>
+                                        <a class="dropdown-item" href="#" role="menuitem">Ventas</a>
+                                        <a class="dropdown-item" href="#" role="menuitem">Ventas Totales</a>
+                                        <a class="dropdown-item" href="#" role="menuitem">Lucro</a>
                                     </div>
                                 </div>
                                 <ul class="nav nav-pills nav-pills-rounded chart-action float-right btn-group" role="group">
-                                    <li class="nav-item"><a class="active nav-link" data-toggle="tab" href="#scoreLineToDay">Day</a></li>
-                                    <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#scoreLineToWeek">Week</a></li>
-                                    <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#scoreLineToMonth">Month</a></li>
+                                    <li class="nav-item"><a class="active nav-link" data-toggle="tab" href="#scoreLineToDay">Dia</a></li>
+                                    <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#scoreLineToWeek">Semana</a></li>
+                                    <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#scoreLineToMonth">Mes</a></li>
                                 </ul>
                             </div>
                             <div class="widget-content tab-content bg-white p-20">
@@ -116,7 +116,7 @@
                     <div class="col-xl-4 col-lg-12">
                         <div class="card">
                             <div class="card-header">
-                                <h4 class="card-title">New Orders</h4>
+                                <h4 class="card-title">Nueva Orden</h4>
                                 <a class="heading-elements-toggle"><i class="la la-ellipsis-v font-medium-3"></i></a>
                                 <div class="heading-elements">
                                     <ul class="list-inline mb-0">
@@ -130,8 +130,8 @@
                                         <table id="new-orders-table" class="table table-hover table-xl mb-0">
                                             <thead>
                                                 <tr>
-                                                    <th class="border-top-0">Product</th>
-                                                    <th class="border-top-0">Customers</th>
+                                                    <th class="border-top-0">Producto</th>
+                                                    <th class="border-top-0">Clientes</th>
                                                     <th class="border-top-0">Total</th>
                                                 </tr>
                                             </thead>
@@ -154,7 +154,7 @@
                                                             </li>
                                                         </ul>
                                                     </td>
-                                                    <td class="text-truncate">$8999</td>
+                                                    <td class="text-truncate">8999 Bs.</td>
                                                 </tr>
                                                 <tr>
                                                     <td class="text-truncate">Pixel 2</td>
@@ -168,7 +168,7 @@
                                                             </li>
                                                         </ul>
                                                     </td>
-                                                    <td class="text-truncate">$5550</td>
+                                                    <td class="text-truncate">5550 Bs.</td>
                                                 </tr>
                                                 <tr>
                                                     <td class="text-truncate">OnePlus</td>
@@ -188,7 +188,7 @@
                                                             </li>
                                                         </ul>
                                                     </td>
-                                                    <td class="text-truncate">$9000</td>
+                                                    <td class="text-truncate">9000 Bs.</td>
                                                 </tr>
                                                 <tr>
                                                     <td class="text-truncate">Galaxy</td>
@@ -205,7 +205,7 @@
                                                             </li>
                                                         </ul>
                                                     </td>
-                                                    <td class="text-truncate">$7500</td>
+                                                    <td class="text-truncate">7500 Bs.</td>
                                                 </tr>
                                                 <tr>
                                                     <td class="text-truncate">Moto Z2</td>
@@ -225,7 +225,7 @@
                                                             </li>
                                                         </ul>
                                                     </td>
-                                                    <td class="text-truncate">$8500</td>
+                                                    <td class="text-truncate">8500 Bs.</td>
                                                 </tr>
                                             </tbody>
                                         </table>
@@ -248,28 +248,28 @@
                             <div class="card-footer">
                                 <div class="row mt-1">
                                     <div class="col-3 text-center">
-                                        <h6 class="text-muted">Total Products</h6>
+                                        <h6 class="text-muted">Productos Totales</h6>
                                         <h2 class="block font-weight-normal">18.6 k</h2>
                                         <div class="progress progress-sm mt-1 mb-0 box-shadow-2">
                                             <div class="progress-bar bg-gradient-x-info" role="progressbar" style="width: 70%" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
                                         </div>
                                     </div>
                                     <div class="col-3 text-center">
-                                        <h6 class="text-muted">Total Sales</h6>
+                                        <h6 class="text-muted">Ventas Totales</h6>
                                         <h2 class="block font-weight-normal">64.54 M</h2>
                                         <div class="progress progress-sm mt-1 mb-0 box-shadow-2">
                                             <div class="progress-bar bg-gradient-x-warning" role="progressbar" style="width: 60%" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
                                         </div>
                                     </div>
                                     <div class="col-3 text-center">
-                                        <h6 class="text-muted">Total Cost</h6>
+                                        <h6 class="text-muted">Costos Totales</h6>
                                         <h2 class="block font-weight-normal">24.38 B</h2>
                                         <div class="progress progress-sm mt-1 mb-0 box-shadow-2">
                                             <div class="progress-bar bg-gradient-x-danger" role="progressbar" style="width: 40%" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
                                         </div>
                                     </div>
                                     <div class="col-3 text-center">
-                                        <h6 class="text-muted">Total Revenue</h6>
+                                        <h6 class="text-muted">Ingresos Totales</h6>
                                         <h2 class="block font-weight-normal">36.72 M</h2>
                                         <div class="progress progress-sm mt-1 mb-0 box-shadow-2">
                                             <div class="progress-bar bg-gradient-x-success" role="progressbar" style="width: 90%" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
@@ -288,10 +288,10 @@
                             </div>
                             <div class="card-footer">
                                 <div class="chart-title mb-1 text-center">
-                                    <h6>Total monthly Sales.</h6>
+                                    <h6>Ventas Mensuales Totales</h6>
                                 </div>
                                 <div class="chart-stats text-center">
-                                    <a href="#" class="btn btn-sm btn-danger box-shadow-2 mr-1">Statistics <i class="ft-bar-chart"></i></a> <span class="text-muted">for the last year.</span>
+                                    <a href="#" class="btn btn-sm btn-danger box-shadow-2 mr-1">Estadísticas <i class="ft-bar-chart"></i></a> <span class="text-muted">durante el último año.</span>
                                 </div>
                             </div>
                         </div>

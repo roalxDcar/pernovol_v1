@@ -16,7 +16,7 @@
                                 <h3 class="card-subtitle line-on-side text-center mt-5 mb-4">
                                     <span>
                                         <b>
-                                            Ingresar al Sistema
+                                            INGRESAR AL SISTEMA
                                         </b>
                                     </span>
                                 </h3>
@@ -26,14 +26,14 @@
                                     <form id="form" action="#" class="form-horizontal form-simple">
                                         @csrf
                                         <fieldset class="position-relative has-icon-left pb-3">
-                                            <input class="form-control" id="email" name="email" placeholder="Email" required="" type="text" style="margin-bottom:1px;">
+                                            <input class="form-control" id="email" name="email" placeholder="Email" required="" type="text" style="margin-bottom:3px;">
                                                 <div class="form-control-position">
                                                     <i class="la la-user"></i>
                                                 </div>
                                             </input>
                                         </fieldset>
                                         <fieldset class="position-relative has-icon-left pb-3">
-                                            <input class="form-control" id="password" name="password" placeholder="Contraseña" required="" type="password" style="margin-bottom:1px;">
+                                            <input class="form-control" id="password" name="password" placeholder="Contraseña" required="" type="password" style="margin-bottom:1px;" >
                                                 <div class="form-control-position">
                                                     <i class="la la-key">
                                                     </i>

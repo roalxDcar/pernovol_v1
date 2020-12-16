@@ -4,7 +4,7 @@
 <div class="content-header-left col-md-6 col-12 mb-2 breadcrumb-new">
     <h3 class="content-header-title mb-0 d-inline-block">            
         <strong>
-            Productos
+            PRODUCTOS
         </strong>
     </h3>
     <div class="row breadcrumbs-top d-inline-block">
@@ -12,11 +12,11 @@
             <ol class="breadcrumb">
                 <li class="breadcrumb-item">
                     <a href="{{ route('get.product') }}" style="color:black;">
-                        Lista de Productos
+                        LISTA DE PRODUCTOS
                     </a>
                 </li>
                 <li class="breadcrumb-item">
-                    Reporte de Productos
+                    REPORTE DE PRODUCTOS
                 </li>
             </ol>
         </div>
@@ -38,7 +38,7 @@
                     <div class="col-12 col-sm-9 col-xl-10">
                         <div class="media-body">
                             <ul class="ml-2 px-0 list-unstyled">
-                                <li class="text-bold-800"><b>"PERNOVOL"</b></li>
+                                <li class="text-bold-800"><h1><b>"PERNOVOL"</b></h1></li>
                                 <li><b>De: </b>Hugo Orlando Tunqui Quirijota</li>
                                 <li><b>CASA MATRIZ</b></li>
                                 <li>Av. 6 de Agosto, Nro.47, Zona 21 de Enero,</li>
@@ -58,19 +58,7 @@
         </div>
         <!-- Invoice Company Details -->
 
-        <div id="invoice-customer-details" class="row pt-2">
-            <div class="col-sm-6 col-12 text-center text-sm-left">
-                <p><span class="text-muted"><b>Municipio :</b></span> Viacha</p>
-                <p><span class="text-muted"><b>Tipo de Contribuyente :</b></span> Empresas Unipersonales</p>
-            </div>
-            <div class="col-sm-6 col-12 text-center text-sm-right">
-                <ul class="px-0 list-unstyled">
-                    <li>Venta al por menor de artículos de ferretería,</li>
-                    <li>pinturas y productos de vídrios - Venta de </li>
-                    <li>partes, piezas y accesorios de vehiculos automotores</li>
-                </ul>
-            </div>
-        </div>
+        
 
         <!-- Invoice Items Details -->
         <div id="invoice-items-details" class="pt-2">
@@ -79,27 +67,25 @@
                     <table class="table">
                         <thead>
                             <tr>
-                                <th>Código</th>
-                                <th class="text-right">Producto</th>
-                                <th class="text-right">Categoria</th>
-                                <th class="text-right">Marca</th>
-                                <th class="text-right">U. de Medida</th>
-                                <th class="text-right">Stock</th>
-                                <th class="text-right">Precio C.</th>
-                                <th class="text-right">Precio V.</th>
+                                <th>CÓDIGO</th>
+                                <th class="text-left">PRODUCTO</th>
+                                <th class="text-left">CATEGORÍA</th>
+                                <th class="text-center">UNIDAD</th>
+                                <th class="text-center">STOCK</th>
+                                <th class="text-center">P. COMPRA</th>
+                                <th class="text-center">P. VENTA</th>
                             </tr>
                         </thead>
                         <tbody>
                             @foreach($products as $product)
                                 <tr>
                                     <td>{{ $product->code_prod }}</td>
-                                    <td class="text-right">{{ $product->name_prod }}</td>
-                                    <td class="text-right">{{ $product->category->name_cat }}</td>
-                                    <td class="text-right">{{ $product->brand->name_bra }}</td>
-                                    <td class="text-right">{{ $product->unit->name_uni }}</td>
-                                    <td class="text-right">{{ $product->stock_prod }}</td>
-                                    <td class="text-right">{{ $product->purchase_price_prod }}</td>
-                                    <td class="text-right">{{ $product->sale_price_prod }}</td>
+                                    <td class="text-left">{{ $product->name_prod }}</td>
+                                    <td class="text-left">{{ $product->category->name_cat }}</td>
+                                    <td class="text-center">{{ $product->unit->name_uni }}</td>
+                                    <td class="text-center">{{ $product->stock_prod }}</td>
+                                    <td class="text-center">{{ $product->purchase_price_prod }}</td>
+                                    <td class="text-center">{{ $product->sale_price_prod }}</td>
                                 </tr>
                             @endforeach
                         </tbody>

@@ -111,7 +111,7 @@
                     </fieldset>
                     <fieldset class="form-group floating-label-form-group col-md-6" style="float: left;">
                         <label for="detail_prod">
-                            <b>Detalle:</b>
+                            <b>Descripción:</b>
                         </label><br>
                         <textarea name="detail_prod" id="detail_prod" cols="40" rows="3" style="resize: none; margin-top: 3px;"></textarea>
                     </fieldset>

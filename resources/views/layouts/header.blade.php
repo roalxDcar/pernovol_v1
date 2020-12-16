@@ -13,7 +13,7 @@
                     <a class="navbar-brand" href="index.html">
                         <img alt="modern admin logo" class="brand-logo" src="{!!asset('assets/app-assets/images/logo/logo.png')!!}">
                             <h3 class="brand-text">
-                                Modern
+                                PERNOVOL
                             </h3>
                         </img>
                     </a>

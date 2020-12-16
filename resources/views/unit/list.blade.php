@@ -14,7 +14,7 @@
 <div class="content-header-left col-md-6 col-12 mb-2 breadcrumb-new">
     <h3 class="content-header-title mb-0 d-inline-block">            
         <strong>
-            Unidades
+            UNIDADES
         </strong>
     </h3>
     <div class="row breadcrumbs-top d-inline-block">
@@ -22,7 +22,7 @@
             <ol class="breadcrumb">
                 <li class="breadcrumb-item">
                     <a href="{{ route('get.branch') }}" style="color:black;">
-                        Lista de Unidades
+                        LISTA DE UNIDADES
                     </a>
                 </li>
             </ol>
@@ -32,7 +32,7 @@
 <div class="content-header-right col-md-6 col-12">
     <div class="btn-group float-md-right">
         <button aria-expanded="false" aria-haspopup="true" class="btn btn-primary round dropdown-menu-right px-2" style="margin-top: 5px;" type="button" id="newUnit">
-            Nuevo Unidad
+            Nueva Unidad
         </button>
     </div>
 </div>
@@ -54,16 +54,16 @@
                                                     ID
                                                 </th>
                                                 <th aria-controls="DataTables_Table_0" aria-label="Position: activate to sort column ascending" class="sorting" colspan="1" rowspan="1" style="width: 400px;" tabindex="0">
-                                                    Unidad
+                                                    UNIDAD
                                                 </th>
                                                 <th aria-controls="DataTables_Table_0" aria-label="Position: activate to sort column ascending" class="sorting" colspan="1" rowspan="1" style="width: 400px;" tabindex="0">
-                                                    Prefijo
+                                                    PREFIJO
                                                 </th>
                                                 <th aria-controls="DataTables_Table_0" aria-label="Salary: activate to sort column ascending text-center" class="sorting" colspan="1" rowspan="1" style="width: 100px;" tabindex="0">
-                                                    Estado
+                                                    ESTADO
                                                 </th>
                                                 <th aria-controls="DataTables_Table_0" aria-label="Salary: activate to sort column ascending" class="sorting text-center" colspan="1" rowspan="1" style="width: 200px;" tabindex="0">
-                                                    Acciones
+                                                    ACCIONES
                                                 </th>
                                             </tr>
                                         </thead>
