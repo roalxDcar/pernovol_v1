@@ -85,6 +85,9 @@
                                                     <th colspan="1" rowspan="1" style="width: 300px;">
                                                         Categoria
                                                     </th>
+                                                    <th colspan="1" rowspan="1" style="width: 300px;" class="text-center">
+                                                        Cantidad
+                                                    </th>
                                                     <th colspan="1" rowspan="1" style="width: 120px;">
                                                         Expiración
                                                     </th>
@@ -110,6 +113,9 @@
                                                     </td>
                                                     <td class="sorting_1">
                                                         {{ $product->category->name_cat }}
+                                                    </td>
+                                                    <td class="text-center">
+                                                        {{ $product->stock_prod }}
                                                     </td>
                                                     <td class="sorting_1">
                                                         {{ $product->expiration_prod }}
